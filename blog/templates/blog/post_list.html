@@ -7,7 +7,7 @@
     {% for post in post_list %}
     <li>
       <div><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></div>
-      <div>{{ post.body }}</div>
+      <div>{{ post.body | safe }}</div>
       <div>{{ post.author }}</div>
     </li>
     {% endfor %}
