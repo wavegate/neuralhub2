@@ -1,17 +1,15 @@
 {% extends "index.html" %} 
 {% block content %}
 <h1>Posts</h1>
-<a href={% url 'post-create' %}>Create post</a>
+{% if user.is_staff %}<a href={% url 'post-create' %} class="button">Create post</a>{% endif %}
   {% if post_list %}
-  <ul>
     {% for post in post_list %}
-    <li>
+    <div>
       <div><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></div>
       <div>{{ post.body | safe }}</div>
       <div>{{ post.author }}</div>
-    </li>
+    </div>
     {% endfor %}
-  </ul>
   {% else %}
   <div>There are no posts.</div>
   {% endif %} 

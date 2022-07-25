@@ -8,6 +8,9 @@ from django.urls import reverse_lazy
 def index(request):
     return render(request, 'index.html')
 
+def about(request):
+    return render(request, 'about.html')
+
 class PostListView(generic.ListView):
     model = Post
     paginate_by = 5

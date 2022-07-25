@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri&family=Secular+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+  font-family: "Amiri", serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  margin-top: 30px;
+}
+
+.logo {
+  font-family: "Secular One", sans-serif;
+  font-size: 48px;
+  line-height: 48px;
+  margin-top: -10px;
+}
+
+.logoSubtitle {
+  font-size: 22px;
+}
+
+.aside {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid black;
+}
+
+.serverIcon {
+  width: 100px;
+  height: 100px;
+}
+
+.divider {
+  border-bottom: 1px solid black;
+  background: red;
+  width: 90%;
+  margin: 1rem auto 1rem auto;
+}
+
+.main {
+  padding: 50px;
+  width: 900px;
+}
+
+.button {
+  all: unset;
+  padding: 0px 12px;
+  background: rgb(55, 146, 101);
+  color: white;
+  font-size: 24px;
+  border-radius: 4px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: rgb(110, 182, 146);
+}
+
+p {
+  text-indent: 2em;
+}
