@@ -12,23 +12,27 @@
     <div class="container">
       <aside class="aside">
         <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
-        <lord-icon
+        <a href="{% url 'posts' %}"><lord-icon
           src="https://cdn.lordicon.com/wrprwmwt.json"
           trigger="loop"
           colors="primary:#121331,secondary:#30e849"
           class="serverIcon">
-      </lord-icon>
-        <div class="logo">COMPSCI</div>
-        <div class="logoSubtitle">A Computer Science Blog</div>
+      </lord-icon></a>
+      <div class="logo"><a href="{% url 'posts' %}" class="homelink">COMPSCI</div>
+        <div class="logoSubtitle"><a href="{% url 'posts' %}" class="homelink">A Computer Science Blog</a></div>
         <div class="divider"></div>
-        <a href="{% url 'posts' %}">Home</a>
-        <a href="{% url 'about' %}">About</a>
-        {% if user.is_authenticated %}
-        <div>User: {{user.get_username }}</div>
-        <div><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></div>
-        {% else %}
-        <div><a href="{% url 'login' %}?next={{request.path}}">Login</a></div>
-        {% endif %}
+        <nav>
+        <ul class="navlist">
+          <li class="navlist_item"><a href="{% url 'posts' %}">Home</a></li>
+          <li class="navlist_item"><a href="{% url 'about' %}">About</a></li>
+          {% if user.is_authenticated %}
+          <div>User: {{user.get_username }}</div>
+          <li class="navlist_item"><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
+          {% else %}
+          <li class="navlist_item"><a href="{% url 'login' %}?next={{request.path}}">Login</a><li>
+          {% endif %}
+        </ul>
+        </nav>
       </aside>
       <main class="main">
         {% block content %}

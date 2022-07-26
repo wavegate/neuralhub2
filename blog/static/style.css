@@ -11,6 +11,41 @@
   font-family: "Amiri", serif;
 }
 
+a,
+button {
+  all: unset;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
+.navlist {
+  list-style-type: none;
+}
+
+.navlist_item {
+  font-size: 18px;
+  position: relative;
+}
+
+.navlist_item::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  background-color: #30e849;
+  border-radius: 2px;
+  height: 5px;
+  bottom: 2px;
+  left: -5px;
+  z-index: -1;
+}
+
+.navlist_item:hover::before {
+  background-color: #93e79e;
+}
+
 .container {
   max-width: 1200px;
   margin: auto;
