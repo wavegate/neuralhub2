@@ -21,38 +21,38 @@
       <div class="logo"><a href="{% url 'posts' %}" class="homelink">COMPSCI</div>
         <div class="logoSubtitle"><a href="{% url 'posts' %}" class="homelink">A Computer Science Blog</a></div>
         <div class="divider"></div>
-        <nav>
+        <nav class="nav">
         <ul class="navlist">
-          <li class="navlist_item"><a href="{% url 'posts' %}">Home</a></li>
-          <li class="navlist_item"><a href="{% url 'about' %}">About</a></li>
+          <li class="navlist_item"><a href="{% url 'posts' %}" class="navlink">Home</a></li>
+          <li class="navlist_item"><a href="{% url 'about' %}" class="navlink">About</a></li>
           {% if user.is_authenticated %}
           <div>User: {{user.get_username }}</div>
-          <li class="navlist_item"><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
+          <li class="navlist_item"><a href="{% url 'logout' %}?next={{request.path}}" class="navlink">Logout</a></li>
           {% else %}
-          <li class="navlist_item"><a href="{% url 'login' %}?next={{request.path}}">Login</a><li>
+          <li class="navlist_item"><a href="{% url 'login' %}?next={{request.path}}" class="navlink">Login</a><li>
           {% endif %}
         </ul>
         </nav>
-      </aside>
-      <main class="main">
-        {% block content %}
-        {% endblock %}
         {% block pagination %}
           {% if is_paginated %}
               <div class="pagination">
                   <span class="page-links">
                       {% if page_obj.has_previous %}
-                          <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                          <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}" class="button">previous</a>
                       {% endif %}
                       <span class="page-current">
                           Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
                       </span>
                       {% if page_obj.has_next %}
-                          <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                          <a href="{{ request.path }}?page={{ page_obj.next_page_number }}" class="button">next</a>
                       {% endif %}
                   </span>
               </div>
           {% endif %}
+        {% endblock %}
+      </aside>
+      <main class="main">
+        {% block content %}
         {% endblock %}
       </main>
     </div>

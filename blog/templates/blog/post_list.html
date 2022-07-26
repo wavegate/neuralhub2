@@ -1,13 +1,12 @@
-{% extends "index.html" %} 
+{% extends "base.html" %} 
 {% block content %}
-<h1>Posts</h1>
 {% if user.is_staff %}<a href={% url 'post-create' %} class="button">Create post</a>{% endif %}
   {% if post_list %}
     {% for post in post_list %}
-    <div>
-      <div><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></div>
+    <div class="post">
+      <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
       <div>{{ post.body | safe }}</div>
-      <div>{{ post.author }}</div>
+      <div>{{ post.date_created }}</div>
     </div>
     {% endfor %}
   {% else %}
