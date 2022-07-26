@@ -20,11 +20,11 @@ class PostDetailView(generic.DetailView):
 
 class PostCreate(CreateView):
     model = Post
-    fields = '__all__'
+    fields = ['title', 'body']
 
 class PostUpdate(UpdateView):
     model = Post
-    fields = '__all__'
+    fields = ['title', 'body']
 
 class PostDelete(DeleteView):
     model = Post
