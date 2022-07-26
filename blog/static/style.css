@@ -107,10 +107,6 @@ button:hover {
   background: rgb(110, 182, 146);
 }
 
-p {
-  text-indent: 2em;
-}
-
 nav {
   margin-bottom: 15px;
 }
@@ -118,4 +114,10 @@ nav {
 .post {
   margin-bottom: 15px;
   border-bottom: 1px solid black;
+}
+
+.postDate {
+  margin-top: -8px;
+  margin-bottom: 8px;
+  font-size: 16px;
 }

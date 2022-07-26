@@ -4,9 +4,9 @@
   {% if post_list %}
     {% for post in post_list %}
     <div class="post">
-      <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+      <h2><a href="{{ post.get_absolute_url }}" class="postTitle">{{ post.title }}</a></h2>
+      <div class="postDate">Posted by {{ post.author }} on {{ post.date_created }}</div>
       <div>{{ post.body | safe | truncatewords:50 }}</div>
-      <div>{{ post.date_created }}</div>
     </div>
     {% endfor %}
   {% else %}
