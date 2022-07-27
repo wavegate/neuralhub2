@@ -1,6 +1,11 @@
 {% extends "base.html" %} {% block content %}
-<h1>{{ post.title }}</h1>
-<p>{{ post.body | safe }}</p>
-{% if user.is_staff %}<div><a href="{% url 'post-delete' post.id %}">Delete</a></div>
-<div><a href="{% url 'post-update' post.id %}">Edit</a></div>{% endif %}
+<div class="post">
+    <h2><a href="{{ post.get_absolute_url }}" class="postTitle">{{ post.title }}</a></h2>
+    <div class="postDate">Posted by {{ post.author }} on {{ post.date_created }}</div>
+    <div class="post">{{ post.body | safe }}</div>
+</div>
+{% if user.is_staff %}
+<div><a href="{% url 'post-update' post.id %}" class="button">Edit</a></div>
+<div><a href="{% url 'post-delete' post.id %}" class="button">Delete</a></div>
+{% endif %}
 {% endblock %}

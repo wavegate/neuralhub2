@@ -2,13 +2,15 @@
 {% block content %}
 {% if user.is_staff %}<a href={% url 'post-create' %} class="button">Create post</a>{% endif %}
   {% if post_list %}
+  <div class="postList">
     {% for post in post_list %}
-    <div class="post">
-      <h2><a href="{{ post.get_absolute_url }}" class="postTitle">{{ post.title }}</a></h2>
-      <div class="postDate">Posted by {{ post.author }} on {{ post.date_created }}</div>
-      <div>{{ post.body | safe | truncatewords:50 }}</div>
-    </div>
+      <div class="post">
+        <h2><a href="{{ post.get_absolute_url }}" class="postTitle">{{ post.title }}</a></h2>
+        <div class="postDate">Posted by {{ post.author }} on {{ post.date_created }}</div>
+        <div>{{ post.body | safe | truncatewords:50 }}</div>
+      </div>
     {% endfor %}
+  </div>
   {% else %}
   <div>There are no posts.</div>
   {% endif %} 
