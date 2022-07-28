@@ -1,7 +1,5 @@
-{% extends "base.html" %} 
-{% block content %}
-{% if user.is_staff %}<a href={% url 'post-create' %} class="button">Create post</a>{% endif %}
-  {% if post_list %}
+{% extends "base.html" %} {% block content %}
+<h1 class="sectionTitle">Posts about "{{ category.name }}"</h1>
   <div class="postList">
     {% for post in post_list %}
       <div class="post">
@@ -11,7 +9,4 @@
       </div>
     {% endfor %}
   </div>
-  {% else %}
-  <div>There are no posts.</div>
-  {% endif %} 
 {% endblock %}

@@ -125,3 +125,28 @@ nav {
   flex-direction: column;
   gap: 64px;
 }
+
+.category {
+  padding: 0px 12px;
+  background: rgb(55, 146, 101);
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.categories {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.categoryList {
+  list-style-type: none;
+  display: flex;
+  gap: 6px;
+}
+
+.sectionTitle {
+  margin-bottom: 64px;
+}

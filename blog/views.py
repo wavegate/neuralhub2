@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post, Author
+from .models import Post, Author, Category
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -20,12 +20,20 @@ class PostDetailView(generic.DetailView):
 
 class PostCreate(CreateView):
     model = Post
-    fields = ['title', 'body', 'author']
+    fields = ['title', 'body', 'author', 'categories']
 
 class PostUpdate(UpdateView):
     model = Post
-    fields = ['title', 'body', 'author']
+    fields = ['title', 'body', 'author', 'categories']
 
 class PostDelete(DeleteView):
     model = Post
     success_url = reverse_lazy('posts')
+
+class CategoryDetailView(generic.DetailView):
+    model = Category
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['post_list'] = Post.objects.filter(categories=self.kwargs['pk'])
+        return context

@@ -1,7 +1,15 @@
 {% extends "base.html" %} {% block content %}
 <div class="post">
-    <h2><a href="{{ post.get_absolute_url }}" class="postTitle">{{ post.title }}</a></h2>
+    <h2 class="postTitle">{{ post.title }}</h2>
     <div class="postDate">Posted by {{ post.author }} on {{ post.date_created }}</div>
+    <div class="categories">
+        <div>Categories: </div>
+        <ul class="categoryList">
+            {% for category in post.categories.all %}
+            <li><a href={{ category.get_absolute_url }} class="category">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
     <div class="post">{{ post.body | safe }}</div>
 </div>
 {% if user.is_staff %}
