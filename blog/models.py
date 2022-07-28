@@ -21,7 +21,10 @@ class Post(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     date_updated = models.DateTimeField(auto_now=True, null=True, blank=True)
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True, blank=True)
-    categories = models.ManyToManyField(Category)
+    categories = models.ManyToManyField(Category, blank=True)
+
+    class Meta:
+        ordering = ['-date_created']
     
     def __str__(self):
         return self.title
