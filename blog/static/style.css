@@ -150,3 +150,14 @@ nav {
 .sectionTitle {
   margin-bottom: 64px;
 }
+
+.topicsHeading {
+  margin-top: 34px;
+}
+
+.topics {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
