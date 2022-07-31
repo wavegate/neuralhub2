@@ -6,8 +6,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 def index(request):
-    categories = Category.objects.all()
-    return render(request, 'index.html', {'categories': categories})
+    return render(request, 'index.html')
 
 def about(request):
     return render(request, 'about.html')

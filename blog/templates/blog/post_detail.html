@@ -2,6 +2,7 @@
 <div class="post">
     <h2 class="postTitle">{{ post.title }}</h2>
     <div class="postDate">Posted by {{ post.author }} on {{ post.date_created }}</div>
+    {% if post.categories.all %}
     <div class="categories">
         <div>Categories: </div>
         <ul class="categoryList">
@@ -10,6 +11,7 @@
             {% endfor %}
         </ul>
     </div>
+    {% endif %}
     <div class="post">{{ post.body | safe }}</div>
 </div>
 {% if user.is_staff %}

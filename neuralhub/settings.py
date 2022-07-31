@@ -140,3 +140,25 @@ STATIC_URL = '/static/'
 # Simplified static file serving.
 # https://pypi.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+
+#Take environment variables from .env file
+import environ
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+
+#Take the environmental variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
+SENDGRID_API_KEY = env('SENDGRID_API_KEY')
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'cc.frankee@gmail.com'
