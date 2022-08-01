@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="border: 1px solid darkgreen; border-radius: 2px; padding:10px; text-align: center;">
+    <div><strong>SUBSCRIBE</strong></div>
+    <div style="margin-bottom: 10px;">Please subscribe to get the latest articles in your mailbox.</div>
+    <div>
+        <form action="{% url 'subscribe' %}" method="post" class="form-horizontal">
+            {% csrf_token %}
+            <input type="email" name="email" class="form-control" placeholder="Your Email ID Please" required>
+            <br>
+            <input type="submit" value="Subscribe" class="btn btn-primary btn-sm">
+        </form>
+    </div>
+</div>
+{% endblock %}

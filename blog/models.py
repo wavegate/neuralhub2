@@ -47,3 +47,11 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
     body = models.TextField(blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True, null=True,blank=True)
+
+class Subscriber(models.Model):
+    email = models.EmailField(null=True, blank=True)
+    conf_num = models.CharField(max_length=15)
+    confirmed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.email + " (" + ("not " if not self.confirmed else "") + "confirmed)"

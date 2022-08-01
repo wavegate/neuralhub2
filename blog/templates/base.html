@@ -31,14 +31,8 @@
           {% else %}
           <li class="navlist_item"><a href="{% url 'login' %}?next={{request.path}}" class="navlink">Login</a><li>
           {% endif %}
+          <li class="navlist_item"><a href="{% url 'subscribe' %}" class="navlink">Subscribe</a></li>
         </ul>
-        <h4 class="topicsHeading">Topics</h4>
-        <ul class="topics">
-          {% for category in categories %}
-          <li class="category"><a href={{category.get_absolute_url}}>{{ category.name }}</a></li>
-          {% endfor %}
-          <ul>
-        </nav>
         {% block pagination %}
           {% if is_paginated %}
               <div class="pagination">
@@ -56,6 +50,13 @@
               </div>
           {% endif %}
         {% endblock %}
+        <h4 class="topicsHeading">Topics</h4>
+        <ul class="topics">
+          {% for category in categories %}
+          <li class="category"><a href={{category.get_absolute_url}}>{{ category.name }}</a></li>
+          {% endfor %}
+          <ul>
+        </nav>
       </aside>
       <main class="main">
         {% block content %}

@@ -10,4 +10,7 @@ urlpatterns = [
    path('<int:pk>/delete/', views.PostDeleteView.as_view(), name='post-delete'),
    path('categories/<int:pk>/', views.CategoryDetailView.as_view(), name='category-view'),
    path('<int:pk>/create_comment', views.CommentCreateView.as_view(), name='comment-create'),
+   path('subscribe', views.subscribe, name='subscribe'),
+   path('subscribe/confirm/', views.confirm_subscription, name='confirm-subscription'),
+   path('subscribe/delete/', views.delete_subscription, name='delete-subscription'),
 ]
