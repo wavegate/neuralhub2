@@ -161,3 +161,7 @@ nav {
   flex-direction: column;
   gap: 6px;
 }
+
+.comments {
+  margin-top: 64px;
+}

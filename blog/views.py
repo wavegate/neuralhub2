@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post, Author, Category
+from .models import Post, Author, Category, Comment
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -18,15 +18,26 @@ class PostListView(generic.ListView):
 class PostDetailView(generic.DetailView):
     model = Post
 
-class PostCreate(CreateView):
+class PostCreateView(CreateView):
     model = Post
     fields = ['title', 'body', 'author', 'categories']
 
-class PostUpdate(UpdateView):
+class CommentCreateView(CreateView):
+    model = Comment
+    fields = ['name', 'body']
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('post-view', kwargs={'pk': self.kwargs['pk']})
+
+class PostUpdateView(UpdateView):
     model = Post
     fields = ['title', 'body', 'author', 'categories']
 
-class PostDelete(DeleteView):
+class PostDeleteView(DeleteView):
     model = Post
     success_url = reverse_lazy('posts')
 

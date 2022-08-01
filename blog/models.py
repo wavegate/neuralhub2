@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
@@ -40,3 +41,9 @@ class Author(models.Model):
 
     def get_absolute_url(self):
         return reverse('author-view', args=[str(self.id)])
+
+class Comment(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    body = models.TextField(blank=True, null=True)
+    date_added = models.DateTimeField(auto_now_add=True, null=True,blank=True)
