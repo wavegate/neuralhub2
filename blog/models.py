@@ -23,6 +23,11 @@ class Post(models.Model):
     date_updated = models.DateTimeField(auto_now=True, null=True, blank=True)
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True, blank=True)
     categories = models.ManyToManyField(Category, blank=True)
+    summary = models.TextField(null=True, blank=True)
+    image = models.CharField(max_length=255, null=True, blank=True)
+    featured = models.BooleanField(null=True, default=False, blank=True)
+    secondaryFeatured = models.BooleanField(null=True, default=False, blank=True)
+
 
     class Meta:
         ordering = ['-date_created']

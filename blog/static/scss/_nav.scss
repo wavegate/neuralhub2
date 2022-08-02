@@ -1,0 +1,137 @@
+@use "breakpoints";
+
+.nav {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10vw;
+
+  @include breakpoints.sm {
+    height: 48px;
+    padding: 0px 5vw;
+  }
+}
+
+.logo {
+  all: unset;
+  font-family: "Oswald", sans-serif;
+  font-size: 36px;
+  margin-top: -8px;
+
+  @include breakpoints.sm {
+    font-size: 24px;
+    margin-top: -2px;
+  }
+}
+
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  min-height: 100vh;
+  width: 80vw;
+  background: white;
+  top: 0px;
+  z-index: 1;
+  right: 0px;
+  padding-top: 64px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.nav__list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  color: #3b4754;
+  font-weight: 700;
+
+  @include breakpoints.sm {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    font-weight: 500;
+
+    &.nav__list--mobile {
+      display: flex;
+    }
+  }
+}
+
+#closeButton {
+  font-size: 30px;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+}
+
+#burgerButton:hover,
+#closeButton:hover {
+  cursor: pointer;
+}
+
+.nav__listItem > a {
+  all: unset;
+}
+
+.nav__listItem > a:hover {
+  cursor: pointer;
+}
+
+.searchContainer {
+  @include breakpoints.sm {
+    display: none;
+    margin-top: 24px;
+    align-self: center;
+
+    &.searchContainer--mobile {
+      display: block;
+    }
+  }
+  position: relative;
+}
+
+.overlay {
+  background: rgb(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+}
+
+#burgerButton {
+  display: none;
+  @include breakpoints.sm {
+    display: block;
+    font-size: 24px;
+  }
+}
+
+.searchBar {
+  all: unset;
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  outline: 2px solid #9fafc1;
+  padding-left: 36px;
+  padding-right: 12px;
+  color: #6e7986;
+}
+
+.searchIcon {
+  color: #9fafc1;
+  position: absolute;
+  left: 12px;
+  top: 12px;
+}
+
+.show {
+  display: flex;
+}

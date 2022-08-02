@@ -5,7 +5,7 @@
       <div class="post">
         <h2><a href={{ post.get_absolute_url }} class="postTitle">{{ post.title }}</a></h2>
         <div class="postDate">Posted by {{ post.author }} on {{ post.date_created }}</div>
-        <div>{{ post.body | safe | truncatewords:50 }}</div>
+        <div>{{ post.body | truncatechars_html:500 | safe }}</div>
       </div>
     {% endfor %}
   </div>

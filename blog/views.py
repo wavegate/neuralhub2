@@ -11,7 +11,25 @@ import random
 from django.core.mail import send_mail
 
 def index(request):
-    return render(request, 'index.html')
+    featuredPost = Post.objects.filter(featured=True)[0]
+    secondaryFeaturedPosts = Post.objects.filter(secondaryFeatured=True)[0:2]
+    nonFeaturedPosts = Post.objects.filter(featured=False,secondaryFeatured=False)
+    context = {
+        "featuredPost": featuredPost,
+        "secondaryFeaturedPosts": secondaryFeaturedPosts,
+        "nonFeaturedPosts": nonFeaturedPosts,
+    }
+
+    if request.method == 'POST':
+        sub = Subscriber(email=request.POST['email'], conf_num=random_digits())
+        sub.save()
+        to_emails=[sub.email]
+        subject='Blog Subscription Confirmation'
+        html_content='Thank you for signing up for my email newsletter! Please complete the process by <a href="{}/confirm/?email={}&conf_num={}"> clicking here to confirm your registration</a>.'.format(request.build_absolute_uri(), sub.email, sub.conf_num)
+        send_mail(subject, html_content, None, to_emails, fail_silently=False, html_message=html_content)
+        messages.add_message(request, messages.INFO, 'Please confirm subscription in email')
+    
+    return render(request, 'index.html', context)
 
 def about(request):
     return render(request, 'about.html')

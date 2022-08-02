@@ -1,0 +1,88 @@
+@use "breakpoints";
+
+.subscribeSection {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #eef1f5;
+  @include breakpoints.sm {
+    height: 90px;
+  }
+}
+
+.subscribeContainer {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoints.sm {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+.subscribeHeading {
+  color: #3b4754;
+
+  @include breakpoints.sm {
+    font-size: 18px;
+  }
+}
+
+.subscribeForm {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+
+  @include breakpoints.sm {
+    gap: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.emailInput {
+  all: unset;
+  width: 300px;
+  height: 36px;
+  padding: 0px 12px;
+  font-size: 18px;
+  outline: 2px solid #c9d3dd;
+  border-radius: 6px;
+  color: #737f8d;
+
+  @include breakpoints.sm {
+    max-width: 150px;
+    height: 24px;
+    font-size: 16px;
+    width: 50%;
+  }
+}
+
+.emailInput::placeholder {
+  color: #9fafc1;
+}
+
+.subscribeButton {
+  all: unset;
+  border-radius: 6px;
+  background: #29323d;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  padding: 0px 24px;
+  height: 38px;
+
+  @include breakpoints.sm {
+    height: 28px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

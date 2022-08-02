@@ -1,0 +1,53 @@
+@use "breakpoints";
+
+.hero {
+  height: 350px;
+  background: #edf0f4;
+  // background: url("img/10172.jpg");
+  // background-size: contain;
+  // background-position: right;
+  // background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  text-align: center;
+
+  @include breakpoints.sm {
+    height: 240px;
+  }
+}
+
+.primaryTagline {
+  font-size: 42px;
+  color: #3b4754;
+
+  @include breakpoints.sm {
+    font-size: 28px;
+  }
+}
+
+.secondaryTagline {
+  font-weight: 400;
+  font-size: 20px;
+  color: #798da3;
+
+  @include breakpoints.sm {
+    font-size: 16px;
+  }
+}
+
+.attribution {
+  all: unset;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  color: rgba(218, 218, 218, 0.452);
+  font-size: 12px;
+}
+
+.attribution:hover {
+  cursor: pointer;
+}
