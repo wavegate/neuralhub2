@@ -1,7 +1,17 @@
+from import_export.admin import ImportExportModelAdmin
+from import_export import resources
 from django.contrib import admin
 from .models import Post, Author, Category, Comment, Subscriber
 
-admin.site.register(Post)
+class PostResource(resources.ModelResource):
+
+    class Meta:
+        model = Post
+
+class PostAdmin(ImportExportModelAdmin):
+    resource_class = PostResource
+
+admin.site.register(Post, PostAdmin)
 admin.site.register(Author)
 admin.site.register(Category)
 admin.site.register(Comment)
