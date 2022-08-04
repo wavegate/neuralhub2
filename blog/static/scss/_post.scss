@@ -30,8 +30,8 @@
   color: white;
 }
 
-.postSummary {
-  display: inline-block;
+.summaryContainer {
+  display: block;
   background: rgb(245, 244, 243);
   padding: 12px 18px;
   border-left: 6px solid rgb(189, 174, 174);
@@ -96,7 +96,7 @@
   width: 1000px;
   display: flex;
   flex-direction: column;
-  padding: 42px 0px 96px 0px;
+  padding: 42px 0px;
 
   @include breakpoints.sm {
     max-width: 100%;
@@ -123,4 +123,8 @@
   @include breakpoints.sm {
     font-size: 28px;
   }
+}
+
+.postSummary {
+  margin-bottom: 18px;
 }

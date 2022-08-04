@@ -1,11 +1,21 @@
 {% extends "base.html" %} 
 
+{% block meta %}
+<meta property="og:url" content="{{ request.build_absolute_uri }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ post.title }}" />
+<meta property="og:description" content="{{ post.summary }}" />
+<meta property="og:image" content="{{ post.image }}" />
+{% endblock %}
+
 {% block stylesheets %}
 {% load static %}
 <link href="{% static 'prism/prism.css' %}" rel="stylesheet" />
 {% endblock %}
 
 {% block content %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="hlrte8fd"></script>
 <div class="hero postHero">
     <img src={{ post.image }} class="heroImage">
     <!-- <a href="https://www.freepik.com/vectors/server-rack" target="_blank" class="attribution">Vector by upklyak</a> -->
@@ -22,7 +32,10 @@
 </div>
 <div class="postSection">
     <div class="post">
-        <div class="postSummary">{{ post.summary }}</div>
+        <div class="summaryContainer">
+            <div class="postSummary">{{ post.summary }}</div>
+            <div class="fb-share-button" data-href="http://127.0.0.1:8000/14" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2F14&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+        </div>
         <div class="postBody">{{ post.body | safe }}</div>
     </div>
     {% if morePosts %}
