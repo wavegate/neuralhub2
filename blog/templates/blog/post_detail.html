@@ -34,7 +34,7 @@
     <div class="post">
         <div class="summaryContainer">
             <div class="postSummary">{{ post.summary }}</div>
-            <div class="fb-share-button" data-href="http://127.0.0.1:8000/14" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2F14&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+            <div class="fb-share-button" data-href="{{ request.build_absolute_uri }}" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2F14&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
         </div>
         <div class="postBody">{{ post.body | safe }}</div>
     </div>
