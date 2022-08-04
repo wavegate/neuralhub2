@@ -5,6 +5,10 @@
   flex-direction: column;
   align-items: center;
   padding: 42px 0px;
+
+  @include breakpoints.sm {
+    padding: 24px 0px;
+  }
 }
 
 .post {

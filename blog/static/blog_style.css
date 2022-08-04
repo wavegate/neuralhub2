@@ -596,6 +596,11 @@
   align-items: center;
   padding: 42px 0px;
 }
+@media (max-width: 1200px) {
+  .postSection {
+    padding: 24px 0px;
+  }
+}
 
 .post {
   width: 1000px;
