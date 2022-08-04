@@ -1,4 +1,4 @@
-{% extends "new_base.html" %} 
+{% extends "base.html" %} 
 
 {% block stylesheets %}
 {% load static %}
@@ -11,8 +11,9 @@
     <!-- <a href="https://www.freepik.com/vectors/server-rack" target="_blank" class="attribution">Vector by upklyak</a> -->
   <h1 class="primaryTagline postPrimaryTagline">{{ post.title }}</h1>
   <h2 class="secondaryTagline postSecondaryTagline">
-    By <span class="postAuthor" href={% url 'about' %}>{{ post.author }}</span> on {{ post.date_created | date:"F j, Y" }} in
+    By <span class="postAuthor" href={% url 'about' %}>{{ post.author }}</span> on {{ post.date_created | date:"F j, Y" }}
     {% if post.categories.all %}
+    in
         {% for category in post.categories.all %}
         <a href={{ category.get_absolute_url }} class="category">{{ category }}</a>{% if not forloop.last %}, {% endif %}
         {% endfor %}
@@ -24,15 +25,31 @@
         <div class="postSummary">{{ post.summary }}</div>
         <div class="postBody">{{ post.body | safe }}</div>
     </div>
-    <div class="comments">
+    {% if morePosts %}
+    <div class="morePostsContainer">
+        <h1 class="morePostsTitle">More about {{ firstCategory }}</h1>
+        {% for post in morePosts|slice:"0:3" %}
+        <div class="moreNews">
+            <a href={{ post.get_absolute_url }}><img class="secondaryNews__image" src={{ post.image }}></img></a>
+            <div class="secondaryNews__text">
+                <a href={{ post.get_absolute_url }}><h2 class="secondaryNews__title">{{ post.title }}</h2></a>
+                <p class="secondaryNews__excerpt">{{ post.summary }}
+                    <a class="readMore" href={{ post.get_absolute_url }}>Read more</a>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% comment %} <div class="commentsSection">
         <h3>Comments</h3>
         {% for comment in post.comments.all %}
         <div>{{ comment.name }} posted {{ comment.date_added | timesince }} ago:</div>
         <div>{{ comment.body | safe }}</div>
         <hr>
         {% endfor %}
-    </div>
-    <a href={% url 'comment-create' post.id %} class="button">Add comment</a>
+        <a href={% url 'comment-create' post.id %} class="button">Add comment</a>
+    </div> {% endcomment %}
     {% if user.is_staff %}
     <div><a href="{% url 'post-update' post.id %}" class="button">Edit</a></div>
     <div><a href="{% url 'post-delete' post.id %}" class="button">Delete</a></div>

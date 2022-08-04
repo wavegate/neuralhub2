@@ -1,14 +1,12 @@
 from django.shortcuts import render
-from .models import Post, Author, Category, Comment, Subscriber
+from .models import Post, Category, Comment, Subscriber
 from django.views import generic
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
-import re
 from django.contrib import messages
-from django.http import HttpResponseRedirect
 import random
 from django.core.mail import send_mail
+from django.http import HttpResponseRedirect
 
 def index(request):
     featuredPost = Post.objects.filter(featured=True)[0]
@@ -19,16 +17,6 @@ def index(request):
         "secondaryFeaturedPosts": secondaryFeaturedPosts,
         "nonFeaturedPosts": nonFeaturedPosts,
     }
-
-    if request.method == 'POST':
-        sub = Subscriber(email=request.POST['email'], conf_num=random_digits())
-        sub.save()
-        to_emails=[sub.email]
-        subject='Blog Subscription Confirmation'
-        html_content='Thank you for signing up for my email newsletter! Please complete the process by <a href="{}/confirm/?email={}&conf_num={}"> clicking here to confirm your registration</a>.'.format(request.build_absolute_uri(), sub.email, sub.conf_num)
-        send_mail(subject, html_content, None, to_emails, fail_silently=False, html_message=html_content)
-        messages.add_message(request, messages.SUCCESS, 'Thank you for subscribing! Please confirm your subscription in your email.')
-    
     return render(request, 'index.html', context)
 
 def about(request):
@@ -39,30 +27,40 @@ def random_digits():
 
 def subscribe(request):
     if request.method == 'POST':
-        sub = Subscriber(email=request.POST['email'], conf_num=random_digits())
-        sub.save()
+        email = request.POST['email']
+        sub = Subscriber.objects.filter(email=email)
+        if sub:
+            sub = sub[0]
+        else:
+            sub = Subscriber(email=request.POST['email'], conf_num=random_digits())
+            sub.save()
         to_emails=[sub.email]
-        subject='Blog Subscription Confirmation'
+        subject='CompSci Blog Subscription Confirmation'
         html_content='Thank you for signing up for my email newsletter! Please complete the process by <a href="{}/confirm/?email={}&conf_num={}"> clicking here to confirm your registration</a>.'.format(request.build_absolute_uri(), sub.email, sub.conf_num)
         send_mail(subject, html_content, None, to_emails, fail_silently=False, html_message=html_content)
-    return render(request, 'subscribe.html')
+        messages.add_message(request, messages.SUCCESS, 'Thank you for subscribing! Please confirm your subscription in your email.')
+        next = request.POST.get('next', '/')
+        return HttpResponseRedirect(next)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 def confirm_subscription(request):
     sub = Subscriber.objects.get(email=request.GET['email'])
     if sub.conf_num == request.GET['conf_num']:
         sub.confirmed = True
         sub.save()
-        return render(request, 'confirm_subscription.html', {'email': sub.email, 'action': 'confirmed'})
+        messages.add_message(request, messages.SUCCESS, 'Thank you, your email has been confirmed.')
     else:
-        return render(request, 'confirm_subscription.html', {'email': sub.email, 'action': 'denied'})
+        messages.add_message(request, messages.ERROR, 'The confirmation for your email was not valid.')
+    return HttpResponseRedirect(reverse(index))
 
 def delete_subscription(request):
     sub = Subscriber.objects.get(email=request.GET['email'])
     if sub.conf_num == request.GET['conf_num']:
         sub.delete()
-        return render(request, 'confirm_subscription.html', {'email': sub.email, 'action': 'unsubscribed'})
+        messages.add_message(request, messages.SUCCESS, 'You have been unsubscribed.')
     else:
-        return render(request, 'confirm_subscription.html', {'email': sub.email, 'action': 'denied'})
+        messages.add_message(request, messages.ERROR, 'The confirmation for your email was not valid.')
+    return HttpResponseRedirect(reverse(index))
 
 class PostListView(generic.ListView):
     model = Post
@@ -70,6 +68,18 @@ class PostListView(generic.ListView):
 
 class PostDetailView(generic.DetailView):
     model = Post
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category = self.get_object().categories.all()
+        if category:
+            category = category[0]
+            context['firstCategory'] = category
+            context['morePosts'] = Post.objects.filter(categories=category).exclude(id=self.kwargs['pk'])
+        else:
+            context['firstCategory'] = None
+            context['morePosts'] = None
+        return context
 
 class PostCreateView(CreateView):
     model = Post

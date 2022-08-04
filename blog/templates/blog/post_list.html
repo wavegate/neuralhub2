@@ -1,4 +1,4 @@
-{% extends "new_base.html" %} 
+{% extends "base.html" %} 
 {% block content %}
 {% if user.is_staff %}<a href={% url 'post-create' %} class="button">Create post</a>{% endif %}
   {% if post_list %}

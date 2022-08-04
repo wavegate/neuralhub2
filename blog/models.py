@@ -24,10 +24,9 @@ class Post(models.Model):
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True, blank=True)
     categories = models.ManyToManyField(Category, blank=True)
     summary = models.TextField(null=True, blank=True)
-    image = models.CharField(max_length=255, null=True, blank=True)
+    image = models.CharField(max_length=255, null=True, blank=True, default="https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
     featured = models.BooleanField(null=True, default=False, blank=True)
     secondaryFeatured = models.BooleanField(null=True, default=False, blank=True)
-
 
     class Meta:
         ordering = ['-date_created']
@@ -54,7 +53,7 @@ class Comment(models.Model):
     date_added = models.DateTimeField(auto_now_add=True, null=True,blank=True)
 
 class Subscriber(models.Model):
-    email = models.EmailField(null=True, blank=True)
+    email = models.EmailField(null=True, blank=True, unique=True)
     conf_num = models.CharField(max_length=15)
     confirmed = models.BooleanField(default=False)
 
