@@ -14,8 +14,7 @@
     By <span class="postAuthor" href={% url 'about' %}>{{ post.author }}</span> on {{ post.date_created | date:"F j, Y" }} in
     {% if post.categories.all %}
         {% for category in post.categories.all %}
-            {% if not forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endif %}
-            <a href={{ category.get_absolute_url }} class="category">{{ category }}</a>
+        <a href={{ category.get_absolute_url }} class="category">{{ category }}</a>{% if not forloop.last %}, {% endif %}
         {% endfor %}
     {% endif %}
   </h2>
