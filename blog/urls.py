@@ -14,4 +14,5 @@ urlpatterns = [
    path('subscribe/confirm/', views.confirm_subscription, name='confirm-subscription'),
    path('subscribe/delete/', views.delete_subscription, name='delete-subscription'),
    path('index', views.index, name='index'),
+   path('index/confirm/', views.confirm_subscription, name='confirm-subscription'),
 ]

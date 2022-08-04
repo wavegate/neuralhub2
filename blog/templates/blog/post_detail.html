@@ -1,30 +1,46 @@
-{% extends "base.html" %} {% block content %}
-<div class="post">
-    <h2 class="postTitle">{{ post.title }}</h2>
-    <div class="postDate">Posted by {{ post.author }} on {{ post.date_created }}</div>
+{% extends "new_base.html" %} 
+
+{% block stylesheets %}
+{% load static %}
+<link href="{% static 'prism/prism.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+<div class="hero postHero">
+    <img src={{ post.image }} class="heroImage">
+    <!-- <a href="https://www.freepik.com/vectors/server-rack" target="_blank" class="attribution">Vector by upklyak</a> -->
+  <h1 class="primaryTagline postPrimaryTagline">{{ post.title }}</h1>
+  <h2 class="secondaryTagline postSecondaryTagline">
+    By <span class="postAuthor" href={% url 'about' %}>{{ post.author }}</span> on {{ post.date_created | date:"F j, Y" }} in
     {% if post.categories.all %}
-    <div class="categories">
-        <div>Categories: </div>
-        <ul class="categoryList">
-            {% for category in post.categories.all %}
-            <li><a href={{ category.get_absolute_url }} class="category">{{ category }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
+        {% for category in post.categories.all %}
+            {% if not forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endif %}
+            <a href={{ category.get_absolute_url }} class="category">{{ category }}</a>
+        {% endfor %}
     {% endif %}
-    <div class="post">{{ post.body | safe }}</div>
+  </h2>
 </div>
-<div class="comments">
-    <h3>Comments</h3>
-    {% for comment in post.comments.all %}
-    <div>{{ comment.name }} posted {{ comment.date_added | timesince }} ago:</div>
-    <div>{{ comment.body | safe }}</div>
-    <hr>
-    {% endfor %}
+<div class="postSection">
+    <div class="post">
+        <div class="postSummary">{{ post.summary }}</div>
+        <div class="postBody">{{ post.body | safe }}</div>
+    </div>
+    <div class="comments">
+        <h3>Comments</h3>
+        {% for comment in post.comments.all %}
+        <div>{{ comment.name }} posted {{ comment.date_added | timesince }} ago:</div>
+        <div>{{ comment.body | safe }}</div>
+        <hr>
+        {% endfor %}
+    </div>
+    <a href={% url 'comment-create' post.id %} class="button">Add comment</a>
+    {% if user.is_staff %}
+    <div><a href="{% url 'post-update' post.id %}" class="button">Edit</a></div>
+    <div><a href="{% url 'post-delete' post.id %}" class="button">Delete</a></div>
+    {% endif %}
 </div>
-<a href={% url 'comment-create' post.id %} class="button">Add comment</a>
-{% if user.is_staff %}
-<div><a href="{% url 'post-update' post.id %}" class="button">Edit</a></div>
-<div><a href="{% url 'post-delete' post.id %}" class="button">Delete</a></div>
-{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'prism/prism.js' %}"></script>
 {% endblock %}

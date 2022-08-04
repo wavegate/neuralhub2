@@ -162,3 +162,11 @@ EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+
+CKEDITOR_CONFIGS = {
+  'default': {
+    'removePlugins': 'stylesheetparser',
+    'allowedContent': True,
+    'toolbar': 'full',
+  },
+}

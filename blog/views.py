@@ -27,7 +27,7 @@ def index(request):
         subject='Blog Subscription Confirmation'
         html_content='Thank you for signing up for my email newsletter! Please complete the process by <a href="{}/confirm/?email={}&conf_num={}"> clicking here to confirm your registration</a>.'.format(request.build_absolute_uri(), sub.email, sub.conf_num)
         send_mail(subject, html_content, None, to_emails, fail_silently=False, html_message=html_content)
-        messages.add_message(request, messages.INFO, 'Please confirm subscription in email')
+        messages.add_message(request, messages.SUCCESS, 'Thank you for subscribing! Please confirm your subscription in your email.')
     
     return render(request, 'index.html', context)
 
