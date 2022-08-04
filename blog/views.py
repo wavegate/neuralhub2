@@ -71,6 +71,18 @@ def topics(request):
     } 
     return render(request, 'topics.html', context)
 
+def search(request):
+    if request.method == 'POST':
+        search = request.POST['search']
+        posts = Post.objects.filter(body__icontains=search)
+        context = {
+            'search': search,
+            'posts': posts,
+        }
+        return render(request, 'search.html', context)
+    else:
+        return HttpResponseRedirect(reverse(index))
+
 class PostListView(generic.ListView):
     model = Post
     paginate_by = 5
