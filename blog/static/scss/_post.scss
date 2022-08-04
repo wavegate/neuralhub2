@@ -11,7 +11,7 @@
   width: 1000px;
 
   @include breakpoints.sm {
-    max-width: 100%;
+    max-width: 93%;
   }
 }
 
@@ -79,5 +79,9 @@
 
   li {
     text-indent: 12px;
+  }
+
+  img {
+    max-width: 100%;
   }
 }

@@ -73,7 +73,7 @@ class PostDetailView(generic.DetailView):
 
 class PostCreateView(CreateView):
     model = Post
-    fields = ['title', 'body', 'author', 'categories']
+    fields = ['title', 'body', 'author', 'categories', 'summary', 'image', 'featured', 'secondaryFeatured']
 
     def form_valid(self, form):
         subscribers = Subscriber.objects.filter(confirmed=True)

@@ -602,7 +602,7 @@
 }
 @media (max-width: 1200px) {
   .post {
-    max-width: 100%;
+    max-width: 93%;
   }
 }
 
@@ -661,6 +661,9 @@
 }
 .postBody li {
   text-indent: 12px;
+}
+.postBody img {
+  max-width: 100%;
 }
 
 * {
