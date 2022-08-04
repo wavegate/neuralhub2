@@ -713,6 +713,12 @@
   margin-bottom: 18px;
 }
 
+.shareList {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+}
+
 .pageContainer {
   display: flex;
   flex-direction: column;
