@@ -26,7 +26,7 @@
       <a href="{% url 'index' %}" class="logo">compsci.blog</a>
       <ul class="nav__list">
         <li class="nav__listItem"><a href="{% url 'about' %}">About</a></li>
-        <li class="nav__listItem"><a href="">Topics</a></li>
+        <li class="nav__listItem"><a href="{% url 'topics' %}">Topics</a></li>
         <li class="nav__listItem"><a href="">Research</a></li>
         <li class="nav__listItem"><a href="">Education</a></li>
       </ul>
@@ -45,7 +45,7 @@
         <i class="fa-solid fa-xmark" id="closeButton"></i>
         <ul class="nav__list nav__list--mobile">
             <li class="nav__listItem"><a href="{% url 'about' %}">About</a></li>
-            <li class="nav__listItem"><a href="">Topics</a></li>
+            <li class="nav__listItem"><a href="{% url 'topics' %}">Topics</a></li>
             <li class="nav__listItem"><a href="">Research</a></li>
             <li class="nav__listItem"><a href="">Education</a></li>
           </ul>
@@ -87,7 +87,7 @@
             <a href="{% url 'index' %}" class="logo logo--footer">compsci.blog</a>
                   <ul class="footer__list">
             <li class="footer__listItem"><a href="{% url 'about' %}">About</a></li>
-            <li class="footer__listItem"><a href="">Topics</a></li>
+            <li class="footer__listItem"><a href="{% url 'topics' %}">Topics</a></li>
             <li class="footer__listItem"><a href="">Research</a></li>
             <li class="footer__listItem"><a href="">Education</a></li>
                   </ul>

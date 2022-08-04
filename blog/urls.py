@@ -16,4 +16,5 @@ urlpatterns = [
    path('subscribe/delete/', views.delete_subscription, name='delete-subscription'),
    # path('index', views.index, name='index'),
    path('confirm/', views.confirm_subscription, name='confirm-subscription'),
+   path('topics', views.topics, name='topics'),
 ]

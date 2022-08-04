@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0px 10vw;
+  border-bottom: 2px solid #eef1f5;
 
   @include breakpoints.sm {
     height: 48px;

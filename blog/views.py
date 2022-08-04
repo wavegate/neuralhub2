@@ -62,6 +62,15 @@ def delete_subscription(request):
         messages.add_message(request, messages.ERROR, 'The confirmation for your email was not valid.')
     return HttpResponseRedirect(reverse(index))
 
+def topics(request):
+    categories = Category.objects.all()
+    for category in categories:
+        category.posts = Post.objects.filter(categories=category)
+    context = {
+        "categories": categories,
+    } 
+    return render(request, 'topics.html', context)
+
 class PostListView(generic.ListView):
     model = Post
     paginate_by = 5
@@ -119,5 +128,5 @@ class CategoryDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['post_list'] = Post.objects.filter(categories=self.kwargs['pk'])
+        context['posts'] = Post.objects.filter(categories=self.kwargs['pk'])
         return context

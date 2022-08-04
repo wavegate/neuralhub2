@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0px 10vw;
+  border-bottom: 2px solid #eef1f5;
 }
 @media (max-width: 1200px) {
   .nav {
@@ -802,6 +803,72 @@ button:hover {
 .text_link {
   font-weight: 700;
   text-decoration: underline;
+}
+
+.basicSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 42px 0px;
+}
+@media (max-width: 1200px) {
+  .basicSection {
+    padding: 24px 0px;
+  }
+}
+
+.basicContainer {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1200px) {
+  .basicContainer {
+    max-width: 95%;
+  }
+}
+.basicContainer h1 {
+  font-size: 36px;
+  margin-bottom: 36px;
+  margin-top: 36px;
+}
+.basicContainer h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+.basicContainer h3 {
+  font-size: 18px;
+  margin-bottom: 18px;
+  margin-top: 18px;
+}
+.basicContainer p {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  line-height: 1.7em;
+}
+.basicContainer a {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 700;
+}
+.basicContainer img {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.basicContainer ul,
+.basicContainer ol {
+  margin-left: 96px;
+}
+.basicContainer ul > li,
+.basicContainer ol > li {
+  line-height: 1.7em;
+}
+.basicContainer li {
+  text-indent: 12px;
+}
+.basicContainer img {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
