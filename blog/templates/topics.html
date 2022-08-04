@@ -3,7 +3,7 @@
 {% block content %}
 <div class="basicSection">
     <div class="basicContainer">
-        {% for category in categories %}
+        {% for category in categories.all %}
             {% comment %} <a href="{{ category.get_absolute_url }}"><h2>{{ category.name }}</h2></a>
             <p>{{ category.description }}</p> {% endcomment %}d
         {% endfor %}
