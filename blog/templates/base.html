@@ -52,14 +52,17 @@
             <li class="nav__listItem"><a href="">Research</a></li>
             <li class="nav__listItem"><a href="">Education</a></li>
           </ul>
-            <div class="searchContainer searchContainer--mobile">
-                <i class="fa-solid fa-magnifying-glass searchIcon"></i>
-                <input
-                  type="text"
-                  class="searchBar"
-                  placeholder="Search..."
-                />
-            </div>
+          <form class="searchContainer searchContainer--mobile" action="{% url 'search' %}" method="post">
+            <i class="fa-solid fa-magnifying-glass searchIcon"></i>
+            {% csrf_token %}
+            <input
+              type="text"
+              name="search"
+              class="searchBar"
+              placeholder="Search..."
+            />
+            <input hidden type="submit">
+        </form>
           </div>
     </nav>
     {% if messages %}
