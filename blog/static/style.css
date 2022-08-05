@@ -720,6 +720,19 @@
   gap: 12px;
 }
 
+pre[data-file]::before {
+  content: attr(data-file);
+  position: absolute;
+  top: 5px;
+  right: 12px;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+pre[data-file] {
+  position: relative;
+}
+
 .pageContainer {
   display: flex;
   flex-direction: column;
