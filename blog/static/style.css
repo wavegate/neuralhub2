@@ -728,6 +728,13 @@ pre[data-file]::before {
   opacity: 0.5;
   font-size: 14px;
 }
+@media (max-width: 1200px) {
+  pre[data-file]::before {
+    top: 0px;
+    left: 4px;
+    font-size: 11px;
+  }
+}
 
 pre[data-file] {
   position: relative;
