@@ -8,6 +8,10 @@
 <meta property="og:image" content="{{ post.image }}" />
 {% endblock %}
 
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
 {% block stylesheets %}
 {% load static %}
 <link href="{% static 'prism/prism.css' %}" rel="stylesheet" />
@@ -75,4 +79,5 @@
 
 {% block scripts %}
 <script src="{% static 'prism/prism.js' %}"></script>
+<!-- Load our React component. -->{% load static %} <script src="{% static 'js/prismPrepper.js' %}" type="text/babel"></script>
 {% endblock %}
