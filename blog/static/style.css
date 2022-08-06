@@ -673,6 +673,56 @@
 .postBody img {
   max-width: 100%;
 }
+.postBody input {
+  all: unset;
+  width: 300px;
+  height: 36px;
+  padding: 0px 12px;
+  font-size: 18px;
+  outline: 2px solid #c9d3dd;
+  border-radius: 6px;
+  color: #737f8d;
+}
+@media (max-width: 1200px) {
+  .postBody input {
+    max-width: 150px;
+    height: 24px;
+    font-size: 16px;
+    width: 50%;
+  }
+}
+.postBody textarea {
+  width: 100%;
+  height: 96px;
+  padding: 6px 6px;
+  font-size: 16px;
+  outline: 2px solid #c9d3dd;
+  border-radius: 6px;
+  color: #737f8d;
+}
+@media (max-width: 1200px) {
+  .postBody textarea {
+    max-width: 95%;
+    height: 68px;
+  }
+}
+.postBody select {
+  width: 300px;
+  height: 36px;
+  padding: 0px 12px;
+  font-size: 16px;
+  outline: 2px solid #c9d3dd;
+  border-radius: 6px;
+  color: #737f8d;
+}
+@media (max-width: 1200px) {
+  .postBody select {
+    max-width: 95%;
+  }
+}
+.postBody .emailInput::placeholder {
+  color: #9fafc1;
+}
 
 .morePostsContainer {
   width: 1000px;
