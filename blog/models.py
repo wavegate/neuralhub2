@@ -28,6 +28,7 @@ class Post(models.Model):
     image = models.CharField(max_length=255, null=True, blank=True, default="https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
     featured = models.BooleanField(null=True, default=False, blank=True)
     secondaryFeatured = models.BooleanField(null=True, default=False, blank=True)
+    draft = models.BooleanField(default=True, null=True, blank=True)
 
     class Meta:
         ordering = ['-date_created']

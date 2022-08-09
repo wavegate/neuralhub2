@@ -7,11 +7,12 @@ from django.contrib import messages
 import random
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def index(request):
-    featuredPost = Post.objects.filter(featured=True)[0]
-    secondaryFeaturedPosts = Post.objects.filter(secondaryFeatured=True)[0:2]
-    nonFeaturedPosts = Post.objects.filter(featured=False,secondaryFeatured=False)
+    featuredPost = Post.objects.filter(featured=True,draft=False)[0]
+    secondaryFeaturedPosts = Post.objects.filter(secondaryFeatured=True,draft=False)[0:2]
+    nonFeaturedPosts = Post.objects.filter(featured=False,secondaryFeatured=False,draft=False)
     context = {
         "featuredPost": featuredPost,
         "secondaryFeaturedPosts": secondaryFeaturedPosts,
@@ -65,7 +66,7 @@ def delete_subscription(request):
 def topics(request):
     categories = Category.objects.all()
     for category in categories:
-        category.posts = Post.objects.filter(categories=category)
+        category.posts = Post.objects.filter(categories=category,draft=False)
     context = {
         "categories": categories,
     } 
@@ -74,7 +75,7 @@ def topics(request):
 def search(request):
     if request.method == 'POST':
         search = request.POST['search']
-        posts = Post.objects.filter(body__icontains=search)
+        posts = Post.objects.filter(body__icontains=search,draft=False)
         context = {
             'search': search,
             'posts': posts,
@@ -102,19 +103,21 @@ class PostDetailView(generic.DetailView):
             context['morePosts'] = None
         return context
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'body', 'author', 'categories', 'summary', 'image', 'featured', 'secondaryFeatured']
+    fields = ['title', 'body', 'author', 'categories', 'summary', 'image', 'featured', 'secondaryFeatured', 'draft']
 
-    def form_valid(self, form):
-        subscribers = Subscriber.objects.filter(confirmed=True)
-        from_email = None
-        subject = form.cleaned_data['title']
-        for sub in subscribers:
-            to_emails = [sub.email]
-            html_content = form.cleaned_data['body'] + ('<br><a href="{}/delete/?email={}&conf_num={}">Unsubscribe</a>.').format(self.request.build_absolute_uri('/subscribe'), sub.email, sub.conf_num)
-            send_mail(subject, html_content, from_email, to_emails, fail_silently=False, html_message=html_content)
-        return super().form_valid(form)
+    def form_valid(self, request, form):
+        if request.user.is_staff:
+            subscribers = Subscriber.objects.filter(confirmed=True)
+            from_email = None
+            subject = form.cleaned_data['title']
+            for sub in subscribers:
+                to_emails = [sub.email]
+                html_content = form.cleaned_data['body'] + ('<br><a href="{}/delete/?email={}&conf_num={}">Unsubscribe</a>.').format(self.request.build_absolute_uri('/subscribe'), sub.email, sub.conf_num)
+                send_mail(subject, html_content, from_email, to_emails, fail_silently=False, html_message=html_content)
+            return super().form_valid(form)
+        return HttpResponseRedirect(reverse(index))
 
 class CommentCreateView(CreateView):
     model = Comment
@@ -127,11 +130,11 @@ class CommentCreateView(CreateView):
     def get_success_url(self):
         return reverse_lazy('post-view', kwargs={'pk': self.kwargs['pk']})
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(UpdateView, LoginRequiredMixin):
     model = Post
-    fields = ['title', 'body', 'author', 'categories']
+    fields = ['title', 'body', 'author', 'categories', 'summary', 'image', 'featured', 'secondaryFeatured', 'draft']
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(DeleteView, LoginRequiredMixin):
     model = Post
     success_url = reverse_lazy('posts')
 
@@ -140,5 +143,5 @@ class CategoryDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['posts'] = Post.objects.filter(categories=self.kwargs['pk'])
+        context['posts'] = Post.objects.filter(categories=self.kwargs['pk'],draft=False)
         return context
