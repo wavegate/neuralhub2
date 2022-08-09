@@ -108,16 +108,14 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ['title', 'body', 'author', 'categories', 'summary', 'image', 'featured', 'secondaryFeatured', 'draft']
 
     def form_valid(self, request, form):
-        if request.user.is_staff:
-            subscribers = Subscriber.objects.filter(confirmed=True)
-            from_email = None
-            subject = form.cleaned_data['title']
-            for sub in subscribers:
-                to_emails = [sub.email]
-                html_content = form.cleaned_data['body'] + ('<br><a href="{}/delete/?email={}&conf_num={}">Unsubscribe</a>.').format(self.request.build_absolute_uri('/subscribe'), sub.email, sub.conf_num)
-                send_mail(subject, html_content, from_email, to_emails, fail_silently=False, html_message=html_content)
-            return super().form_valid(form)
-        return HttpResponseRedirect(reverse(index))
+        subscribers = Subscriber.objects.filter(confirmed=True)
+        from_email = None
+        subject = form.cleaned_data['title']
+        for sub in subscribers:
+            to_emails = [sub.email]
+            html_content = form.cleaned_data['body'] + ('<br><a href="{}/delete/?email={}&conf_num={}">Unsubscribe</a>.').format(self.request.build_absolute_uri('/subscribe'), sub.email, sub.conf_num)
+            send_mail(subject, html_content, from_email, to_emails, fail_silently=False, html_message=html_content)
+        return super().form_valid(form)
 
 class CommentCreateView(CreateView):
     model = Comment
