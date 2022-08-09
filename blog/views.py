@@ -107,7 +107,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'body', 'author', 'categories', 'summary', 'image', 'featured', 'secondaryFeatured', 'draft']
 
-    def form_valid(self, request, form):
+    def form_valid(self, form):
         subscribers = Subscriber.objects.filter(confirmed=True)
         from_email = None
         subject = form.cleaned_data['title']
