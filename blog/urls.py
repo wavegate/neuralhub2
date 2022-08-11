@@ -18,4 +18,6 @@ urlpatterns = [
    path('confirm/', views.confirm_subscription, name='confirm-subscription'),
    path('topics', views.topics, name='topics'),
    path('search', views.search, name='search'),
+   path('addVote/<int:pk>', views.addVote, name='addVote'),
+   path('addVote', views.addDeadVote, name='addDeadVote'),
 ]

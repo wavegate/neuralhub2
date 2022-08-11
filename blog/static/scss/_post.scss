@@ -1,4 +1,5 @@
 @use "breakpoints";
+@use "votes";
 
 .postSection {
   display: flex;
@@ -38,28 +39,55 @@
 }
 
 .postBody {
+  display: flex;
+  flex-direction: column;
+
   h1 {
     font-size: 36px;
-    margin-bottom: 36px;
-    margin-top: 36px;
+    margin-bottom: 18px;
+    margin-top: 44px;
+
+    @include breakpoints.sm {
+      font-size: 24px;
+      margin-bottom: 18px;
+      margin-top: 36px;
+    }
   }
 
   h2 {
     font-size: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
     margin-top: 24px;
+
+    @include breakpoints.sm {
+      font-size: 18px;
+      margin-bottom: 18px;
+      margin-top: 18px;
+    }
   }
 
   h3 {
     font-size: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     margin-top: 18px;
+
+    @include breakpoints.sm {
+      font-size: 16px;
+      margin-bottom: 16px;
+      margin-top: 16px;
+    }
   }
 
   p {
     margin-bottom: 1em;
     margin-top: 1em;
     line-height: 1.7em;
+
+    @include breakpoints.sm {
+      font-size: 16px;
+      margin-bottom: 0.7em;
+      margin-top: 0.7em;
+    }
   }
 
   a {
@@ -76,6 +104,11 @@
   ul,
   ol {
     margin-left: 96px;
+
+    @include breakpoints.sm {
+      margin-left: 36px;
+      font-size: 14px;
+    }
   }
 
   ul > li,
@@ -89,6 +122,16 @@
 
   img {
     max-width: 100%;
+    align-self: center;
+  }
+
+  .image {
+    text-align: center;
+
+    .caption {
+      font-size: 16px;
+      margin-top: -10px;
+    }
   }
 
   input {
@@ -106,6 +149,42 @@
       height: 24px;
       font-size: 16px;
       width: 50%;
+    }
+
+    &[type="radio"] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      border-radius: 50%;
+      // width: 8px;
+      // height: 8px;
+
+      // border: 2px solid #999;
+      transition: 0.2s all linear;
+      margin-right: 15px;
+    }
+
+    &[type="radio"]:checked {
+      background: black;
+    }
+
+    &[type="radio"]:hover {
+      cursor: pointer;
+      outline: 2px solid black;
+    }
+
+    &[type="radio"]:hover + label {
+      color: black;
+    }
+
+    &[type="radio"] + label {
+      color: rgb(99, 99, 99);
+    }
+
+    &[type="radio"] + label:hover {
+      cursor: pointer;
+      color: black;
     }
   }
 

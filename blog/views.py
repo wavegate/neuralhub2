@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import Post, Category, Comment, Subscriber
+from .models import Post, Category, Comment, Subscriber, VoteBox, VoteOption
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
 from django.contrib import messages
 import random
 from django.core.mail import send_mail
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 def index(request):
@@ -25,6 +25,23 @@ def about(request):
 
 def random_digits():
     return "%0.12d" % random.randint(0, 99999999999)
+
+def addVote(request, pk):
+    voteoption = VoteOption.objects.get(id=pk)
+    voteoption.counter = voteoption.counter + 1
+    voteoption.save()
+    votebox = voteoption.box
+    voteoptions = votebox.voteoption_set
+    voteoptionnames = list(voteoptions.values_list('name', flat=True))
+    voteoptioncounters = list(voteoptions.values_list('counter', flat=True))
+    data = {
+        'names': voteoptionnames,
+        'counters': voteoptioncounters,
+    }
+    return JsonResponse(data)
+
+def addDeadVote(request):
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER')) 
 
 def subscribe(request):
     if request.method == 'POST':

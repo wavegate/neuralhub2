@@ -61,3 +61,23 @@ class Subscriber(models.Model):
 
     def __str__(self):
         return self.email + " (" + ("not " if not self.confirmed else "") + "confirmed)"
+
+class VoteBox(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    post = models.ForeignKey('Post', on_delete=models.SET_NULL, null=True, blank=True)
+    prompt = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "VoteBoxes"
+
+class VoteOption(models.Model):
+    box = models.ForeignKey('VoteBox', on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=255, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    counter = models.IntegerField(blank=True, null=True, default=0)
+
+    def __str__(self):
+        return self.name + self.box.name

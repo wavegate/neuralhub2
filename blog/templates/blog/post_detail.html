@@ -39,7 +39,7 @@
         <div class="summaryContainer">
             <div class="postSummary">{{ post.summary }}</div>
             <div class="shareList">
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="{{ post.title }}" {% if post.categories.all %}data-hashtags="{{ post.categories.all | join:"," }}"{% endif %} data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="{{ post.title }}" data-hashtags="CompSci,{% if post.categories.all %}{{ post.categories.all | join:"," }}{% endif %}" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 <div class="fb-share-button" data-href="{{ request.build_absolute_uri }}" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2F14&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
             </div>
         </div>
@@ -75,9 +75,37 @@
     <div><a href="{% url 'post-delete' post.id %}" class="button">Delete</a></div>
     {% endif %}
 </div>
+<div id="voteboxes">
+    {% for votebox in post.votebox_set.all %}
+    <form class="votebox" id="votebox#{{ votebox.id }}">
+        <h3 class="votePrompt">{{ votebox.prompt }}</h3>
+        <div id="myDiv"></div>
+        <div class="voteOptions">
+            {% for voteoption in votebox.voteoption_set.all %}
+            <div class="radioOption">
+                <input type="radio" id="voteoption#{{ voteoption.id }}" name="{{ votebox.id }}" value="{{ voteoption.name }}"></input>
+                <label for="voteoption#{{ voteoption.id }}">{{ voteoption.name }}</label>
+            {% comment %} <div class="voteoption">
+                <div class="voteoption__name"> {{ voteoption.name }}</div>
+                <div class="voteoption__counter">{{ voteoption.counter }} data-url="{% url 'addVote' %}"</div>
+                <button class="voteoption__button" id="voteoption#{{ voteoption.id }}" data-url="{% url 'addVote' voteoption.id %}">Add vote</button>
+            </div> {% endcomment %}
+        </div>
+            {% endfor %}
+            <button class="votebox__button" id="votebox__button#{{ votebox.id }}" data-url="{% url 'addDeadVote' %}">Vote!</button>
+        </div>
+    </form>
+    {% endfor %}
+</div>
 {% endblock %}
 
 {% block scripts %}
+<script>
+    var csrftoken = '{{ csrf_token }}';
+</script>
+<script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
 <script src="{% static 'prism/prism.js' %}"></script>
-<!-- Load our React component. -->{% load static %} <script src="{% static 'js/prismPrepper.js' %}" type="text/babel"></script>
+<!-- Load our React component. -->{% load static %} 
+<script src="{% static 'js/prismPrepper.js' %}" type="text/babel"></script>
+<script src="{% static 'js/voteBoxes.js' %}"></script>
 {% endblock %}

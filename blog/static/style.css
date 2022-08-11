@@ -591,6 +591,37 @@
   cursor: pointer;
 }
 
+.votebox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 54px;
+  margin-bottom: 54px;
+}
+
+.votePrompt {
+  text-align: center;
+}
+
+.votebox__button {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: 2px solid black;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.votebox__button:hover {
+  background: black;
+  color: white;
+}
+
+.radioOption {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
 .postSection {
   display: flex;
   flex-direction: column;
@@ -630,25 +661,57 @@
   border-left: 6px solid rgb(189, 174, 174);
 }
 
+.postBody {
+  display: flex;
+  flex-direction: column;
+}
 .postBody h1 {
   font-size: 36px;
-  margin-bottom: 36px;
-  margin-top: 36px;
+  margin-bottom: 18px;
+  margin-top: 44px;
+}
+@media (max-width: 1200px) {
+  .postBody h1 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    margin-top: 36px;
+  }
 }
 .postBody h2 {
   font-size: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   margin-top: 24px;
+}
+@media (max-width: 1200px) {
+  .postBody h2 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    margin-top: 18px;
+  }
 }
 .postBody h3 {
   font-size: 18px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   margin-top: 18px;
+}
+@media (max-width: 1200px) {
+  .postBody h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
 }
 .postBody p {
   margin-bottom: 1em;
   margin-top: 1em;
   line-height: 1.7em;
+}
+@media (max-width: 1200px) {
+  .postBody p {
+    font-size: 16px;
+    margin-bottom: 0.7em;
+    margin-top: 0.7em;
+  }
 }
 .postBody a {
   cursor: pointer;
@@ -663,6 +726,13 @@
 .postBody ol {
   margin-left: 96px;
 }
+@media (max-width: 1200px) {
+  .postBody ul,
+.postBody ol {
+    margin-left: 36px;
+    font-size: 14px;
+  }
+}
 .postBody ul > li,
 .postBody ol > li {
   line-height: 1.7em;
@@ -672,6 +742,14 @@
 }
 .postBody img {
   max-width: 100%;
+  align-self: center;
+}
+.postBody .image {
+  text-align: center;
+}
+.postBody .image .caption {
+  font-size: 16px;
+  margin-top: -10px;
 }
 .postBody input {
   all: unset;
@@ -690,6 +768,31 @@
     font-size: 16px;
     width: 50%;
   }
+}
+.postBody input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  transition: 0.2s all linear;
+  margin-right: 15px;
+}
+.postBody input[type=radio]:checked {
+  background: black;
+}
+.postBody input[type=radio]:hover {
+  cursor: pointer;
+  outline: 2px solid black;
+}
+.postBody input[type=radio]:hover + label {
+  color: black;
+}
+.postBody input[type=radio] + label {
+  color: rgb(99, 99, 99);
+}
+.postBody input[type=radio] + label:hover {
+  cursor: pointer;
+  color: black;
 }
 .postBody textarea {
   width: 100%;

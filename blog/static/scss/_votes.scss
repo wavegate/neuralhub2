@@ -1,0 +1,30 @@
+.votebox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 54px;
+  margin-bottom: 54px;
+}
+
+.votePrompt {
+  text-align: center;
+}
+
+.votebox__button {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: 2px solid black;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.votebox__button:hover {
+  background: black;
+  color: white;
+}
+
+.radioOption {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
