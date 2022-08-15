@@ -1,6 +1,8 @@
 const voteboxes = document.getElementById("voteboxes");
 voteboxesHTML = voteboxes.innerHTML;
 
+console.log("check");
+
 const votebox1 = document.getElementById("votebox1");
 if (votebox1) {
   votebox1.innerHTML = voteboxesHTML;
