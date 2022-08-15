@@ -174,4 +174,4 @@ CKEDITOR_CONFIGS = {
 }
 
 # CORS_ALLOWED_ORIGINS = ['compsciblog.herokuapp.com', '127.0.0.1', 'localhost', 'compsciblog.s3.us-west-1.amazonaws.com']
-CORS_ALLOW_ALL_ORIGINS: True
+# CORS_ALLOW_ALL_ORIGINS: True
