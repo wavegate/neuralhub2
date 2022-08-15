@@ -27,6 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'aoijeoaiaiewfjoaij3wr90u03298u
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['compsciblog.herokuapp.com', '127.0.0.1', 'localhost']
+CORS_ALLOWED_ORIGINS = ['compsciblog.herokuapp.com', '127.0.0.1', 'localhost', 'compsciblog.s3.us-west-1.amazonaws.com']
 
 
 # Application definition
@@ -41,10 +42,12 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'ckeditor',
     'import_export',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
