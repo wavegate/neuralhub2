@@ -27,8 +27,6 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'aoijeoaiaiewfjoaij3wr90u03298u
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['compsciblog.herokuapp.com', '127.0.0.1', 'localhost']
-CORS_ALLOWED_ORIGINS = ['compsciblog.herokuapp.com', '127.0.0.1', 'localhost', 'compsciblog.s3.us-west-1.amazonaws.com']
-
 
 # Application definition
 
@@ -174,3 +172,6 @@ CKEDITOR_CONFIGS = {
     'toolbar': 'full',
   },
 }
+
+# CORS_ALLOWED_ORIGINS = ['compsciblog.herokuapp.com', '127.0.0.1', 'localhost', 'compsciblog.s3.us-west-1.amazonaws.com']
+CORS_ALLOW_ALL_ORIGINS: True
