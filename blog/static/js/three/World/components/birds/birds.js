@@ -6,7 +6,10 @@ async function loadModel() {
   const loader = new GLTFLoader();
 
   const [modelData] = await Promise.all([
-    loader.loadAsync("/static/js/three/assets/models/scene.glb"),
+    // loader.loadAsync("/static/js/three/assets/models/scene.glb"),
+    loader.loadAsync(
+      "https://compsciblog.s3.us-west-1.amazonaws.com/scene.glb"
+    ),
   ]);
 
   const model = setupModel(modelData);
