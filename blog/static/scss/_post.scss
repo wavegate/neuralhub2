@@ -122,7 +122,11 @@
 
   img {
     max-width: 100%;
+    height: auto;
     align-self: center;
+    // position: relative;
+    // left: 50%;
+    // transform: translate(-50%, 0%);
   }
 
   .image {
@@ -222,11 +226,15 @@
   }
 
   #scene-container {
-    height: 400px;
+    canvas {
+      height: 400px;
+      outline: 2px solid black;
+    }
   }
 }
 
 .morePostsContainer {
+  margin-top: 48px;
   width: 1000px;
   display: flex;
   flex-direction: column;

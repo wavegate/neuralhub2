@@ -742,6 +742,7 @@
 }
 .postBody img {
   max-width: 100%;
+  height: auto;
   align-self: center;
 }
 .postBody .image {
@@ -826,11 +827,13 @@
 .postBody .emailInput::placeholder {
   color: #9fafc1;
 }
-.postBody #scene-container {
+.postBody #scene-container canvas {
   height: 400px;
+  outline: 2px solid black;
 }
 
 .morePostsContainer {
+  margin-top: 48px;
   width: 1000px;
   display: flex;
   flex-direction: column;
