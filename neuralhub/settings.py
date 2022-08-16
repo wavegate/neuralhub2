@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'ckeditor',
     'import_export',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
