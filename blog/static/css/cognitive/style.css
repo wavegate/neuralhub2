@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.target {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(96px, 196px, 12vw);
+  text-align: center;
+  width: 80%;
+}
+
+.button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 60px;
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: 2px solid black;
+}
+
+.button:hover {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+#Y {
+  /* left: 43%; */
+  left: 50%;
+  font-size: clamp(16px, 24px, 4vw);
+}
+
+.message {
+  font-size: clamp(16px, 36px, 4vw);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.message h1 {
+  font-size: clamp(20px, 36px, 4vw);
+}
+
+.message p {
+  font-size: clamp(16px, 24px, 4vw);
+}
+
+.message img {
+  max-width: 800px;
+  width: 95%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* #noButton {
+  left: 57%;
+} */

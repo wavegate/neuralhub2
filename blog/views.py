@@ -43,6 +43,9 @@ def addVote(request, pk):
 def addDeadVote(request):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER')) 
 
+def twoback(request):
+    return render(request, 'twoback.html')
+
 def subscribe(request):
     if request.method == 'POST':
         email = request.POST['email']

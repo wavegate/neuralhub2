@@ -20,4 +20,5 @@ urlpatterns = [
    path('search', views.search, name='search'),
    path('addVote/<int:pk>', views.addVote, name='addVote'),
    path('addVote', views.addDeadVote, name='addDeadVote'),
+   path('twoback', views.twoback, name='twoback'),
 ]
