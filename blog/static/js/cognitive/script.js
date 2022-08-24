@@ -1,3 +1,5 @@
+//dependency: https://unpkg.com/simple-statistics@7.7.6/dist/simple-statistics.min.js
+
 let trials = [];
 let resultTrials = [];
 const options = ["N", "B", "C", "Z", "D", "E"];
@@ -15,6 +17,41 @@ const minRT = 100;
 // const numTrials = 156;
 // const numBlocks = 2;
 const numTrials = 10;
+
+const accuracyMean = 0.85;
+const accuracySD = 0.05;
+const RTMean = 1100;
+const RTSD = 200;
+
+function GetZPercent(z) {
+  //z == number of standard deviations from the mean
+
+  //if z is greater than 6.5 standard deviations from the mean
+  //the number of significant digits will be outside of a reasonable
+  //range
+  if (z < -6.5) return 0.0;
+  if (z > 6.5) return 1.0;
+
+  var factK = 1;
+  var sum = 0;
+  var term = 1;
+  var k = 0;
+  var loopStop = Math.exp(-23);
+  while (Math.abs(term) > loopStop) {
+    term =
+      (((0.3989422804 * Math.pow(-1, k) * Math.pow(z, k)) /
+        (2 * k + 1) /
+        Math.pow(2, k)) *
+        Math.pow(z, k + 1)) /
+      factK;
+    sum += term;
+    k++;
+    factK *= k;
+  }
+  sum += 0.5;
+
+  return sum;
+}
 
 function createTrials() {
   trials.push({
@@ -48,12 +85,6 @@ function createTrials() {
     }
   }
 }
-
-let stimTrial = {
-  index: 0,
-  shape: "Z",
-  correctResponse: "Y",
-};
 
 createTrials();
 console.log(trials);
@@ -110,6 +141,7 @@ const Target = (props) => {
         }
         let accuracy;
         let avgRT;
+        let score;
         if (correctTrials.length > 0) {
           accuracy = correctTrials.length / (resultTrials.length - 2);
           let responseTimes = 0;
@@ -123,6 +155,15 @@ const Target = (props) => {
           avgRT = responseTimes / relevantTrials;
           console.log(`accuracy: ${accuracy}`);
           console.log(`avgRT: ${avgRT}`);
+          const accuracyZ = (accuracy - accuracyMean) / accuracySD;
+          const RTZ = (RTMean - avgRT) / RTSD;
+          const accuracyScore = GetZPercent(accuracyZ);
+          const RTScore = GetZPercent(RTZ);
+          console.log(accuracyScore);
+          console.log(RTScore);
+          score = ((accuracyScore + RTScore) / 2) * 100;
+          localStorage.setItem("twoback", score);
+          console.log("final score: " + localStorage.getItem("twoback"));
         } else {
           accuracy = 0;
           avgRT = null;
@@ -138,10 +179,14 @@ const Target = (props) => {
               %
               {avgRT > 0
                 ? ` and your average reaction time
-                      was ${avgRT} milliseconds`
+                      was ${avgRT.toLocaleString(undefined, {
+                        minimumFractionDigits: 0,
+                      })} milliseconds`
                 : ""}
-              .
+              . This puts your working memory at the {score.toFixed(0)}
+              th percentile!
             </p>
+            <p>You are free to close this window.</p>
           </div>
         );
       }
