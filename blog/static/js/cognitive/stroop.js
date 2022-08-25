@@ -1,24 +1,24 @@
 let trials = [];
 let resultTrials = [];
-const options = ["N", "B", "C", "Z", "D", "E"];
+const options = ["GO", "STOP"];
 const pickRandom = (array) => {
   return Math.floor(Math.random() * array.length);
 };
 let sequence = [];
 let responseTimes = [];
 let responses = [];
-const percentTargets = 0.5;
-const stimDisplayTime = 300;
-const ISI = 1500;
-const maxRT = 1200;
+const percentTargets = 0.8;
+const maxStimDisplayTime = 500;
+const ISI = 1000;
+const maxRT = 1600;
 const minRT = 100;
 // const numTrials = 156;
 // const numBlocks = 2;
-const numTrials = 10;
+const numTrials = 20;
 
-const accuracyMean = 0.85;
-const accuracySD = 0.05;
-const RTMean = 1100;
+const accuracyMean = 0.95;
+const accuracySD = 0.02;
+const RTMean = 500;
 const RTSD = 200;
 
 function GetZPercent(z) {
@@ -52,33 +52,35 @@ function GetZPercent(z) {
 }
 
 function createTrials() {
-  trials.push({
-    index: 0,
-    shape: options[pickRandom(options)],
-    correctResponse: null,
-  });
-  trials.push({
-    index: 1,
-    shape: options[pickRandom(options)],
-    correctResponse: null,
-  });
-  for (let i = 2; i < numTrials + 2; i++) {
-    if (Math.random() < percentTargets) {
+  for (let i = 0; i < numTrials; i++) {
+    const dice = Math.random();
+    if (dice < 0.25) {
       trials.push({
         index: i,
-        shape: trials[i - 2].shape,
-        correctResponse: "Y",
+        shape: "RED",
+        correctResponse: "R",
+        color: "red",
+      });
+    } else if (dice >= 0.25 && dice < 0.5) {
+      trials.push({
+        index: i,
+        shape: "RED",
+        correctResponse: "G",
+        color: "green",
+      });
+    } else if (dice >= 0.5 && dice < 0.75) {
+      trials.push({
+        index: i,
+        shape: "GREEN",
+        correctResponse: "R",
+        color: "red",
       });
     } else {
-      const newOptions = [...options];
-      const index = newOptions.indexOf(trials[i - 2].shape);
-      if (index > -1) {
-        newOptions.splice(index, 1);
-      }
       trials.push({
         index: i,
-        shape: newOptions[pickRandom(newOptions)],
-        correctResponse: "N",
+        shape: "GREEN",
+        correctResponse: "G",
+        color: "green",
       });
     }
   }
@@ -99,15 +101,19 @@ const Target = (props) => {
     if (index == -1) {
       setShape(
         <div className="message">
-          <h1>Welcome to the 2-back test.</h1>
-          <p>In this test, you will be presented with a sequence of letters.</p>
+          <h1>Welcome to the Stroop task.</h1>
           <p>
-            Your goal is to click the "YES" button below only when the letter
-            presented is the same letter as that presented two letters previous.
+            In this test, you will be presented with a word in either the color
+            green or the color red.
+          </p>
+          <p>
+            Your goal is to click the green button below whenever you see a word
+            that is the COLOR green (ignore what the text says!), and click the
+            red button below whenever you see a word that is the COLOR red.
           </p>
           <img src={instructionsPath} />
           <p>Respond as quickly and accurately as you can.</p>
-          <p>Please click the "YES" button to begin.</p>
+          <p>Please click one of the buttons below to begin.</p>
         </div>
       );
     } else {
@@ -120,19 +126,21 @@ const Target = (props) => {
         });
       }
       if (index < trials.length) {
-        setShape(trials[index].shape);
+        setShape(
+          <span className={trials[index].color}>{trials[index].shape}</span>
+        );
         setStartTime(new Date());
         setResponse(null);
         clicked = false;
         responseTime = null;
         const intervalID = setInterval(() => {
           setShape("+");
-        }, stimDisplayTime);
+        }, maxStimDisplayTime);
         return () => clearInterval(intervalID);
       } else {
         console.log(resultTrials);
         const correctTrials = [];
-        for (let i = 2; i < resultTrials.length; i++) {
+        for (let i = 0; i < resultTrials.length; i++) {
           if (resultTrials[i].response == trials[i].correctResponse) {
             correctTrials.push(resultTrials[i]);
           }
@@ -141,7 +149,7 @@ const Target = (props) => {
         let avgRT;
         let score;
         if (correctTrials.length > 0) {
-          accuracy = correctTrials.length / (resultTrials.length - 2);
+          accuracy = correctTrials.length / resultTrials.length;
           let responseTimes = 0;
           let relevantTrials = 0;
           for (let trial of correctTrials) {
@@ -159,9 +167,9 @@ const Target = (props) => {
           const RTScore = GetZPercent(RTZ);
           console.log(accuracyScore);
           console.log(RTScore);
-          score = ((accuracyScore + RTScore) / 2) * 100;
-          localStorage.setItem("twoback", score);
-          console.log("final score: " + localStorage.getItem("twoback"));
+          score = (accuracyScore * 0.5 + RTScore * 0.5) * 100;
+          localStorage.setItem("stroop", score);
+          console.log("final score: " + localStorage.getItem("stroop"));
         } else {
           accuracy = 0;
           avgRT = null;
@@ -177,11 +185,9 @@ const Target = (props) => {
               %
               {avgRT > 0
                 ? ` and your average reaction time
-                      was ${avgRT.toLocaleString(undefined, {
-                        minimumFractionDigits: 0,
-                      })} milliseconds`
+                      was ${avgRT.toFixed(0)} milliseconds`
                 : ""}
-              . This puts your working memory at the {score.toFixed(0)}
+              . This puts your interference control at the {score.toFixed(0)}
               th percentile!
             </p>
             <p>You are free to close this window.</p>
@@ -212,12 +218,12 @@ const Target = (props) => {
   return (
     <React.Fragment>
       <div className="target">{shape}</div>
-      <button id="Y" className="button" onClick={handleClick}>
-        YES
+      <button id="G" className="button" onClick={handleClick}>
+        GREEN
       </button>
-      {/* <button id="noButton" className="button" onClick={handleClick}>
-        NO
-      </button> */}
+      <button id="R" className="button" onClick={handleClick}>
+        RED
+      </button>
     </React.Fragment>
   );
 };

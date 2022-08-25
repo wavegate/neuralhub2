@@ -1,24 +1,24 @@
 let trials = [];
 let resultTrials = [];
-const options = ["N", "B", "C", "Z", "D", "E"];
+const options = ["GO", "STOP"];
 const pickRandom = (array) => {
   return Math.floor(Math.random() * array.length);
 };
 let sequence = [];
 let responseTimes = [];
 let responses = [];
-const percentTargets = 0.5;
-const stimDisplayTime = 300;
-const ISI = 1500;
-const maxRT = 1200;
+const percentTargets = 0.8;
+const maxStimDisplayTime = 1600;
+const ISI = 500;
+const maxRT = 1600;
 const minRT = 100;
 // const numTrials = 156;
 // const numBlocks = 2;
-const numTrials = 10;
+const numTrials = 20;
 
-const accuracyMean = 0.85;
-const accuracySD = 0.05;
-const RTMean = 1100;
+const accuracyMean = 0.95;
+const accuracySD = 0.02;
+const RTMean = 500;
 const RTSD = 200;
 
 function GetZPercent(z) {
@@ -52,32 +52,17 @@ function GetZPercent(z) {
 }
 
 function createTrials() {
-  trials.push({
-    index: 0,
-    shape: options[pickRandom(options)],
-    correctResponse: null,
-  });
-  trials.push({
-    index: 1,
-    shape: options[pickRandom(options)],
-    correctResponse: null,
-  });
-  for (let i = 2; i < numTrials + 2; i++) {
+  for (let i = 0; i < numTrials; i++) {
     if (Math.random() < percentTargets) {
       trials.push({
         index: i,
-        shape: trials[i - 2].shape,
+        shape: "GO",
         correctResponse: "Y",
       });
     } else {
-      const newOptions = [...options];
-      const index = newOptions.indexOf(trials[i - 2].shape);
-      if (index > -1) {
-        newOptions.splice(index, 1);
-      }
       trials.push({
         index: i,
-        shape: newOptions[pickRandom(newOptions)],
+        shape: "STOP",
         correctResponse: "N",
       });
     }
@@ -99,14 +84,17 @@ const Target = (props) => {
     if (index == -1) {
       setShape(
         <div className="message">
-          <h1>Welcome to the 2-back test.</h1>
-          <p>In this test, you will be presented with a sequence of letters.</p>
+          <h1>Welcome to the go/no-go task.</h1>
           <p>
-            Your goal is to click the "YES" button below only when the letter
-            presented is the same letter as that presented two letters previous.
+            In this test, you will be presented with either a GO signal or a
+            STOP signal.
+          </p>
+          <p>
+            Your goal is to click the "YES" button below whenever you see a GO
+            signal but do NOT click anything if you see a STOP signal.
           </p>
           <img src={instructionsPath} />
-          <p>Respond as quickly and accurately as you can.</p>
+          <p>Respond as quickly as you can.</p>
           <p>Please click the "YES" button to begin.</p>
         </div>
       );
@@ -127,12 +115,12 @@ const Target = (props) => {
         responseTime = null;
         const intervalID = setInterval(() => {
           setShape("+");
-        }, stimDisplayTime);
+        }, maxStimDisplayTime);
         return () => clearInterval(intervalID);
       } else {
         console.log(resultTrials);
         const correctTrials = [];
-        for (let i = 2; i < resultTrials.length; i++) {
+        for (let i = 0; i < resultTrials.length; i++) {
           if (resultTrials[i].response == trials[i].correctResponse) {
             correctTrials.push(resultTrials[i]);
           }
@@ -141,7 +129,7 @@ const Target = (props) => {
         let avgRT;
         let score;
         if (correctTrials.length > 0) {
-          accuracy = correctTrials.length / (resultTrials.length - 2);
+          accuracy = correctTrials.length / resultTrials.length;
           let responseTimes = 0;
           let relevantTrials = 0;
           for (let trial of correctTrials) {
@@ -159,9 +147,9 @@ const Target = (props) => {
           const RTScore = GetZPercent(RTZ);
           console.log(accuracyScore);
           console.log(RTScore);
-          score = ((accuracyScore + RTScore) / 2) * 100;
-          localStorage.setItem("twoback", score);
-          console.log("final score: " + localStorage.getItem("twoback"));
+          score = (accuracyScore * 0.5 + RTScore * 0.5) * 100;
+          localStorage.setItem("gonogo", score);
+          console.log("final score: " + localStorage.getItem("gonogo"));
         } else {
           accuracy = 0;
           avgRT = null;
@@ -177,11 +165,9 @@ const Target = (props) => {
               %
               {avgRT > 0
                 ? ` and your average reaction time
-                      was ${avgRT.toLocaleString(undefined, {
-                        minimumFractionDigits: 0,
-                      })} milliseconds`
+                      was ${avgRT.toFixed(0)} milliseconds`
                 : ""}
-              . This puts your working memory at the {score.toFixed(0)}
+              . This puts your inhibitory control at the {score.toFixed(0)}
               th percentile!
             </p>
             <p>You are free to close this window.</p>
@@ -206,6 +192,7 @@ const Target = (props) => {
       const endTime = new Date();
       clicked = true;
       responseTime = endTime - startTime;
+      setShape("+");
     }
   };
 

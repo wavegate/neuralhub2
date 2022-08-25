@@ -18,6 +18,10 @@
 {% endblock %}
 
 {% block content %}
+{% if user.is_staff %}
+    <div><a href="{% url 'post-update' post.id %}" class="button">Edit</a></div>
+    <div><a href="{% url 'post-delete' post.id %}" class="button">Delete</a></div>
+    {% endif %}
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="hlrte8fd"></script>
 <div class="hero postHero">
@@ -70,10 +74,6 @@
         {% endfor %}
         <a href={% url 'comment-create' post.id %} class="button">Add comment</a>
     </div> {% endcomment %}
-    {% if user.is_staff %}
-    <div><a href="{% url 'post-update' post.id %}" class="button">Edit</a></div>
-    <div><a href="{% url 'post-delete' post.id %}" class="button">Delete</a></div>
-    {% endif %}
 </div>
 <div id="voteboxes">
     {% for votebox in post.votebox_set.all %}

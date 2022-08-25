@@ -46,6 +46,36 @@ def addDeadVote(request):
 def twoback(request):
     return render(request, 'twoback.html')
 
+def gonogo(request):
+    return render(request, 'gonogo.html')
+
+def stroop(request):
+    return render(request, 'stroop.html')
+
+def subitizing(request):
+    return render(request, 'subitizing.html')
+    
+def visual_search(request):
+    return render(request, 'visual_search.html')
+
+def task_switching(request):
+    return render(request, 'task_switching.html')
+
+def posner(request):
+    return render(request, 'posner.html')
+
+def lexical(request):
+    return render(request, 'lexical.html')
+
+def dsst(request):
+    return render(request, 'dsst.html')
+
+def rotation(request):
+    return render(request, 'rotation.html')
+
+def clock(request):
+    return render(request, 'clock.html')
+
 def subscribe(request):
     if request.method == 'POST':
         email = request.POST['email']

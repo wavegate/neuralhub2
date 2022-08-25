@@ -851,8 +851,8 @@
   color: #9fafc1;
 }
 .postBody .canvasContainer {
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
   align-self: center;
 }
 .postBody #scene-container canvas {
