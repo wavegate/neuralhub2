@@ -27,8 +27,7 @@ urlpatterns = [
    path('task_switching', views.task_switching, name='task_switching'),
    path('posner', views.posner, name='posner'),
    path('visual_search', views.visual_search, name='visual_search'),
-   path('lexical', views.lexical, name='lexical'),
-   path('dsst', views.dsst, name='dsst'),
    path('rotation', views.rotation, name='rotation'),
    path('clock', views.clock, name='clock'),
+   path('add_experiment', views.add_experiment, name='add_experiment'),
 ]

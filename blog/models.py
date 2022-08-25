@@ -16,6 +16,9 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"
 
+class Experiment(models.Model):
+    data = models.TextField(blank=True, null=True)
+
 class Post(models.Model):
     title = models.CharField(max_length=255, null=True, blank=True)
     # body = models.TextField(null=True, blank=True)

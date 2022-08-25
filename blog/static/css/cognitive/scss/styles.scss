@@ -1,17 +1,9 @@
-.clockContainer {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-@media (max-width: 300px) {
-  .clockContainer {
-    width: 200px;
-    height: 200px;
-  }
-}
+@use "breakpoints";
+@use "clock";
+
+$font-normal: clamp(16px, 24px, 4vw);
+$font-large: clamp(32px, 64px, 8vw);
+$font-button: clamp(24px, 32px, 6vw);
 
 * {
   box-sizing: border-box;
@@ -25,14 +17,13 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: clamp(16px, 24px, 4vw);
+  font-size: $font-normal;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 1em;
-}
-@media (max-width: 300px) {
-  .message {
+
+  @include breakpoints.sm {
     top: 5%;
     transform: translate(-50%, 0);
   }
@@ -51,10 +42,9 @@ button {
   display: flex;
   justify-content: center;
   gap: 36px;
-  font-size: clamp(24px, 32px, 6vw);
-}
-@media (max-width: 300px) {
-  .buttons {
+  font-size: $font-button;
+
+  @include breakpoints.sm {
     top: 87%;
     gap: 24px;
   }
@@ -74,5 +64,3 @@ button {
 .button:hover {
   cursor: pointer;
 }
-
-/*# sourceMappingURL=style.css.map */

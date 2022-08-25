@@ -2,9 +2,9 @@ const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 const trials = [];
-const numTrials = 20;
+const numTrials = 5;
 const results = [];
-const ISI = 1200;
+const ISI = 1000;
 const percentageTargets = 0.2;
 
 for (let i = 0; i < numTrials; i++) {
@@ -18,9 +18,50 @@ console.log(trials);
 let accuracy;
 let avgRT;
 
+const submitData = async () => {
+  let data = { name: "clock", trials: trials, results: results };
+  fetch("/add_experiment", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": csrftoken,
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+function GetZPercent(z) {
+  //z == number of standard deviations from the mean
+
+  //if z is greater than 6.5 standard deviations from the mean
+  //the number of significant digits will be outside of a reasonable
+  //range
+  if (z < -6.5) return 0.0;
+  if (z > 6.5) return 1.0;
+
+  var factK = 1;
+  var sum = 0;
+  var term = 1;
+  var k = 0;
+  var loopStop = Math.exp(-23);
+  while (Math.abs(term) > loopStop) {
+    term =
+      (((0.3989422804 * Math.pow(-1, k) * Math.pow(z, k)) /
+        (2 * k + 1) /
+        Math.pow(2, k)) *
+        Math.pow(z, k + 1)) /
+      factK;
+    sum += term;
+    k++;
+    factK *= k;
+  }
+  sum += 0.5;
+
+  return sum;
+}
+
 function Clock(props) {
   React.useEffect(() => {
-    console.log("load");
     const clockContainer = document.getElementsByClassName("clockContainer")[0];
     const clock = document.getElementById("clock");
     clock.width = clockContainer.offsetWidth;
@@ -33,7 +74,7 @@ function Clock(props) {
     ctx.lineWidth = "3px";
     ctx.lineCap = "round";
     ctx.moveTo(0, 0);
-    ctx.rotate(props.position * 0.1);
+    ctx.rotate((props.position * Math.PI) / 50);
     ctx.lineTo(0, -(radius - 20));
     ctx.stroke();
 
@@ -61,76 +102,93 @@ function Display() {
   const [position, setPosition] = React.useState(-1);
   const [target, setTarget] = React.useState(
     <div className="message">
-      <h1>Welcome to the Mackworth clock task!</h1>
+      <h2>Welcome to the Mackworth clock task!</h2>
       <p>
         In this task, you will see the hand of the clock tick by a small amount
         each second.
       </p>
       <p>
-        Your goal is to click the "YES" button below if the clock ticks a lot
-        more than the other ticks.
+        Your goal is to click the button each time the clock ticks more than the
+        other ticks.
       </p>
-      <p>Respond as quickly and accurately as possible.</p>
-      <p>Please click a button below to begin.</p>
+      <p>Respond as accurately as possible.</p>
     </div>
   );
-  const [response, setResponse] = React.useState();
-  const [startTime, setStartTime] = React.useState();
-  const [responseTime, setResponseTime] = React.useState();
-  const [permitResponse, setPermitResponse] = React.useState();
+  const [trial, setTrial] = React.useState({
+    response: null,
+    startTime: null,
+    responseTime: null,
+    permitResponse: false,
+  });
+
+  const handleClick = ({ target }) => {
+    if (index == -1) {
+      setIndex((prev) => prev + 1);
+    } else if (index < trials.length && trial.permitResponse) {
+      setTrial({
+        response: target.id,
+        responseTime: new Date() - trial.startTime,
+        permitResponse: false,
+      });
+    }
+  };
 
   React.useEffect(() => {
     if (index > 0) {
       results.push({
         index: index - 1,
-        response: response,
-        responseTime: responseTime,
+        response: trial.response ? trial.response : null,
+        responseTime: trial.response ? trial.responseTime : null,
       });
     }
     if (index > -1 && index < trials.length) {
-      setPermitResponse(true);
-      setStartTime(new Date());
-      setResponse();
       if (trials[index].correctResponse == "Y") {
         setPosition((prev) => prev + 2);
       } else {
         setPosition((prev) => prev + 1);
       }
-      setTarget(<Clock position={position} />);
     } else if (index >= trials.length) {
-      const correctTrials = [];
-      for (let i = 0; i < results.length; i++) {
-        if (trials[i].correctResponse == results[i].response) {
-          correctTrials.push(results[i]);
-        }
-      }
-      accuracy = correctTrials.length / results.length;
-      let RTsum = 0;
-      let relevantTrials = 0;
-      for (let i = 0; i < correctTrials.length; i++) {
-        const resp = correctTrials[i].responseTime;
-        if (resp) {
-          RTsum += resp;
-          relevantTrials++;
-        }
-      }
-      avgRT = RTsum / relevantTrials;
       console.log(results);
+      let targetCount = 0;
+      let missedCount = 0;
+      for (let i = 0; i < results.length; i++) {
+        if (trials[i].correctResponse == "Y") {
+          targetCount++;
+          if (results[i].response != "Y") {
+            missedCount++;
+          }
+        }
+      }
+      let missedPercentage = missedCount / targetCount;
+      const missedAvg = 0.2;
+      const missedSD = 0.1;
+      const score = (
+        GetZPercent((missedAvg - missedPercentage) / missedSD) * 100
+      ).toFixed(2);
       setTarget(
         <div className="message">
-          <h1>Congratulations! You have completed the task.</h1>
+          <h2>Congratulations! You have completed the task.</h2>
           <p>
-            Your accuracy was {accuracy} and your average reaction time was{" "}
-            {avgRT}.
+            You caught {targetCount - missedCount} out of {targetCount} targets.
+            That puts you in the {score}th percentile!
           </p>
           <p>Feel free to close this window.</p>
         </div>
       );
+      setButton();
+      submitData();
     }
   }, [index]);
 
   React.useEffect(() => {
     if (position > -1) {
+      setTarget(<Clock position={position} />);
+      setTrial({
+        response: null,
+        permitResponse: true,
+        responseTime: null,
+        startTime: new Date(),
+      });
       const timeoutID = setTimeout(() => {
         setIndex((prev) => prev + 1);
       }, ISI);
@@ -138,22 +196,26 @@ function Display() {
     }
   }, [position]);
 
-  const handleClick = ({ target }) => {
-    if (index == -1) {
-      setIndex((prev) => prev + 1);
-    } else if (index < trials.length && permitResponse) {
-      setResponse(target.id);
-      setResponseTime(new Date() - startTime);
-      setPermitResponse(false);
+  React.useEffect(() => {
+    if (index > -1) {
+      setButton(
+        <button id="Y" className="button" onClick={handleClick}>
+          <i className="fa-solid fa-hand-pointer"></i>
+        </button>
+      );
     }
-  };
+  }, [trial]);
+
+  const [button, setButton] = React.useState(
+    <button id="Y" className="button" onClick={handleClick}>
+      START
+    </button>
+  );
 
   return (
     <React.Fragment>
-      <div className="target">{target}</div>
-      <button id="Y" className="button" onClick={handleClick}>
-        YES
-      </button>
+      {target}
+      <div className="buttons">{button}</div>
     </React.Fragment>
   );
 }

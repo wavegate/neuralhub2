@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post, Category, Comment, Subscriber, VoteBox, VoteOption
+from .models import Post, Category, Comment, Subscriber, VoteBox, VoteOption, Experiment
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
@@ -8,6 +8,7 @@ import random
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
+import json
 
 def index(request):
     featuredPost = Post.objects.filter(featured=True,draft=False)[0]
@@ -64,17 +65,18 @@ def task_switching(request):
 def posner(request):
     return render(request, 'posner.html')
 
-def lexical(request):
-    return render(request, 'lexical.html')
-
-def dsst(request):
-    return render(request, 'dsst.html')
-
 def rotation(request):
     return render(request, 'rotation.html')
 
 def clock(request):
     return render(request, 'clock.html')
+
+def add_experiment(request):
+    if request.method == "POST":
+        data = json.loads(request.body.decode("utf-8"))
+        e = Experiment(data=data)
+        e.save()
+    return render(request, 'index.html')
 
 def subscribe(request):
     if request.method == 'POST':
