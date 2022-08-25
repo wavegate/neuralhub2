@@ -220,3 +220,8 @@
   transform: translate(-50%, -50%);
   font-size: clamp(78px, 146px, 10vw);
 }
+
+.clockContainer {
+  width: 300px;
+  height: 300px;
+}
