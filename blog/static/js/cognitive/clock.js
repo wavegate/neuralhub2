@@ -2,7 +2,7 @@ const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 const trials = [];
-const numTrials = 5;
+const numTrials = 60;
 const results = [];
 const ISI = 1000;
 const percentageTargets = 0.2;
