@@ -68,6 +68,8 @@ function Display() {
       });
     }
     if (index > -1 && index < trials.length) {
+      setResponse("");
+      setResponseTime("");
       setTarget(
         <div className="stimTask">
           <div className="topStim">SHAPE</div>

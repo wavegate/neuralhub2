@@ -193,3 +193,30 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.canvasScreen {
+  width: 200px;
+  height: 200px;
+  outline: 1px solid black;
+}
+
+.leftOption {
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(78px, 146px, 10vw);
+}
+
+.rotated {
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.rightOption {
+  position: absolute;
+  top: 50%;
+  left: 72%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(78px, 146px, 10vw);
+}
