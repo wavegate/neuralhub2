@@ -139,7 +139,8 @@ function Display() {
       ></img>
       <p>
         Sometimes, the hand of the clock will move twice as far as the other
-        ticks. When this happens, click the button below within 1 second.
+        ticks. When this happens, click the button below within 1 second. Total
+        experiment time: ~2 minutes.
       </p>
       <p>Respond as quickly and accurately as possible.</p>
     </div>
@@ -167,15 +168,6 @@ function Display() {
       }
     }
   };
-
-  React.useEffect(() => {
-    // if (color) {
-    //   const timeoutID = setTimeout(() => {
-    //     setColor();
-    //   }, 500);
-    //   return () => clearTimeout(timeoutID);
-    // }
-  }, [color]);
 
   React.useEffect(() => {
     if (index > 0) {
@@ -223,7 +215,7 @@ function Display() {
 
       let avgAccuracy = 0.8;
       let accuracySD = 0.1;
-      let averageRT = 600;
+      let averageRT = 700;
       let rtSD = 300;
       let accuracyScore = GetZPercent((accuracy - avgAccuracy) / accuracySD);
       let RTscore = GetZPercent((averageRT - avgRT) / rtSD);
