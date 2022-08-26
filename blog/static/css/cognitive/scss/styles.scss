@@ -59,8 +59,22 @@ button {
   outline: 1px solid black;
   background: black;
   color: white;
-}
 
-.button:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+    color: black;
+    background: white;
+  }
+
+  @include breakpoints.sm {
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background: black;
+    }
+    &:active {
+      color: black;
+      background: white;
+    }
+  }
 }

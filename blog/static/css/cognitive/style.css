@@ -70,9 +70,21 @@ button {
   background: black;
   color: white;
 }
-
 .button:hover {
   cursor: pointer;
+  color: black;
+  background: white;
+}
+@media (max-width: 300px) {
+  .button:hover {
+    cursor: pointer;
+    color: white;
+    background: black;
+  }
+  .button:active {
+    color: black;
+    background: white;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
