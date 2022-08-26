@@ -1,18 +1,39 @@
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
-const trials = [];
-const numTrials = 60;
+let trials = [];
+const totalPosition = 100;
+const numTrials = 90;
 const results = [];
 const ISI = 1000;
 const percentageTargets = 0.2;
 
-for (let i = 0; i < numTrials; i++) {
+for (let i = 0; i < 10; i++) {
+  trials.push({
+    index: i,
+    correctResponse: null,
+  });
+}
+
+for (let i = 10; i < numTrials + 10; i++) {
   trials.push({
     index: i,
     correctResponse: Math.random() < percentageTargets ? "Y" : null,
   });
 }
+
+let positionCount = 0;
+let ind = 0;
+while (positionCount < totalPosition) {
+  if (trials[ind].correctResponse == "Y") {
+    positionCount += 2;
+  } else {
+    positionCount += 1;
+  }
+  ind++;
+}
+
+trials = trials.slice(0, ind);
 console.log(trials);
 
 let accuracy;
@@ -151,6 +172,7 @@ function Display() {
       console.log(results);
       let targetCount = 0;
       let missedCount = 0;
+      const correctTrials = [];
       for (let i = 0; i < results.length; i++) {
         if (trials[i].correctResponse == "Y") {
           targetCount++;
@@ -158,24 +180,52 @@ function Display() {
             missedCount++;
           }
         }
+        if (trials[i].correctResponse == results[i].response) {
+          correctTrials.push(results[i]);
+        }
       }
-      let missedPercentage = missedCount / targetCount;
-      const missedAvg = 0.2;
-      const missedSD = 0.1;
-      const score = (
-        GetZPercent((missedAvg - missedPercentage) / missedSD) * 100
-      ).toFixed(2);
+      let relevantTrials = 0;
+      let totalRT = 0;
+      accuracy = correctTrials.length / results.length;
+      for (let i = 0; i < correctTrials.length; i++) {
+        if (correctTrials[i].responseTime) {
+          totalRT += correctTrials[i].responseTime;
+          relevantTrials++;
+        }
+      }
+      avgRT = totalRT / relevantTrials;
+      //   let missedPercentage = missedCount / targetCount;
+      //   const missedAvg = 0.2;
+      //   const missedSD = 0.1;
+
+      let avgAccuracy = 0.8;
+      let accuracySD = 0.1;
+      let averageRT = 600;
+      let rtSD = 300;
+      let accuracyScore = (accuracy - avgAccuracy) / accuracySD;
+      let RTscore = (averageRT - avgRT) / rtSD;
+      let score = (accuracyScore + RTscore) / 2;
+      score = (score * 100).toFixed(0);
+      if (score) {
+        localStorage.setItem("clock", score);
+      }
       setTarget(
         <div className="message">
           <h2>Congratulations! You have completed the task.</h2>
           <p>
-            You caught {targetCount - missedCount} out of {targetCount} targets.
-            That puts you in the {score}th percentile!
+            You hit {targetCount - missedCount} out of {targetCount} targets.
+            Your accuracy was {(accuracy * 100).toFixed(0)}% and your average
+            reaction time was {avgRT.toFixed(0)} milliseconds. This gives you a
+            score of <strong>{score}</strong>!
           </p>
           <p>Feel free to close this window.</p>
         </div>
       );
-      setButton();
+      setButton(
+        <a className="button" href={bloglink}>
+          <i className="fa-solid fa-xmark"></i>
+        </a>
+      );
       submitData();
     }
   }, [index]);

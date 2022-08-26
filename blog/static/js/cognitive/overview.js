@@ -7,6 +7,7 @@ let subitizing = 0;
 let visual_search = 0;
 let posner = 0;
 let rotation = 0;
+let clock = 0;
 if (localStorage.getItem("twoback")) {
   twoback = localStorage.getItem("twoback");
 }
@@ -27,6 +28,9 @@ if (localStorage.getItem("posner")) {
 }
 if (localStorage.getItem("rotation")) {
   rotation = localStorage.getItem("rotation");
+}
+if (localStorage.getItem("clock")) {
+  clock = localStorage.getItem("clock");
 }
 
 const myChart = new Chart(ctx, {
@@ -55,7 +59,7 @@ const myChart = new Chart(ctx, {
           visual_search,
           subitizing,
           rotation,
-          62,
+          clock,
         ],
         fill: true,
         backgroundColor: "rgba(255, 99, 132, 0.2)",

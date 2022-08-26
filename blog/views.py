@@ -69,7 +69,11 @@ def rotation(request):
     return render(request, 'rotation.html')
 
 def clock(request):
-    return render(request, 'clock.html')
+    post = Post.objects.filter(title__contains='Mackworth clock')[0]
+    context = {
+        "bloglink": post.get_absolute_url,
+    }
+    return render(request, 'clock.html', context)
 
 def add_experiment(request):
     if request.method == "POST":
