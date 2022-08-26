@@ -104,6 +104,8 @@
   ul,
   ol {
     margin-left: 96px;
+    margin-bottom: 1em;
+    margin-top: 1em;
 
     @include breakpoints.sm {
       margin-left: 36px;

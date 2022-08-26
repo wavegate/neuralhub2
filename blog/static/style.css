@@ -725,6 +725,8 @@
 .postBody ul,
 .postBody ol {
   margin-left: 96px;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 @media (max-width: 1200px) {
   .postBody ul,
