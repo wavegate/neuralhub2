@@ -2,11 +2,15 @@ const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 let trials = [];
-const totalPosition = 100;
+let totalPosition = 100;
 const numTrials = 90;
 const results = [];
 const ISI = 1000;
 const percentageTargets = 0.2;
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const practice = urlParams.get("practice");
 
 for (let i = 0; i < 10; i++) {
   trials.push({
@@ -112,7 +116,7 @@ function Clock(props) {
   });
 
   return (
-    <div className="clockContainer">
+    <div className={`clockContainer ${props.color}`}>
       <canvas id="clock"></canvas>
     </div>
   );
@@ -121,6 +125,7 @@ function Clock(props) {
 function Display() {
   const [index, setIndex] = React.useState(-1);
   const [position, setPosition] = React.useState(-1);
+  const [color, setColor] = React.useState();
   const [target, setTarget] = React.useState(
     <div className="message">
       <h2>Welcome to the Mackworth clock task!</h2>
@@ -128,11 +133,15 @@ function Display() {
         In this task, you will see the hand of the clock tick by a small amount
         each second.
       </p>
+      <img
+        className="exampleGif"
+        src="https://compsciblog.s3.us-west-1.amazonaws.com/clock.gif"
+      ></img>
       <p>
-        Your goal is to click the button each time the clock ticks more than the
-        other ticks.
+        Sometimes, the hand of the clock will move twice as far as the other
+        ticks. When this happens, click the button below within 1 second.
       </p>
-      <p>Respond as accurately as possible.</p>
+      <p>Respond as quickly and accurately as possible.</p>
     </div>
   );
   const [trial, setTrial] = React.useState({
@@ -151,8 +160,22 @@ function Display() {
         responseTime: new Date() - trial.startTime,
         permitResponse: false,
       });
+      if (target.id == trials[index].correctResponse) {
+        setTarget(<Clock position={position} color="green" />);
+      } else {
+        setTarget(<Clock position={position} color="red" />);
+      }
     }
   };
+
+  React.useEffect(() => {
+    // if (color) {
+    //   const timeoutID = setTimeout(() => {
+    //     setColor();
+    //   }, 500);
+    //   return () => clearTimeout(timeoutID);
+    // }
+  }, [color]);
 
   React.useEffect(() => {
     if (index > 0) {
@@ -202,8 +225,8 @@ function Display() {
       let accuracySD = 0.1;
       let averageRT = 600;
       let rtSD = 300;
-      let accuracyScore = (accuracy - avgAccuracy) / accuracySD;
-      let RTscore = (averageRT - avgRT) / rtSD;
+      let accuracyScore = GetZPercent((accuracy - avgAccuracy) / accuracySD);
+      let RTscore = GetZPercent((averageRT - avgRT) / rtSD);
       let score = (accuracyScore + RTscore) / 2;
       score = (score * 100).toFixed(0);
       if (score) {
@@ -226,7 +249,9 @@ function Display() {
           <i className="fa-solid fa-xmark"></i>
         </a>
       );
-      submitData();
+      if (!practice) {
+        submitData();
+      }
     }
   }, [index]);
 
@@ -264,7 +289,7 @@ function Display() {
 
   return (
     <React.Fragment>
-      {target}
+      <div className={color}>{target}</div>
       <div className="buttons">{button}</div>
     </React.Fragment>
   );
