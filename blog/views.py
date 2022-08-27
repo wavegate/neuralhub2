@@ -51,7 +51,11 @@ def gonogo(request):
     return render(request, 'gonogo.html')
 
 def stroop(request):
-    return render(request, 'stroop.html')
+    post = Post.objects.filter(title__contains='Stroop')[0]
+    context = {
+        "bloglink": post.get_absolute_url,
+    }
+    return render(request, 'stroop.html', context)
 
 def subitizing(request):
     post = Post.objects.filter(title__contains='Subitizing')[0]

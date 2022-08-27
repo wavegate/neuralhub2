@@ -211,6 +211,16 @@
   height: 60%;
 }
 
+.greenCol {
+  color: rgb(0, 179, 0);
+  font-size: 64px;
+}
+
+.redCol {
+  color: red;
+  font-size: 64px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
