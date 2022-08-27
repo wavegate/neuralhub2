@@ -163,7 +163,7 @@ function Display() {
       let score = ((accuracyScore + RTscore) / 2 + missedScore) / 2;
       score = (score * 100).toFixed(0);
       if (score) {
-        localStorage.setItem("stroop", score);
+        localStorage.setItem("gonogo", score);
         submitData();
       }
       setTarget(
