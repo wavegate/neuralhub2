@@ -78,8 +78,8 @@ function Display() {
         rotated one.
       </p>
       <p>
-        Respond as quickly and accurately as possible. Please click a button
-        below to start.
+        Respond as quickly and accurately as possible. The total experiment time
+        is ~2 minutes. Please click a button below to start.
       </p>
     </div>
   );
