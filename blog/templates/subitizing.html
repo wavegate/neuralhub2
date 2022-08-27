@@ -7,10 +7,15 @@
     <title>Subitizing - CompSci Blog</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/cognitive/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <div id="root"></div>
 
+    <script>
+      var csrftoken = '{{ csrf_token }}';
+      var bloglink = '{{ bloglink }}';
+  </script>
     <script
       src="https://unpkg.com/react@18/umd/react.development.js"
       crossorigin
@@ -23,9 +28,7 @@
       src="https://unpkg.com/babel-standalone@6/babel.min.js"
       crossorigin
     ></script>
-    <script>
-      let instructionsPath = "{% static 'img/cognitive/instructions.svg' %}";
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="{% static 'js/cognitive/subitizing.js' %}" type="text/babel"></script>
   </body>
 </html>

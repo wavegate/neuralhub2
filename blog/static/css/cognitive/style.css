@@ -87,6 +87,72 @@
   background: green;
 }
 
+.canvasContainer {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  outline: 1px solid black;
+}
+@media (max-width: 900px) {
+  .canvasContainer {
+    top: 34%;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.messageTop {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, 0%);
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+@media (max-width: 900px) {
+  .messageTop {
+    font-size: 16px;
+    transform: translate(-50%, 0);
+  }
+}
+@media (max-width: 300px) {
+  .messageTop {
+    font-size: 12px;
+  }
+}
+
+.chartContainer {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  transform: translate(-50%, 0%);
+}
+@media (max-width: 900px) {
+  .chartContainer {
+    max-width: 400px;
+    width: 90%;
+    height: 400px;
+    top: 40%;
+  }
+}
+@media (max-width: 300px) {
+  .chartContainer {
+    max-width: 250px;
+    width: 90%;
+    height: 250px;
+    top: 40%;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -140,6 +206,30 @@ button {
 @media (max-width: 300px) {
   .buttons {
     gap: 12px;
+  }
+}
+
+.buttonGrid {
+  transform: translate(0, -50%);
+  height: 240px;
+  width: 240px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+}
+.buttonGrid .button {
+  width: auto;
+  height: auto;
+}
+@media (max-width: 300px) {
+  .buttonGrid {
+    height: 160px;
+    width: 160px;
+  }
+}
+@media (max-width: 900px) {
+  .buttonGrid {
+    height: 200px;
+    width: 200px;
   }
 }
 

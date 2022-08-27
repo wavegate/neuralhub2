@@ -54,7 +54,11 @@ def stroop(request):
     return render(request, 'stroop.html')
 
 def subitizing(request):
-    return render(request, 'subitizing.html')
+    post = Post.objects.filter(title__contains='Subitizing')[0]
+    context = {
+        "bloglink": post.get_absolute_url,
+    }
+    return render(request, 'subitizing.html', context)
     
 def visual_search(request):
     return render(request, 'visual_search.html')

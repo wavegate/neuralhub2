@@ -739,9 +739,6 @@
 .postBody ol > li {
   line-height: 1.7em;
 }
-.postBody li {
-  text-indent: 12px;
-}
 .postBody img {
   max-width: 100%;
   height: auto;

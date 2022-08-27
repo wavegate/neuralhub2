@@ -1,6 +1,7 @@
 @use "breakpoints";
 @use "clock";
 @use "rotation";
+@use "subitizing";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald&display=swap");
 
 * {
@@ -53,6 +54,30 @@ button {
 
   @include breakpoints.sm {
     gap: 12px;
+  }
+}
+
+.buttonGrid {
+  transform: translate(0, -50%);
+
+  height: 240px;
+  width: 240px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+
+  .button {
+    width: auto;
+    height: auto;
+  }
+
+  @include breakpoints.sm {
+    height: 160px;
+    width: 160px;
+  }
+
+  @include breakpoints.med {
+    height: 200px;
+    width: 200px;
   }
 }
 

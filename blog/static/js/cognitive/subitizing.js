@@ -1,25 +1,36 @@
-let trials = [];
-let resultTrials = [];
-const options = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const pickRandom = (array) => {
-  return Math.floor(Math.random() * array.length);
-};
-let sequence = [];
-let responseTimes = [];
-let responses = [];
-const percentTargets = 0.8;
-const maxStimDisplayTime = 500;
-const ISI = 1000;
-const maxRT = 1600;
-const minRT = 100;
-// const numTrials = 156;
-// const numBlocks = 2;
-const numTrials = 20;
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
 
-const accuracyMean = 0.95;
-const accuracySD = 0.02;
-const RTMean = 500;
-const RTSD = 200;
+let trials = [];
+const numTrials = 90;
+for (let i = 0; i < numTrials; i++) {
+  const dice = Math.floor(Math.random() * 9 + 1);
+  trials.push({
+    index: i,
+    correctResponse: dice,
+  });
+}
+console.log(trials);
+
+let accuracy;
+let avgRT;
+
+const submitData = async () => {
+  let data = { name: "subitizing", trials: trials, results: results };
+  fetch("/add_experiment", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": csrftoken,
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+let results = [];
+const stimDisplayTime = 1000;
+const ISI = 1000;
+const accuracyByNumber = [];
 
 function GetZPercent(z) {
   //z == number of standard deviations from the mean
@@ -51,139 +62,200 @@ function GetZPercent(z) {
   return sum;
 }
 
-function createTrials() {
-  for (let i = 0; i < numTrials; i++) {
-    const dice = Math.floor(Math.random() * 9 + 1);
-    trials.push({
-      index: i,
-      correctResponse: dice,
-      count: dice,
-    });
-  }
-}
-
-createTrials();
-console.log(trials);
-let clicked = false;
-let responseTime;
-
-const Target = (props) => {
+function Display() {
   const [index, setIndex] = React.useState(-1);
-  const [shape, setShape] = React.useState("+");
-  const [response, setResponse] = React.useState(null);
-  const [startTime, setStartTime] = React.useState(new Date());
+  const [target, setTarget] = React.useState(
+    <div className="message">
+      <h2>Welcome to the Subitizing task!</h2>
+      <p>
+        In this task, you will be presented with a number of dots for a brief
+        moment.
+      </p>
+      <p>
+        Your goal is to click the button corresponding to the number of dots
+        that you saw.
+      </p>
+      <p>
+        Respond as quickly and accurately as possible. Total experiment time: ~3
+        minutes. Please click a button below to start.
+      </p>
+    </div>
+  );
+  const [trial, setTrial] = React.useState({
+    response: null,
+    startTime: null,
+    responseTime: null,
+    permitResponse: false,
+  });
+  const [chart, setChart] = React.useState();
 
-  React.useEffect(() => {
+  const handleClick = ({ target }) => {
     if (index == -1) {
-      setShape(
-        <div className="message">
-          <h1>Welcome to the subitizing task.</h1>
-          <p>
-            In this test, you will be presented with a word in either the color
-            green or the color red.
-          </p>
-          <p>
-            Your goal is to click the green button below whenever you see a word
-            that is the COLOR green (ignore what the text says!), and click the
-            red button below whenever you see a word that is the COLOR red.
-          </p>
-          <img src={instructionsPath} />
-          <p>Respond as quickly and accurately as you can.</p>
-          <p>Please click one of the buttons below to begin.</p>
-        </div>
-      );
-    } else {
-      if (index > 0) {
-        resultTrials.push({
-          index: index - 1,
-          response: response ? response : "N",
-          responseTime:
-            responseTime > minRT && responseTime < maxRT ? responseTime : null,
-        });
-      }
-      if (index < trials.length) {
-        setShape(<canvas id="basicCanvas"></canvas>);
-        setStartTime(new Date());
-        setResponse(null);
-        clicked = false;
-        responseTime = null;
-        const intervalID = setInterval(() => {
-          setShape("+");
-        }, maxStimDisplayTime);
-        return () => clearInterval(intervalID);
+      setIndex((prev) => prev + 1);
+    } else if (index <= trials.length && trial.permitResponse) {
+      setTrial({
+        response: target.id,
+        responseTime: new Date() - trial.startTime,
+        permitResponse: false,
+      });
+      if (target.id == trials[index].correctResponse) {
+        const canvasContainer =
+          document.getElementsByClassName("canvasContainer");
+        if (canvasContainer.length > 0) {
+          canvasContainer[0].classList.add("green");
+        }
       } else {
-        console.log(resultTrials);
-        const correctTrials = [];
-        for (let i = 0; i < resultTrials.length; i++) {
-          if (resultTrials[i].response == trials[i].correctResponse) {
-            correctTrials.push(resultTrials[i]);
-          }
+        const canvasContainer =
+          document.getElementsByClassName("canvasContainer");
+        if (canvasContainer.length > 0) {
+          canvasContainer[0].classList.add("red");
         }
-        let accuracy;
-        let avgRT;
-        let score;
-        if (correctTrials.length > 0) {
-          accuracy = correctTrials.length / resultTrials.length;
-          let responseTimes = 0;
-          let relevantTrials = 0;
-          for (let trial of correctTrials) {
-            if (trial.responseTime) {
-              responseTimes += trial.responseTime;
-              relevantTrials++;
-            }
-          }
-          avgRT = responseTimes / relevantTrials;
-          console.log(`accuracy: ${accuracy}`);
-          console.log(`avgRT: ${avgRT}`);
-          const accuracyZ = (accuracy - accuracyMean) / accuracySD;
-          const RTZ = (RTMean - avgRT) / RTSD;
-          const accuracyScore = GetZPercent(accuracyZ);
-          const RTScore = GetZPercent(RTZ);
-          console.log(accuracyScore);
-          console.log(RTScore);
-          score = (accuracyScore * 0.5 + RTScore * 0.5) * 100;
-          localStorage.setItem("subitizing", score);
-          console.log("final score: " + localStorage.getItem("subitizing"));
-        } else {
-          accuracy = 0;
-          avgRT = null;
-        }
-        setShape(
-          <div className="message">
-            <h1>Congratulations, you have completed the test.</h1>
-            <p>
-              Your accuracy was{" "}
-              {(accuracy * 100).toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-              })}
-              %
-              {avgRT > 0
-                ? ` and your average reaction time
-                      was ${avgRT.toFixed(0)} milliseconds`
-                : ""}
-              . This puts your enumeration at the {score.toFixed(0)}
-              th percentile!
-            </p>
-            <p>You are free to close this window.</p>
-          </div>
-        );
       }
     }
-  }, [index]);
-  React.useEffect(() => {
-    if (shape === "+") {
-      const intervalID = setInterval(() => {
-        setIndex((prev) => prev + 1);
-      }, ISI);
-      return () => clearInterval(intervalID);
-    } else {
-      const canvas = document.getElementById("basicCanvas");
+  };
 
+  React.useEffect(() => {
+    if (index > 0) {
+      results.push({
+        index: index - 1,
+        response: trial.response ? trial.response : null,
+        responseTime: trial.response ? trial.responseTime : null,
+      });
+    }
+    if (index > -1 && index < trials.length) {
+      setTarget();
+      const timeoutID = setTimeout(() => {
+        setTarget(
+          <div className="canvasContainer">
+            <canvas id="canvas"></canvas>
+          </div>
+        );
+      }, ISI);
+      return () => clearInterval(timeoutID);
+    }
+    if (index >= trials.length) {
+      console.log(results);
+      const correctTrials = [];
+      for (let i = 0; i < results.length; i++) {
+        if (trials[i].correctResponse == results[i].response) {
+          correctTrials.push(results[i]);
+        }
+      }
+      accuracy = correctTrials.length / results.length;
+      let relevantTrials = 0;
+      let totalRT = 0;
+      for (let i = 0; i < correctTrials.length; i++) {
+        if (correctTrials[i].responseTime) {
+          totalRT += correctTrials[i].responseTime;
+          relevantTrials++;
+        }
+      }
+      avgRT = totalRT / relevantTrials;
+      let max = 0;
+      let searchMax = true;
+      for (let i = 1; i <= 9; i++) {
+        let totTrials = 0;
+        let numCorrect = 0;
+        for (let j = 0; j < trials.length; j++) {
+          if (trials[j].correctResponse == i) {
+            totTrials++;
+            if (results[j].response == i) {
+              numCorrect++;
+            }
+          }
+        }
+        if (totTrials) {
+          accuracyByNumber.push(numCorrect / totTrials);
+          if (numCorrect / totTrials > 0.5 && searchMax) {
+            max = i;
+          } else {
+            searchMax = false;
+          }
+        } else {
+          accuracyByNumber.push(null);
+        }
+      }
+
+      let avgAccuracy = 0.6;
+      let accuracySD = 0.2;
+      let averageRT = 1000;
+      let rtSD = 300;
+      let accuracyScore = GetZPercent((accuracy - avgAccuracy) / accuracySD);
+      let RTscore = GetZPercent((averageRT - avgRT) / rtSD);
+      let score = (accuracyScore + RTscore) / 2;
+      score = (score * 100).toFixed(0);
+      if (score) {
+        localStorage.setItem("subitizing", score);
+        submitData();
+      }
+      setChart();
+      setTarget(
+        <div className="messageTop">
+          <h2>Congratulations! You have completed the task.</h2>
+          <p>
+            You hit {correctTrials.length} out of {trials.length} targets. Your
+            accuracy was {(accuracy * 100).toFixed(0)}% and your average
+            reaction time was {avgRT.toFixed(0)} milliseconds. The approximate
+            number of objects you can enumerate is {max}. This gives you a score
+            of <strong>{score}</strong>!
+          </p>
+          <p>Feel free to close this window.</p>
+        </div>
+      );
+      setButton(
+        <a className="button" href={bloglink}>
+          <i className="fa-solid fa-xmark"></i>
+        </a>
+      );
+      setChart(
+        <div className="chartContainer">
+          <canvas id="myChart"></canvas>
+        </div>
+      );
+    }
+  }, [index]);
+
+  React.useEffect(() => {
+    if (chart) {
+      const cht = document.getElementById("myChart");
+
+      const myChart = new Chart(cht, {
+        type: "line",
+        data: {
+          labels: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+          datasets: [
+            {
+              label: "Accuracy",
+              data: accuracyByNumber,
+              fill: false,
+              borderColor: "rgb(75, 192, 192)",
+              tension: 0.1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            x: {
+              type: "linear",
+              position: "bottom",
+            },
+          },
+        },
+      });
+    }
+  }, [chart]);
+
+  React.useEffect(() => {
+    if (target && index > -1 && index < trials.length) {
+      setTrial({ permitResponse: true, startTime: new Date() });
+      const canvas = document.getElementById("canvas");
+      const canvasContainer =
+        document.getElementsByClassName("canvasContainer")[0];
       if (canvas) {
-        canvas.width = 200;
-        canvas.height = 200;
+        canvas.width = canvasContainer.offsetWidth;
+        canvas.height = canvasContainer.offsetHeight;
         const ctx = canvas.getContext("2d");
-        const numDots = trials[index].count;
+        const numDots = trials[index].correctResponse;
 
         function drawCircle(x, y) {
           ctx.beginPath();
@@ -197,22 +269,15 @@ const Target = (props) => {
           );
         }
       }
+      const timeoutID = setTimeout(() => {
+        setIndex((prev) => prev + 1);
+      }, stimDisplayTime);
+      return () => clearTimeout(timeoutID);
     }
-  }, [shape]);
-  const handleClick = ({ target }) => {
-    if (index == -1) {
-      setIndex(0);
-    } else if (!clicked) {
-      setResponse(target.id);
-      const endTime = new Date();
-      clicked = true;
-      responseTime = endTime - startTime;
-    }
-  };
+  }, [target]);
 
-  return (
+  const [button, setButton] = React.useState(
     <React.Fragment>
-      <div className="target">{shape}</div>
       <div className="buttonGrid">
         <button id="1" className="button" onClick={handleClick}>
           1
@@ -244,7 +309,52 @@ const Target = (props) => {
       </div>
     </React.Fragment>
   );
-};
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Target />);
+  React.useEffect(() => {
+    if (index > -1 && index < trials.length) {
+      setButton(
+        <React.Fragment>
+          <div className="buttonGrid">
+            <button id="1" className="button" onClick={handleClick}>
+              1
+            </button>
+            <button id="2" className="button" onClick={handleClick}>
+              2
+            </button>
+            <button id="3" className="button" onClick={handleClick}>
+              3
+            </button>
+            <button id="4" className="button" onClick={handleClick}>
+              4
+            </button>
+            <button id="5" className="button" onClick={handleClick}>
+              5
+            </button>
+            <button id="6" className="button" onClick={handleClick}>
+              6
+            </button>
+            <button id="7" className="button" onClick={handleClick}>
+              7
+            </button>
+            <button id="8" className="button" onClick={handleClick}>
+              8
+            </button>
+            <button id="9" className="button" onClick={handleClick}>
+              9
+            </button>
+          </div>
+        </React.Fragment>
+      );
+    }
+  }, [trial]);
+
+  return (
+    <React.Fragment>
+      {target}
+      {chart}
+      <div className="buttons">{button}</div>
+    </React.Fragment>
+  );
+}
+
+root.render(<Display />);

@@ -1,0 +1,62 @@
+@use "breakpoints";
+
+.canvasContainer {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  outline: 1px solid black;
+
+  @include breakpoints.med {
+    top: 34%;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.messageTop {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, 0%);
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  @include breakpoints.med {
+    font-size: 16px;
+    transform: translate(-50%, 0);
+  }
+
+  @include breakpoints.sm {
+    font-size: 12px;
+  }
+}
+
+.chartContainer {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  transform: translate(-50%, 0%);
+
+  @include breakpoints.med {
+    max-width: 400px;
+    width: 90%;
+    height: 400px;
+    top: 40%;
+  }
+
+  @include breakpoints.sm {
+    max-width: 250px;
+    width: 90%;
+    height: 250px;
+    top: 40%;
+  }
+}

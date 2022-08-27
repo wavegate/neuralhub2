@@ -78,7 +78,7 @@ function Display() {
         rotated one.
       </p>
       <p>
-        Respond as quickly and accurately as possible. Total experiment time: ~2
+        Respond as quickly and accurately as possible. Total experiment time: ~3
         minutes. Please click a button below to start.
       </p>
     </div>
@@ -121,7 +121,6 @@ function Display() {
           .getElementsByClassName("rightCanvasContainer")[0]
           .classList.add("red");
       }
-      return () => clearTimeout(timeoutID);
     }
   };
 
@@ -189,11 +188,6 @@ function Display() {
       console.log(results);
       setLeftOption();
       setRightOption();
-      setButton(
-        <a className="button" href={bloglink}>
-          <i className="fa-solid fa-xmark"></i>
-        </a>
-      );
       const correctTrials = [];
       for (let i = 0; i < results.length; i++) {
         if (trials[i].correctResponse == results[i].response) {
