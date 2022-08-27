@@ -2,7 +2,7 @@ const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 let trials = [];
-let totalPosition = 20;
+let totalPosition = 100;
 const numTrials = 90;
 const results = [];
 const ISI = 1000;
