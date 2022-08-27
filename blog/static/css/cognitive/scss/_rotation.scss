@@ -1,0 +1,76 @@
+@use "breakpoints";
+
+.canvasContainer {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  transform: translate(-50%, -50%);
+  outline: 1px solid black;
+
+  @include breakpoints.med {
+    top: 34%;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.options {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+
+  @include breakpoints.sm {
+    gap: 12px;
+  }
+
+  @include breakpoints.med {
+    top: 60%;
+  }
+
+  .canvasContainer {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+  }
+}
+
+.rotated90 {
+  transform: rotate(90deg) !important;
+  transform-origin: center;
+}
+
+.rotated180 {
+  transform: rotate(180deg) !important;
+  transform-origin: center;
+}
+
+.rotated270 {
+  transform: rotate(270deg) !important;
+  transform-origin: center;
+}
+
+.example {
+  align-self: center;
+  height: 200px;
+  width: 200px;
+
+  @include breakpoints.sm {
+  }
+}
+
+.aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: green;
+}

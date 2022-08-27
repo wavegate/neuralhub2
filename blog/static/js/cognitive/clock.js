@@ -8,9 +8,9 @@ const results = [];
 const ISI = 1000;
 const percentageTargets = 0.2;
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const practice = urlParams.get("practice");
+// const queryString = window.location.search;
+// const urlParams = new URLSearchParams(queryString);
+// const practice = urlParams.get("practice");
 
 for (let i = 0; i < 10; i++) {
   trials.push({
@@ -241,9 +241,6 @@ function Display() {
           <i className="fa-solid fa-xmark"></i>
         </a>
       );
-      if (!practice) {
-        submitData();
-      }
     }
   }, [index]);
 

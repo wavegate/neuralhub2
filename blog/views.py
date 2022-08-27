@@ -66,10 +66,14 @@ def posner(request):
     return render(request, 'posner.html')
 
 def rotation(request):
-    return render(request, 'rotation.html')
+    post = Post.objects.filter(title__contains='Mental Rotation')[0]
+    context = {
+        "bloglink": post.get_absolute_url,
+    }
+    return render(request, 'rotation.html', context)
 
 def clock(request):
-    post = Post.objects.filter(title__contains='Mackworth clock')[0]
+    post = Post.objects.filter(title__contains='Mackworth Clock')[0]
     context = {
         "bloglink": post.get_absolute_url,
     }
