@@ -79,7 +79,7 @@ function Display() {
       </p>
       <p>
         Respond as quickly and accurately as possible. The total experiment time
-        is ~2 minutes. Please click a button below to start.
+        is ~3 minutes. Please click a button below to start.
       </p>
     </div>
   );
