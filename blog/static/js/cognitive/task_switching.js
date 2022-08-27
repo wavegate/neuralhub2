@@ -30,7 +30,7 @@ let accuracy;
 let avgRT;
 
 const submitData = async () => {
-  let data = { name: "rotation", trials: trials, results: results };
+  let data = { name: "task_switching", trials: trials, results: results };
   fetch("/add_experiment", {
     method: "POST",
     headers: {
