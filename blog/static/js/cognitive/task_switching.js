@@ -3,7 +3,7 @@ const root = ReactDOM.createRoot(rootElement);
 
 const trials = [];
 const results = [];
-const numTrials = 5;
+const numTrials = 40;
 const ISI = 1600;
 const stimDuration = 2600;
 
