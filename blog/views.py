@@ -45,7 +45,11 @@ def addDeadVote(request):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER')) 
 
 def twoback(request):
-    return render(request, 'twoback.html')
+    post = Post.objects.filter(title__contains='n-back')[0]
+    context = {
+        "bloglink": post.get_absolute_url,
+    }
+    return render(request, 'twoback.html', context)
 
 def gonogo(request):
     post = Post.objects.filter(title__contains='Go/no-go')[0]

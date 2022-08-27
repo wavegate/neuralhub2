@@ -221,8 +221,23 @@
   font-size: 64px;
 }
 
+.stim {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .goSignal {
   font-size: 98px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stim {
+  font-size: 64px;
   position: absolute;
   left: 50%;
   top: 50%;

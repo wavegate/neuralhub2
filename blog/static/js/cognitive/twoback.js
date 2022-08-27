@@ -4,9 +4,14 @@ const root = ReactDOM.createRoot(rootElement);
 const trials = [];
 const results = [];
 
-const stimDisplayTime = 800;
-const ISI = 600;
+const options = ["N", "B", "C", "Z", "D", "E"];
+const pickRandom = (array) => {
+  return Math.floor(Math.random() * array.length);
+};
 
+const percentTargets = 0.5;
+const stimDisplayTime = 1000;
+const ISI = 800;
 const numTrials = 60;
 
 function GetZPercent(z) {
@@ -39,51 +44,43 @@ function GetZPercent(z) {
   return sum;
 }
 
-for (let i = 0; i < numTrials; i++) {
-  const dice = Math.random();
-  if (dice < 0.25) {
+trials.push({
+  index: 0,
+  shape: options[pickRandom(options)],
+  correctResponse: null,
+});
+trials.push({
+  index: 1,
+  shape: options[pickRandom(options)],
+  correctResponse: null,
+});
+for (let i = 2; i < numTrials + 2; i++) {
+  if (Math.random() < percentTargets) {
     trials.push({
       index: i,
-      shape: "RED",
-      correctResponse: "R",
-      color: "redCol",
-      congruent: true,
-    });
-  } else if (dice >= 0.25 && dice < 0.5) {
-    trials.push({
-      index: i,
-      shape: "RED",
-      correctResponse: "G",
-      color: "greenCol",
-      congruent: false,
-    });
-  } else if (dice >= 0.5 && dice < 0.75) {
-    trials.push({
-      index: i,
-      shape: "GREEN",
-      correctResponse: "R",
-      color: "redCol",
-      congruent: false,
+      shape: trials[i - 2].shape,
+      correctResponse: "Y",
     });
   } else {
+    const newOptions = [...options];
+    const index = newOptions.indexOf(trials[i - 2].shape);
+    if (index > -1) {
+      newOptions.splice(index, 1);
+    }
     trials.push({
       index: i,
-      shape: "GREEN",
-      correctResponse: "G",
-      color: "greenCol",
-      congruent: true,
+      shape: newOptions[pickRandom(newOptions)],
+      correctResponse: null,
     });
   }
 }
-console.log(trials);
 
+console.log(trials);
 let accuracy;
 let avgRT;
-let congruentRT;
-let incongruentRT;
 
 const submitData = async () => {
-  let data = { name: "stroop", trials: trials, results: results };
+  let data = { name: "twoback", trials: trials, results: results };
   fetch("/add_experiment", {
     method: "POST",
     headers: {
@@ -98,19 +95,15 @@ function Display() {
   const [index, setIndex] = React.useState(-1);
   const [target, setTarget] = React.useState(
     <div className="message">
-      <h2>Welcome to the Stroop task!</h2>
+      <h2>Welcome to the 2-back task!</h2>
+      <p>In this task, you will be presented with a sequence of letters.</p>
       <p>
-        In this task, you will be presented with a word in either the color
-        green or red.
-      </p>
-      <p>
-        Click the GREEN button below whenever you see a word in the COLOR green
-        (ignore the text!). Click the RED button when you see a word in the
-        COLOR red.
+        Your goal is to click the "YES" button below only when the letter
+        presented is the same letter as that presented TWO letters previous.
       </p>
       <p>
         Respond as quickly and accurately as possible. Total experiment time: ~2
-        minutes. Please click a button below to start.
+        minutes.
       </p>
     </div>
   );
@@ -120,7 +113,6 @@ function Display() {
     responseTime: null,
     permitResponse: false,
   });
-  const [chart, setChart] = React.useState();
 
   const handleClick = ({ target }) => {
     if (index == -1) {
@@ -131,6 +123,11 @@ function Display() {
         responseTime: new Date() - trial.startTime,
         permitResponse: false,
       });
+      if (target.id == trials[index].correctResponse) {
+        document.getElementsByClassName("stim")[0].classList.add("green");
+      } else {
+        document.getElementsByClassName("stim")[0].classList.add("red");
+      }
     }
   };
 
@@ -145,36 +142,18 @@ function Display() {
     if (index > -1 && index < trials.length) {
       setTarget();
       const timeoutID = setTimeout(() => {
-        setTarget(
-          <div className="stim">
-            <span className={trials[index].color}>{trials[index].shape}</span>
-          </div>
-        );
+        setTarget(<div className="stim">{trials[index].shape}</div>);
       }, ISI);
       return () => clearTimeout(timeoutID);
     }
     if (index >= trials.length) {
       console.log(results);
       const correctTrials = [];
-      let congruentRTTotal = 0;
-      let congruentRTCount = 0;
-      let incongruentRTTotal = 0;
-      let incongruentRTCount = 0;
       for (let i = 0; i < results.length; i++) {
         if (trials[i].correctResponse == results[i].response) {
           correctTrials.push(results[i]);
-          if (trials[i].congruent && results[i].responseTime) {
-            congruentRTTotal += results[i].responseTime;
-            congruentRTCount++;
-          }
-          if (!trials[i].congruent && results[i].response) {
-            incongruentRTTotal += results[i].responseTime;
-            incongruentRTCount++;
-          }
         }
       }
-      congruentRT = congruentRTTotal / congruentRTCount;
-      incongruentRT = incongruentRTTotal / incongruentRTCount;
       accuracy = correctTrials.length / results.length;
       let relevantTrials = 0;
       let totalRT = 0;
@@ -187,18 +166,18 @@ function Display() {
       avgRT = totalRT / relevantTrials;
       let avgAccuracy = 0.8;
       let accuracySD = 0.1;
-      let averageRT = 600;
-      let rtSD = 100;
+      let averageRT = 700;
+      let rtSD = 200;
       let accuracyScore = GetZPercent((accuracy - avgAccuracy) / accuracySD);
       let RTscore = GetZPercent((averageRT - avgRT) / rtSD);
       let score = (accuracyScore + RTscore) / 2;
       score = (score * 100).toFixed(0);
       if (score) {
-        localStorage.setItem("stroop", score);
+        localStorage.setItem("twoback", score);
         submitData();
       }
       setTarget(
-        <div className="messageTop">
+        <div className="message">
           <h2>Congratulations! You have completed the task.</h2>
           <p>
             You hit {correctTrials.length} out of {trials.length} targets. Your
@@ -214,14 +193,8 @@ function Display() {
           <i className="fa-solid fa-xmark"></i>
         </a>
       );
-      setChart(
-        <div className="chartContainer">
-          <canvas id="myChart"></canvas>
-        </div>
-      );
     }
   }, [index]);
-
   React.useEffect(() => {
     if (target && index > -1 && index < trials.length) {
       setTrial({
@@ -239,56 +212,18 @@ function Display() {
 
   const [button, setButton] = React.useState(
     <React.Fragment>
-      <button id="G" className="button" onClick={handleClick}>
-        GREEN
-      </button>
-      <button id="R" className="button" onClick={handleClick}>
-        RED
+      <button id="Y" className="button" onClick={handleClick}>
+        YES
       </button>
     </React.Fragment>
   );
 
   React.useEffect(() => {
-    if (chart) {
-      const cht = document.getElementById("myChart");
-
-      const myChart = new Chart(cht, {
-        type: "bar",
-        data: {
-          labels: ["Congruent", "Incongruent"],
-          datasets: [
-            {
-              label: "Reaction time",
-              data: [congruentRT, incongruentRT],
-              backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(255, 159, 64, 0.2)",
-              ],
-              borderColor: ["rgb(255, 99, 132)", "rgb(255, 159, 64)"],
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-    }
-  }, [chart]);
-
-  React.useEffect(() => {
     if (index > -1 && index < trials.length) {
       setButton(
         <React.Fragment>
-          <button id="G" className="button" onClick={handleClick}>
-            GREEN
-          </button>
-          <button id="R" className="button" onClick={handleClick}>
-            RED
+          <button id="Y" className="button" onClick={handleClick}>
+            YES
           </button>
         </React.Fragment>
       );
@@ -298,7 +233,6 @@ function Display() {
   return (
     <React.Fragment>
       {target}
-      {chart}
       <div className="buttons">{button}</div>
     </React.Fragment>
   );
