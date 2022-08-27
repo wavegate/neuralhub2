@@ -4,10 +4,10 @@ const root = ReactDOM.createRoot(rootElement);
 const trials = [];
 const results = [];
 
-const stimDisplayTime = 1000;
-const ISI = 1000;
+const stimDisplayTime = 800;
+const ISI = 600;
 
-const numTrials = 30;
+const numTrials = 60;
 
 function GetZPercent(z) {
   //z == number of standard deviations from the mean
@@ -47,6 +47,7 @@ for (let i = 0; i < numTrials; i++) {
       shape: "RED",
       correctResponse: "R",
       color: "redCol",
+      congruent: true,
     });
   } else if (dice >= 0.25 && dice < 0.5) {
     trials.push({
@@ -54,6 +55,7 @@ for (let i = 0; i < numTrials; i++) {
       shape: "RED",
       correctResponse: "G",
       color: "greenCol",
+      congruent: false,
     });
   } else if (dice >= 0.5 && dice < 0.75) {
     trials.push({
@@ -61,6 +63,7 @@ for (let i = 0; i < numTrials; i++) {
       shape: "GREEN",
       correctResponse: "R",
       color: "redCol",
+      congruent: false,
     });
   } else {
     trials.push({
@@ -68,6 +71,7 @@ for (let i = 0; i < numTrials; i++) {
       shape: "GREEN",
       correctResponse: "G",
       color: "greenCol",
+      congruent: true,
     });
   }
 }
@@ -75,6 +79,8 @@ console.log(trials);
 
 let accuracy;
 let avgRT;
+let congruentRT;
+let incongruentRT;
 
 const submitData = async () => {
   let data = { name: "stroop", trials: trials, results: results };
@@ -103,7 +109,7 @@ function Display() {
         COLOR red.
       </p>
       <p>
-        Respond as quickly and accurately as possible. Total experiment time: ~3
+        Respond as quickly and accurately as possible. Total experiment time: ~2
         minutes. Please click a button below to start.
       </p>
     </div>
@@ -114,6 +120,7 @@ function Display() {
     responseTime: null,
     permitResponse: false,
   });
+  const [chart, setChart] = React.useState();
 
   const handleClick = ({ target }) => {
     if (index == -1) {
@@ -149,11 +156,25 @@ function Display() {
     if (index >= trials.length) {
       console.log(results);
       const correctTrials = [];
+      let congruentRTTotal = 0;
+      let congruentRTCount = 0;
+      let incongruentRTTotal = 0;
+      let incongruentRTCount = 0;
       for (let i = 0; i < results.length; i++) {
         if (trials[i].correctResponse == results[i].response) {
           correctTrials.push(results[i]);
+          if (trials[i].congruent && results[i].responseTime) {
+            congruentRTTotal += results[i].responseTime;
+            congruentRTCount++;
+          }
+          if (!trials[i].congruent && results[i].response) {
+            incongruentRTTotal += results[i].responseTime;
+            incongruentRTCount++;
+          }
         }
       }
+      congruentRT = congruentRTTotal / congruentRTCount;
+      incongruentRT = incongruentRTTotal / incongruentRTCount;
       accuracy = correctTrials.length / results.length;
       let relevantTrials = 0;
       let totalRT = 0;
@@ -164,7 +185,6 @@ function Display() {
         }
       }
       avgRT = totalRT / relevantTrials;
-
       let avgAccuracy = 0.8;
       let accuracySD = 0.1;
       let averageRT = 600;
@@ -178,7 +198,7 @@ function Display() {
         submitData();
       }
       setTarget(
-        <div className="message">
+        <div className="messageTop">
           <h2>Congratulations! You have completed the task.</h2>
           <p>
             You hit {correctTrials.length} out of {trials.length} targets. Your
@@ -193,6 +213,11 @@ function Display() {
         <a className="button" href={bloglink}>
           <i className="fa-solid fa-xmark"></i>
         </a>
+      );
+      setChart(
+        <div className="chartContainer">
+          <canvas id="myChart"></canvas>
+        </div>
       );
     }
   }, [index]);
@@ -224,6 +249,38 @@ function Display() {
   );
 
   React.useEffect(() => {
+    if (chart) {
+      const cht = document.getElementById("myChart");
+
+      const myChart = new Chart(cht, {
+        type: "bar",
+        data: {
+          labels: ["Congruent", "Incongruent"],
+          datasets: [
+            {
+              label: "Reaction time",
+              data: [congruentRT, incongruentRT],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: ["rgb(255, 99, 132)", "rgb(255, 159, 64)"],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    }
+  }, [chart]);
+
+  React.useEffect(() => {
     if (index > -1 && index < trials.length) {
       setButton(
         <React.Fragment>
@@ -241,6 +298,7 @@ function Display() {
   return (
     <React.Fragment>
       {target}
+      {chart}
       <div className="buttons">{button}</div>
     </React.Fragment>
   );
