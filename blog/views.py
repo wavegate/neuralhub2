@@ -48,7 +48,11 @@ def twoback(request):
     return render(request, 'twoback.html')
 
 def gonogo(request):
-    return render(request, 'gonogo.html')
+    post = Post.objects.filter(title__contains='Go/no-go')[0]
+    context = {
+        "bloglink": post.get_absolute_url,
+    }
+    return render(request, 'gonogo.html', context)
 
 def stroop(request):
     post = Post.objects.filter(title__contains='Stroop')[0]

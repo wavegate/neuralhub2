@@ -1,25 +1,14 @@
-let trials = [];
-let resultTrials = [];
-const options = ["GO", "STOP"];
-const pickRandom = (array) => {
-  return Math.floor(Math.random() * array.length);
-};
-let sequence = [];
-let responseTimes = [];
-let responses = [];
-const percentTargets = 0.8;
-const maxStimDisplayTime = 1600;
-const ISI = 500;
-const maxRT = 1600;
-const minRT = 100;
-// const numTrials = 156;
-// const numBlocks = 2;
-const numTrials = 20;
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
 
-const accuracyMean = 0.95;
-const accuracySD = 0.02;
-const RTMean = 500;
-const RTSD = 200;
+const trials = [];
+const results = [];
+
+const stimDisplayTime = 500;
+const ISI = 500;
+const percentTargets = 0.9;
+
+const numTrials = 100;
 
 function GetZPercent(z) {
   //z == number of standard deviations from the mean
@@ -51,163 +40,195 @@ function GetZPercent(z) {
   return sum;
 }
 
-function createTrials() {
-  for (let i = 0; i < numTrials; i++) {
-    if (Math.random() < percentTargets) {
-      trials.push({
-        index: i,
-        shape: "GO",
-        correctResponse: "Y",
-      });
-    } else {
-      trials.push({
-        index: i,
-        shape: "STOP",
-        correctResponse: "N",
-      });
-    }
+for (let i = 0; i < numTrials; i++) {
+  if (Math.random() < percentTargets) {
+    trials.push({
+      index: i,
+      shape: "GO",
+      correctResponse: "Y",
+    });
+  } else {
+    trials.push({
+      index: i,
+      shape: "STOP",
+      correctResponse: null,
+    });
   }
 }
 
-createTrials();
 console.log(trials);
-let clicked = false;
-let responseTime;
 
-const Target = (props) => {
+let accuracy;
+let avgRT;
+
+const submitData = async () => {
+  let data = { name: "stroop", trials: trials, results: results };
+  fetch("/add_experiment", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": csrftoken,
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+function Display() {
   const [index, setIndex] = React.useState(-1);
-  const [shape, setShape] = React.useState("+");
-  const [response, setResponse] = React.useState(null);
-  const [startTime, setStartTime] = React.useState(new Date());
+  const [target, setTarget] = React.useState(
+    <div className="message">
+      <h2>Welcome to the Go/no-go task!</h2>
+      <p>
+        In this task, you will be presented with either a GO signal or a STOP
+        signal.
+      </p>
+      <p>
+        Click the GO button whenever you see a GO signal but do NOT click
+        anything if you see a STOP signal.
+      </p>
+      <p>
+        Respond as quickly and accurately as possible. Total experiment time: ~2
+        minutes. Please click a button below to start.
+      </p>
+    </div>
+  );
+  const [trial, setTrial] = React.useState({
+    response: null,
+    startTime: null,
+    responseTime: null,
+    permitResponse: false,
+  });
 
-  React.useEffect(() => {
-    if (index == -1) {
-      setShape(
-        <div className="message">
-          <h1>Welcome to the go/no-go task.</h1>
-          <p>
-            In this test, you will be presented with either a GO signal or a
-            STOP signal.
-          </p>
-          <p>
-            Your goal is to click the "YES" button below whenever you see a GO
-            signal but do NOT click anything if you see a STOP signal.
-          </p>
-          <img src={instructionsPath} />
-          <p>Respond as quickly as you can.</p>
-          <p>Please click the "YES" button to begin.</p>
-        </div>
-      );
-    } else {
-      if (index > 0) {
-        resultTrials.push({
-          index: index - 1,
-          response: response ? response : "N",
-          responseTime:
-            responseTime > minRT && responseTime < maxRT ? responseTime : null,
-        });
-      }
-      if (index < trials.length) {
-        setShape(trials[index].shape);
-        setStartTime(new Date());
-        setResponse(null);
-        clicked = false;
-        responseTime = null;
-        const intervalID = setInterval(() => {
-          setShape("+");
-        }, maxStimDisplayTime);
-        return () => clearInterval(intervalID);
-      } else {
-        console.log(resultTrials);
-        const correctTrials = [];
-        for (let i = 0; i < resultTrials.length; i++) {
-          if (resultTrials[i].response == trials[i].correctResponse) {
-            correctTrials.push(resultTrials[i]);
-          }
-        }
-        let accuracy;
-        let avgRT;
-        let score;
-        if (correctTrials.length > 0) {
-          accuracy = correctTrials.length / resultTrials.length;
-          let responseTimes = 0;
-          let relevantTrials = 0;
-          for (let trial of correctTrials) {
-            if (trial.responseTime) {
-              responseTimes += trial.responseTime;
-              relevantTrials++;
-            }
-          }
-          avgRT = responseTimes / relevantTrials;
-          console.log(`accuracy: ${accuracy}`);
-          console.log(`avgRT: ${avgRT}`);
-          const accuracyZ = (accuracy - accuracyMean) / accuracySD;
-          const RTZ = (RTMean - avgRT) / RTSD;
-          const accuracyScore = GetZPercent(accuracyZ);
-          const RTScore = GetZPercent(RTZ);
-          console.log(accuracyScore);
-          console.log(RTScore);
-          score = (accuracyScore * 0.5 + RTScore * 0.5) * 100;
-          localStorage.setItem("gonogo", score);
-          console.log("final score: " + localStorage.getItem("gonogo"));
-        } else {
-          accuracy = 0;
-          avgRT = null;
-        }
-        setShape(
-          <div className="message">
-            <h1>Congratulations, you have completed the test.</h1>
-            <p>
-              Your accuracy was{" "}
-              {(accuracy * 100).toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-              })}
-              %
-              {avgRT > 0
-                ? ` and your average reaction time
-                      was ${avgRT.toFixed(0)} milliseconds`
-                : ""}
-              . This puts your inhibitory control at the {score.toFixed(0)}
-              th percentile!
-            </p>
-            <p>You are free to close this window.</p>
-          </div>
-        );
-      }
-    }
-  }, [index]);
-  React.useEffect(() => {
-    if (shape === "+") {
-      const intervalID = setInterval(() => {
-        setIndex((prev) => prev + 1);
-      }, ISI);
-      return () => clearInterval(intervalID);
-    }
-  }, [shape]);
   const handleClick = ({ target }) => {
     if (index == -1) {
-      setIndex(0);
-    } else if (!clicked) {
-      setResponse(target.id);
-      const endTime = new Date();
-      clicked = true;
-      responseTime = endTime - startTime;
-      setShape("+");
+      setIndex((prev) => prev + 1);
+    } else if (index <= trials.length && trial.permitResponse) {
+      setTrial({
+        response: target.id,
+        responseTime: new Date() - trial.startTime,
+        permitResponse: false,
+      });
+      setIndex((prev) => prev + 1);
     }
   };
 
-  return (
+  React.useEffect(() => {
+    if (index > 0) {
+      results.push({
+        index: index - 1,
+        response: trial.response ? trial.response : null,
+        responseTime: trial.response ? trial.responseTime : null,
+      });
+    }
+    if (index > -1 && index < trials.length) {
+      setTarget();
+      const timeoutID = setTimeout(() => {
+        setTarget(<div className="goSignal">{trials[index].shape}</div>);
+      }, ISI);
+      return () => clearTimeout(timeoutID);
+    }
+    if (index >= trials.length) {
+      console.log(results);
+      const correctTrials = [];
+      const stopTrials = [];
+      for (let i = 0; i < results.length; i++) {
+        if (trials[i].correctResponse == results[i].response) {
+          correctTrials.push(results[i]);
+        }
+        if (trials[i].correctResponse == null) {
+          stopTrials.push(results[i]);
+        }
+      }
+      const missedStops = stopTrials.filter((trial) => trial.response).length;
+      const missedPercentage = 1 - missedStops / stopTrials.length;
+      let avgMissed = 0.8;
+      let missedSD = 0.1;
+      let missedScore = GetZPercent((missedPercentage - avgMissed) / missedSD);
+      accuracy = correctTrials.length / results.length;
+      let relevantTrials = 0;
+      let totalRT = 0;
+      for (let i = 0; i < correctTrials.length; i++) {
+        if (correctTrials[i].responseTime) {
+          totalRT += correctTrials[i].responseTime;
+          relevantTrials++;
+        }
+      }
+      avgRT = totalRT / relevantTrials;
+      let avgAccuracy = 0.8;
+      let accuracySD = 0.1;
+      let averageRT = 600;
+      let rtSD = 100;
+      let accuracyScore = GetZPercent((accuracy - avgAccuracy) / accuracySD);
+      let RTscore = GetZPercent((averageRT - avgRT) / rtSD);
+      let score = ((accuracyScore + RTscore) / 2 + missedScore) / 2;
+      score = (score * 100).toFixed(0);
+      if (score) {
+        localStorage.setItem("stroop", score);
+        submitData();
+      }
+      setTarget(
+        <div className="message">
+          <h2>Congratulations! You have completed the task.</h2>
+          <p>
+            You hit {correctTrials.length} out of {trials.length} targets. Your
+            accuracy was {(accuracy * 100).toFixed(0)}% and your average
+            reaction time was {avgRT.toFixed(0)} milliseconds. You correctly
+            stopped yourself {(missedPercentage * 100).toFixed(0)}% of the time.
+            This gives you a score of <strong>{score}</strong>!
+          </p>
+          <p>Feel free to close this window.</p>
+        </div>
+      );
+      setButton(
+        <a className="button" href={bloglink}>
+          <i className="fa-solid fa-xmark"></i>
+        </a>
+      );
+    }
+  }, [index]);
+
+  React.useEffect(() => {
+    if (target && index > -1 && index < trials.length) {
+      setTrial({
+        response: null,
+        setResponseTime: null,
+        permitResponse: true,
+        startTime: new Date(),
+      });
+      const timeoutID = setTimeout(() => {
+        setIndex((prev) => prev + 1);
+      }, stimDisplayTime);
+      return () => clearTimeout(timeoutID);
+    }
+  }, [target]);
+
+  const [button, setButton] = React.useState(
     <React.Fragment>
-      <div className="target">{shape}</div>
       <button id="Y" className="button" onClick={handleClick}>
-        YES
+        GO
       </button>
-      {/* <button id="noButton" className="button" onClick={handleClick}>
-        NO
-      </button> */}
     </React.Fragment>
   );
-};
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Target />);
+  React.useEffect(() => {
+    if (index > -1 && index < trials.length) {
+      setButton(
+        <React.Fragment>
+          <button id="Y" className="button" onClick={handleClick}>
+            GO
+          </button>
+        </React.Fragment>
+      );
+    }
+  }, [trial]);
+
+  return (
+    <React.Fragment>
+      {target}
+
+      <div className="buttons">{button}</div>
+    </React.Fragment>
+  );
+}
+
+root.render(<Display />);
