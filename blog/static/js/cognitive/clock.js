@@ -2,7 +2,7 @@ const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 let trials = [];
-let totalPosition = 100;
+let totalPosition = 20;
 const numTrials = 90;
 const results = [];
 const ISI = 1000;
@@ -223,6 +223,7 @@ function Display() {
       score = (score * 100).toFixed(0);
       if (score) {
         localStorage.setItem("clock", score);
+        submitData();
       }
       setTarget(
         <div className="message">

@@ -78,8 +78,8 @@ function Display() {
         rotated one.
       </p>
       <p>
-        Respond as quickly and accurately as possible. The total experiment time
-        is ~3 minutes. Please click a button below to start.
+        Respond as quickly and accurately as possible. Total experiment time: ~2
+        minutes. Please click a button below to start.
       </p>
     </div>
   );
@@ -221,6 +221,7 @@ function Display() {
       score = (score * 100).toFixed(0);
       if (score) {
         localStorage.setItem("rotation", score);
+        submitData();
       }
       setTarget(
         <div className="message">
