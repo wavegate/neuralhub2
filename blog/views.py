@@ -61,7 +61,11 @@ def subitizing(request):
     return render(request, 'subitizing.html', context)
     
 def visual_search(request):
-    return render(request, 'visual_search.html')
+    post = Post.objects.filter(title__contains='Visual Search')[0]
+    context = {
+        "bloglink": post.get_absolute_url,
+    }
+    return render(request, 'visual_search.html', context)
 
 def task_switching(request):
     return render(request, 'task_switching.html')

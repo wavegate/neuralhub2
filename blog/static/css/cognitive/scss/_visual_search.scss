@@ -1,0 +1,16 @@
+@use "breakpoints";
+
+.canvasContainer {
+  width: 240px;
+  height: 240px;
+  position: absolute;
+}
+
+#invisButton {
+  all: unset;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  transform: translate(-50%, -50%);
+  background: transparent;
+}
