@@ -2,7 +2,7 @@ const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 let trials = [];
-const numTrials = 90;
+const numTrials = 70;
 for (let i = 0; i < numTrials; i++) {
   const dice = Math.floor(Math.random() * 9 + 1);
   trials.push({
@@ -28,7 +28,7 @@ const submitData = async () => {
 };
 
 let results = [];
-const stimDisplayTime = 1000;
+const stimDisplayTime = 1400;
 const ISI = 1000;
 const accuracyByNumber = [];
 
@@ -99,16 +99,18 @@ function Display() {
         permitResponse: false,
       });
       if (target.id == trials[index].correctResponse) {
-        const canvasContainer =
-          document.getElementsByClassName("canvasContainer");
-        if (canvasContainer.length > 0) {
-          canvasContainer[0].classList.add("green");
+        const canvasContainer__subitizing = document.getElementsByClassName(
+          "canvasContainer__subitizing"
+        );
+        if (canvasContainer__subitizing.length > 0) {
+          canvasContainer__subitizing[0].classList.add("green");
         }
       } else {
-        const canvasContainer =
-          document.getElementsByClassName("canvasContainer");
-        if (canvasContainer.length > 0) {
-          canvasContainer[0].classList.add("red");
+        const canvasContainer__subitizing = document.getElementsByClassName(
+          "canvasContainer__subitizing"
+        );
+        if (canvasContainer__subitizing.length > 0) {
+          canvasContainer__subitizing[0].classList.add("red");
         }
       }
     }
@@ -126,7 +128,7 @@ function Display() {
       setTarget();
       const timeoutID = setTimeout(() => {
         setTarget(
-          <div className="canvasContainer">
+          <div className="canvasContainer__subitizing">
             <canvas id="canvas"></canvas>
           </div>
         );
@@ -249,11 +251,12 @@ function Display() {
     if (target && index > -1 && index < trials.length) {
       setTrial({ permitResponse: true, startTime: new Date() });
       const canvas = document.getElementById("canvas");
-      const canvasContainer =
-        document.getElementsByClassName("canvasContainer")[0];
+      const canvasContainer__subitizing = document.getElementsByClassName(
+        "canvasContainer__subitizing"
+      )[0];
       if (canvas) {
-        canvas.width = canvasContainer.offsetWidth;
-        canvas.height = canvasContainer.offsetHeight;
+        canvas.width = canvasContainer__subitizing.offsetWidth;
+        canvas.height = canvasContainer__subitizing.offsetHeight;
         const ctx = canvas.getContext("2d");
         const numDots = trials[index].correctResponse;
 

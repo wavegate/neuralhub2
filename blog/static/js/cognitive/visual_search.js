@@ -178,7 +178,7 @@ function Display() {
   React.useEffect(() => {
     if (index > -1 && index < trials.length && trial.permitResponse) {
       setTarget(
-        <div className="canvasContainer">
+        <div className="canvasContainer__visual_search">
           <button id="invisButton" onClick={handleClick}></button>
           <canvas id="canvas"></canvas>
         </div>
@@ -189,12 +189,13 @@ function Display() {
   React.useEffect(() => {
     if (index > -1 && index < trials.length && target) {
       const canvas = document.getElementById("canvas");
-      const canvasContainer =
-        document.getElementsByClassName("canvasContainer")[0];
+      const canvasContainer__visual_search = document.getElementsByClassName(
+        "canvasContainer__visual_search"
+      )[0];
 
       if (canvas) {
-        canvas.width = canvasContainer.offsetWidth;
-        canvas.height = canvasContainer.offsetWidth;
+        canvas.width = canvasContainer__visual_search.offsetWidth;
+        canvas.height = canvasContainer__visual_search.offsetWidth;
         const ctx = canvas.getContext("2d");
 
         function drawCircle(x, y, color) {

@@ -68,7 +68,11 @@ def visual_search(request):
     return render(request, 'visual_search.html', context)
 
 def task_switching(request):
-    return render(request, 'task_switching.html')
+    post = Post.objects.filter(title__contains='Task Switching')[0]
+    context = {
+        "bloglink": post.get_absolute_url,
+    }
+    return render(request, 'task_switching.html', context)
 
 def posner(request):
     return render(request, 'posner.html')
