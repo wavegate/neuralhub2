@@ -864,14 +864,15 @@
   color: #9fafc1;
 }
 .postBody .canvasContainer {
-  height: 600px;
+  height: auto;
   width: 600px;
   align-self: center;
 }
 @media (max-width: 1200px) {
   .postBody .canvasContainer {
-    height: 380px;
+    height: auto;
     width: 380px;
+    max-width: 90%;
   }
 }
 .postBody #scene-container canvas {

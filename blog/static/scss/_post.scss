@@ -270,13 +270,14 @@
   }
 
   .canvasContainer {
-    height: 600px;
+    height: auto;
     width: 600px;
     align-self: center;
 
     @include breakpoints.sm {
-      height: 380px;
+      height: auto;
       width: 380px;
+      max-width: 90%;
     }
   }
 
