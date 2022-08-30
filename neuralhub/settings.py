@@ -170,5 +170,3 @@ CKEDITOR_CONFIGS = {
     'toolbar': 'full',
   },
 }
-
-APPEND_SLASH = True
