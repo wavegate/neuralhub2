@@ -1,0 +1,166 @@
+@use "breakpoints";
+@use "colors";
+
+.section__overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#fafafa, rgba(0, 0, 0, 0) 50%),
+    linear-gradient(rgba(0, 0, 0, 0) 50%, #fafafa),
+    url("https://compsciblog.s3.us-west-1.amazonaws.com/vector.jpg");
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+
+  z-index: 2;
+  gap: 24px;
+}
+
+.hero__title {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: center;
+
+  @include breakpoints.sm {
+    font-size: 48px;
+  }
+}
+
+.hero__info {
+  font-size: 36px;
+  font-weight: 400;
+  color: colors.$darkgrey;
+  text-align: center;
+
+  @include breakpoints.sm {
+    font-size: 24px;
+  }
+}
+
+.button {
+  width: 160px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  border-radius: 0.4rem;
+  border: 2px solid #3b4754;
+  color: black;
+  background: white;
+  background: colors.$highlight;
+  border: none;
+  box-shadow: 3px 3px 0 0 #3b4754;
+  font-weight: 600;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: translate(3px, 3px);
+    box-shadow: none;
+    transition: all 0.1s;
+  }
+
+  @include breakpoints.sm {
+    width: 140px;
+    height: 40px;
+  }
+}
+
+.mouseScroll {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid #879099;
+  border-radius: 25px;
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #3b4754;
+    animation: scroll 1.3s infinite;
+    border-radius: 4px;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 26px);
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 24px;
+  list-style-type: none;
+  font-size: 18px;
+
+  @include breakpoints.med {
+    gap: 12px;
+  }
+}
+
+.socialSide {
+  position: absolute;
+  left: 40px;
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  // gap: 8px;
+  list-style-type: none;
+  font-size: 26px;
+  z-index: 5;
+  color: #505b66;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+
+  @include breakpoints.sm {
+    left: 20px;
+    bottom: 20px;
+    font-size: 18px;
+  }
+}
+
+.socialItem {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoints.sm {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.socialItem:hover {
+  background: colors.$highlight-light;
+  cursor: pointer;
+  transition: all 0.2s;
+}

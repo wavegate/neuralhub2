@@ -27,6 +27,9 @@ def about(request):
 def random_digits():
     return "%0.12d" % random.randint(0, 99999999999)
 
+def portfolio(request):
+    return render(request, 'portfolio.html')
+
 def addVote(request, pk):
     voteoption = VoteOption.objects.get(id=pk)
     voteoption.counter = voteoption.counter + 1

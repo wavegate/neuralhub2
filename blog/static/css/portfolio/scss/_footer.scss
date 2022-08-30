@@ -1,0 +1,49 @@
+@use "breakpoints";
+@use "colors";
+
+.topSection {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10vw;
+  border-top: 2px solid #eef1f5;
+  gap: 16px;
+
+  @include breakpoints.sm {
+    height: 80px;
+  }
+}
+
+.logo--footer {
+  @include breakpoints.lg {
+    display: none;
+  }
+}
+
+.copyright {
+  color: #3b4754;
+  font-size: 18px;
+  font-weight: 300;
+
+  @include breakpoints.sm {
+    font-size: 16px;
+  }
+}
+
+.footer__list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  color: #3b4754;
+  font-weight: 600;
+
+  @include breakpoints.lg {
+    display: none;
+  }
+}
+
+.footer__listItem:hover {
+  color: colors.$links;
+}

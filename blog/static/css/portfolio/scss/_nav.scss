@@ -1,0 +1,158 @@
+@use "breakpoints";
+@use "colors";
+.nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3vh 10vw;
+  // border-bottom: 2px solid #eef1f5;
+  position: fixed;
+  width: 100%;
+  // background: linear-gradient(
+  //   to top,
+  //   rgba(255, 0, 0, 0) 0%,
+  //   rgba(255, 255, 255, 1) 60%
+  // );
+  background: white;
+  box-shadow: 0px 0px 300px rgba(0, 0, 0, 0.2);
+
+  @include breakpoints.sm {
+    height: 40px;
+    padding: 0px 5vw;
+  }
+
+  z-index: 5;
+}
+
+.logo {
+  font-size: 20px;
+  background-size: cover;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  &:hover {
+    background: colors.$highlight-light;
+    color: #3b4754;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  @include breakpoints.med {
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  min-height: 100vh;
+  width: 80vw;
+  background: white;
+  top: 0px;
+  z-index: 10;
+  right: 0px;
+  padding-top: 64px;
+}
+
+.nav__list {
+  list-style-type: none;
+  display: flex;
+  // align-items: center;
+  gap: 2vw;
+  color: #3b4754;
+  font-weight: 600;
+  align-items: center;
+
+  @include breakpoints.sm {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    font-weight: 500;
+
+    &.nav__list--mobile {
+      display: flex;
+    }
+  }
+}
+
+#closeButton {
+  font-size: 30px;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+}
+
+#burgerButton:hover,
+#closeButton:hover {
+  cursor: pointer;
+}
+
+.nav__listItem > a {
+  all: unset;
+}
+
+.nav__listItem {
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  &:hover {
+    background: colors.$highlight-light;
+    color: #3b4754;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+}
+// .nav__listItem > a:hover {
+//   cursor: pointer;
+//   color: colors.$links;
+// }
+
+.searchContainer {
+  @include breakpoints.sm {
+    display: none;
+    margin-top: 24px;
+    align-self: center;
+
+    &.searchContainer--mobile {
+      display: block;
+    }
+  }
+  position: relative;
+}
+
+.overlay {
+  background: rgb(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  display: none;
+}
+
+#burgerButton {
+  display: none;
+  @include breakpoints.sm {
+    display: block;
+    font-size: 24px;
+  }
+}
+
+.show {
+  display: flex;
+}
+
+.resume {
+  padding: 6px 12px;
+  background: colors.$highlight;
+  border-radius: 6px;
+  &:hover {
+    cursor: pointer;
+  }
+  a:hover {
+    color: #3b4754;
+  }
+}

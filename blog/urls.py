@@ -2,7 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-   # path('', views.PostListView.as_view(), name='posts'),
    path('', views.index, name='index'),
    path('about', views.about, name='about'),
    path('create', views.PostCreateView.as_view(), name='post-create'),
@@ -14,7 +13,6 @@ urlpatterns = [
    path('subscribe', views.subscribe, name='subscribe'),
    path('subscribe/confirm/', views.confirm_subscription, name='confirm-subscription'),
    path('subscribe/delete/', views.delete_subscription, name='delete-subscription'),
-   # path('index', views.index, name='index'),
    path('confirm/', views.confirm_subscription, name='confirm-subscription'),
    path('topics', views.topics, name='topics'),
    path('search', views.search, name='search'),
@@ -30,4 +28,5 @@ urlpatterns = [
    path('rotation', views.rotation, name='rotation'),
    path('clock', views.clock, name='clock'),
    path('add_experiment', views.add_experiment, name='add_experiment'),
+   path('portfolio', views.portfolio, name='portfolio'),
 ]

@@ -1,0 +1,128 @@
+@use "breakpoints";
+@use "colors";
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+
+  @include breakpoints.sm {
+    gap: 24px;
+  }
+}
+
+#contactButton {
+  @include breakpoints.sm {
+    display: none;
+  }
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 76px;
+
+  @include breakpoints.sm {
+    grid-template-columns: auto;
+    gap: 24px;
+  }
+}
+
+.bighead {
+  max-width: 200px;
+}
+
+.section__heading {
+  text-transform: uppercase;
+  font-size: 44px;
+  letter-spacing: 3px;
+  position: relative;
+
+  @include breakpoints.sm {
+    font-size: 32px;
+  }
+}
+
+.section__heading::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 7px;
+  background: colors.$highlight;
+  transform: skew(-18deg) translateX(-50%);
+  left: 50%;
+  bottom: 0px;
+  z-index: -1;
+}
+
+.about__info {
+  font-size: 18px;
+  p {
+    line-height: 1.5em;
+  }
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  color: colors.$darkgrey;
+
+  @include breakpoints.sm {
+    font-size: 16px;
+  }
+}
+
+.about__images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.about__skills {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+
+  @include breakpoints.sm {
+    gap: 16px;
+  }
+}
+
+.skillIcon {
+  max-height: 50px;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.2));
+  @include breakpoints.sm {
+    max-height: 30px;
+  }
+}
+
+.skillBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: colors.$darkgrey;
+  font-size: 18px;
+
+  @include breakpoints.sm {
+    font-size: 16px;
+    gap: 8px;
+  }
+}

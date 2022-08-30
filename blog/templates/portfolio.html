@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <title>Frank Lee | Web Developer</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/portfolio/style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="favicon.ico"/>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <nav class="nav">
+        <a href="#home" class="logo">Frank Lee</a>
+        <ul class="nav__list">
+          <li class="nav__listItem"><a href="#home">Home</a></li>
+          <li class="nav__listItem"><a href="#about">About</a></li>
+          <li class="nav__listItem"><a href="#projects">Projects</a></li>
+          <li class="nav__listItem"><a href="#contact">Contact</a></li>
+          <li class="nav__listItem resume"><a href="#resume">Resume</a></li>
+        </ul>
+      <i class="fas fa-bars" id="burgerButton"></i>
+    </nav>
+    <nav class="mobileNav">
+        <i class="fa-solid fa-xmark" id="closeButton"></i>
+        <ul class="nav__list nav__list--mobile">
+          <li class="nav__listItem"><a href="#home">Home</a></li>
+          <li class="nav__listItem"><a href="#about">About</a></li>
+          <li class="nav__listItem"><a href="#projects">Projects</a></li>
+          <li class="nav__listItem"><a href="#contact">Contact</a></li>
+          <li class="nav__listItem resume"><a href="#resume">Resume</a></li>
+          </ul>
+          </div>
+    </nav>
+    <section class="section"  id="home">
+      <div class="section__overlay"></div>
+        <div class="hero__text">
+            <h1 class="hero__title">Frank Lee</h1>
+            <p class="hero__info">Full-Stack Web Developer</p>
+            <a class="button" href="#projects">Projects</a>
+            <div class="mouseScroll"></div>
+        </div>
+        <ul class="socialSide">
+          <li class="socialItem"><a href="https://github.com/wavegate" title="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+          <li class="socialItem"><a href="https://www.linkedin.com/in/frank-lee-5b4799211/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+    </section>
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section__heading">About me</h2>
+        <div class="about__grid">
+          <div class="about__info">
+            <p>I'm a <strong>Full-stack Web Developer</strong> open to Job opportunities. I am based in the <strong>SF Bay Area</strong>, and am doing an online <strong>Master's in Computer Science</strong> at Georgia Tech. I am also a medical graduate and ex-biomedical engineer.</p>
+            <a href="#contact" class="button" id="contactButton">Contact</a>
+          </div>
+          <div class="about__images">
+            <!-- <img src="img/bighead.svg" class="bighead"> -->
+            <div class="about__skills">
+              <div class="skillBox">
+                <img src="https://compsciblog.s3.us-west-1.amazonaws.com/html-5.svg" class="skillIcon" alt="html-5" title="html-5">
+                <p>HTML</p>
+              </div>
+              <div class="skillBox">
+              <img src="https://compsciblog.s3.us-west-1.amazonaws.com/css-3.svg" class="skillIcon" alt="css-3" title="css-3">
+              <p>CSS</p>
+            </div>
+              <div class="skillBox">
+              <img src="https://compsciblog.s3.us-west-1.amazonaws.com/sass.svg" class="skillIcon" alt="sass" title="sass">
+              <p>SASS</p>
+            </div>
+              <div class="skillBox">
+              <img src="https://compsciblog.s3.us-west-1.amazonaws.com/javascript.svg" class="skillIcon" alt="javascript" title="javascript">
+              <p>JavaScript</p>
+            </div>
+              <div class="skillBox">
+              <img src="https://compsciblog.s3.us-west-1.amazonaws.com/react.svg" class="skillIcon" alt="react" title="react">
+              <p>React</p>
+            </div>
+              <div class="skillBox">
+              <img src="https://compsciblog.s3.us-west-1.amazonaws.com/python.svg" class="skillIcon" alt="python" title="python">
+              <p>Python</p>
+            </div>
+              <div class="skillBox">
+              <img src="https://compsciblog.s3.us-west-1.amazonaws.com/django-icon.svg" class="skillIcon" alt="django" title="django">
+              <p>Django</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section__heading">Projects</h2>
+        <div class="cards">
+        <div class="card">
+          <video muted controls loop class="card__image">
+            <source src="https://compsciblog.s3.us-west-1.amazonaws.com/blog.webm"
+                    type="video/webm">
+            <img class="card__image" src="https://compsciblog.s3.us-west-1.amazonaws.com/blog.png">
+        
+            Sorry, your browser doesn't support embedded videos.
+        </video>
+          <div class="card__info">
+            <h3 class="card__title">CompSci Blog</h3>
+            <p>Blog about computer science with users, categories, search, posts, comments, email subscription, SEO, and social media integration. Built with Django, PostgreSQL, HTML/CSS/JS. Various snippets and experiments built with React, Three, D3, Chart, Prism, etc.</p>
+            <div class="links">
+              <a href="https://compsciblog.herokuapp.com/" target="_blank"><button class="smallButton" title="Visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+              <a href="https://github.com/wavegate/neuralhub2" target="_blank"><button class="smallButton" title="Github"><i class="fa-brands fa-github"></i></button></a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <video muted controls loop class="card__image">
+            <source src="https://compsciblog.s3.us-west-1.amazonaws.com/match.webm"
+                    type="video/webm">
+                    <img class="card__image" src="https://compsciblog.s3.us-west-1.amazonaws.com/match.png">
+        
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+          <div class="card__info">
+            <h3 class="card__title">Residency Match</h3>
+            <p>A site for medical residency applicants to share interview dates, discuss interview experiences, chat, and create Q&A threads. Built with Flask, PostgreSQL, and Paper UI.</p>
+            <div class="links">
+              <a href="https://match0912-staging.herokuapp.com/" target="_blank"><button class="smallButton" title="Visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+              <a href="https://github.com/wavegate/match" target="_blank"><button class="smallButton" title="Github"><i class="fa-brands fa-github"></i></button></a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card__image" src="cognition.gif">
+          <div class="card__info">
+            <h3 class="card__title">Cognitive Testing System</h3>
+            <p>Collection of online psychology experiments built with React (integrated into blog).</p>
+            <div class="links">
+              <a href="https://compsciblog.herokuapp.com/27" target="_blank"><button class="smallButton" title="Visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+              <a href="https://github.com/wavegate/neuralhub2/tree/main/blog/static/js/cognitive" target="_blank"><button class="smallButton" title="Github"><i class="fa-brands fa-github"></i></button></a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card__image" src="https://compsciblog.s3.us-west-1.amazonaws.com/frontend.png">
+          <div class="card__info">
+            <h3 class="card__title">Frontend Mentor Challenges</h3>
+            <p>Practice with HTML/CSS/JS to create responsive components.</p>
+            <div class="links">
+              <a href="https://www.frontendmentor.io/profile/wavegate/solutions" target="_blank"><button class="smallButton" title="Visit"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="section" id="contact">
+      <div class="section__overlay"></div>
+      <div class="container">
+        <h2 class="section__heading">Contact</h2>
+        <form class="contactForm" method="post" id="contactForm">
+          <div class="formSection">
+            <label class="formLabel" for="name">Name</label>
+            <input type="text" class="formInput" id="name" name="name" placeholder="Enter your name"/>
+          </div>
+          <div class="formSection">
+            <label class="formLabel" for="email">Email</label>
+            <input required type="email" class="formInput" id="email" name="email" placeholder="Enter your email"/>
+          </div>
+          <div class="formSection">
+            <label class="formLabel" for="message">Message</label>
+            <textarea required class="formInput" placeholder="Enter your message" id="message" name="message"></textarea>
+          </div>
+          <button class="button">Submit</button></div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+        <div class="topSection">
+            <a href="#home" class="logo logo--footer">Frank Lee</a>
+                  <ul class="footer__list">
+            <li class="nav__listItem"><a href="#home">Home</a></li>
+            <li class="nav__listItem"><a href="#about">About</a></li>
+            <li class="nav__listItem"><a href="#projects">Projects</a></li>
+            <li class="nav__listItem"><a href="#contact">Contact</a></li>
+                  </ul>
+                  <ul class="socials">
+                    <li class="socialItem"><a href="https://github.com/wavegate" title="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                    <li class="socialItem"><a href="https://www.linkedin.com/in/frank-lee-5b4799211/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                  </ul>
+                <div class="copyright">
+                    © Copyright 2022
+                </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/portfolio/script.js' %}"></script>
+  </body>
+</html>
