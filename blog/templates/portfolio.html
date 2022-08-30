@@ -18,6 +18,20 @@
     <link rel="shortcut icon" href="{% static 'img/portfolio/favicon-32x32.png' %}"/>
   </head>
   <body>
+    {% if messages %}
+    <ul class="alerts">
+      {% for message in messages %}
+        <li class="alert{% if message.tags %} {{ message.tags }}{% endif %}">{{ message }}
+          <i class="fa-solid fa-xmark closeAlert"></i>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% comment %} <ul class="alerts">
+    <li class="alert success">Thanks for subscioja
+      <i class="fa-solid fa-xmark closeAlert"></i>
+    </li>
+  </ul> {% endcomment %}
     <div class="overlay"></div>
     <nav class="nav">
         <a href="#home" class="logo">Frank Lee</a>
@@ -167,10 +181,11 @@
       <div class="section__overlay"></div>
       <div class="container">
         <h2 class="section__heading">Contact</h2>
-        <form class="contactForm" method="post" id="contactForm">
+        <form class="contactForm" method="post" id="contactForm" action="{% url 'portfolio_contact' %}">
+          {% csrf_token %}
           <div class="formSection">
             <label class="formLabel" for="name">Name</label>
-            <input type="text" class="formInput" id="name" name="name" placeholder="Enter your name"/>
+            <input type="text" class="formInput" id="name" name="name" placeholder="Enter your name" />
           </div>
           <div class="formSection">
             <label class="formLabel" for="email">Email</label>

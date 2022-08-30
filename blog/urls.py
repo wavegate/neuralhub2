@@ -29,4 +29,5 @@ urlpatterns = [
    path('clock', views.clock, name='clock'),
    path('add_experiment', views.add_experiment, name='add_experiment'),
    path('portfolio', views.portfolio, name='portfolio'),
+   path('portfolio_contact', views.portfolio_contact, name='portfolio_contact'),
 ]

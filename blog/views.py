@@ -30,6 +30,19 @@ def random_digits():
 def portfolio(request):
     return render(request, 'portfolio.html')
 
+def portfolio_contact(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        to_emails=['cc.frankee@gmail.com']
+        subject='Portfolio Email'
+        html_content='Name: {}, Email: {}, Message: {}'.format(name, email, message)
+        send_mail(subject, html_content, None, to_emails, fail_silently=False, html_message=html_content)
+        messages.add_message(request, messages.SUCCESS, "Thank you for your message!")
+        return HttpResponseRedirect(reverse("portfolio"))
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
 def addVote(request, pk):
     voteoption = VoteOption.objects.get(id=pk)
     voteoption.counter = voteoption.counter + 1
