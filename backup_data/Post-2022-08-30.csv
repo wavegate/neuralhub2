@@ -1,0 +1,1697 @@
+id,title,body,date_created,date_updated,author,categories,summary,image,featured,secondaryFeatured,draft
+38,An online version of the classic working memory n-back task,"<div class=""buttonContainer""><a class=""button"" href=""/twoback"">Take assessment</a></div>
+
+<h1>Working memory</h1>
+
+<p><a href=""/27"">Back to Executive functions</a></p>
+
+<p>Working memory is an executive function which holds information temporarily. It is similar to short-term memory (and previously was referred to as such), but focuses on the capacity for also manipulating information rather than simply the storage of it. The term &quot;working memory&quot; was coined by Miller, Galanter, and Pribram in the 1960s in the context of theories&nbsp;comparing the function of the brain to that of a computer. In computer terms, working memory might be seen as a combination of parts of the computer&#39;s random access memory (RAM) and central processing unit (CPU), whereas long-term memory might be seen as a mass storage device such as our hard disk drive (HDD).</p>
+
+<p>One of the main models of working memory is the working memory model proposed by Baddeley and Hitch in 1974, which suggests that working memory is a central executive which oversees a phonological loop, a visouspatial sketchpad, and a episodic buffer. The phonological loop stores sounds and prevents its decay by continuously refreshing in a rehearsal loop (eg. saying a phone number in your head repeatedly to remember it). The visuospatial sketchpad constructs and manipulates mental maps. The episodic buffer integrates phonological, visual, and spatial information, as well as information from other systems, such as semantic and musical information, and links the working memory to long-term memory. It is termed an episodic buffer because it binds information from temporary storage to a unitary episodic representation.</p>
+
+<h1>The n-back task</h1>
+
+<p>The n-back task is a continuous performance task used to assess working memory. The task was introduced by Wayne Kirchner in 1958, and involves presenting a sequence of stimuli (in this case letters). The participant is supposed to indicate when the stimulus presented is the exact same stimulus as the one presented &quot;n&quot; steps earlier. For example, if the task is a 1-back task, then n=1, and the participant is instructed to respond whenever the previous letter was the same as the current letter. If the task is a 2-back task, then n=2, and then participant is instructed to respond whenever the letter presented two stimuli ago is the same as the current letter. As the number of stimuli increases, this increases a demand on the participants&#39; working memory, and the memory buffer must be updated continuously. The dual n-back task is a common variation which presents two different stimuli at the same time. The n-back task is frequently used to measure and train fluid intelligence, though the task&#39;s external validity is not proven. The n-back task is also used in clinical and educational settings to improve general cognitive processing. The assessment linked from this page is a 2-back task.</p>
+
+<h2>Your results</h2>
+
+<div id=""results"">&nbsp;</div>
+<script type=""text/javascript"">
+const results = document.getElementById(""results"");
+if (results) {
+results.innerHTML = `Your latest score was at the ${(localStorage.getItem('twoback')*1).toFixed(0)}th percentile.`;} else {
+results.innerHTML = ""Your personal results for completed tasks will appear here."";}
+</script>
+
+<h2>References</h2>
+
+<ol>
+	<li>KIRCHNER WK. Age differences in short-term retention of rapidly changing information. J Exp Psychol. 1958 Apr;55(4):352-8. doi: 10.1037/h0043688. PMID: 13539317.</li>
+</ol>",2022-08-27 21:52:20,2022-08-28 04:26:25,1,11,"Our mind's ability to store and manipulate information is a key determinant to its processing power. This capacity, termed working memory in the context of cognitive science, can be tested using the n-back task.",https://images.pexels.com/photos/185933/pexels-photo-185933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+37,An online test of inhibitory control with the Go/no-go task,"<div class=""buttonContainer""><a class=""button"" href=""/gonogo"">Take assessment</a></div>
+
+<h1>Inhibitory control</h1>
+
+<p><a href=""/27"">Back to Executive functions</a></p>
+
+<p>Inhibitory control, also known as response inhibition, is an executive function that permits an individual to inhibit their inpulses in order to select a more appropriate behavior. It is the foundation of self control, and includes two aspects: motor response inhibition and interference control. Motor responsive inhibition, which is tested with the Go/no-go task, involves the inhibition of automatic motor responses, and can be further differentiated into action restraint (or action suppression) and action cancelation. Inhibitory control, overall, is an operationalization of impulsivity and compulsivity. Impulsivity is the tendency to act on impulses, creating actions that seem almost involuntary. Compulsivity is the tendency to repeat specific behaviors and failing to inhibit the behavior when it is no longer appropriate.</p>
+
+<p>Interference control, which might be tested with the Stroop task (link here), deals with the interference between learned patterns and new patterns. Inhibitory control adds on top of that the cognitive process of stopping an action while that action is already being carried out. Together, they allow our minds to adapt and respond to our environment more effectively.&nbsp;</p>
+
+<p>Understanding inhibitory control is key to understanding the cause of many psychiatric and personality disorders. Based on our past experiences and our present environments, we may almost involuntary perform some action (lash out at people we care about, or fall back an addiction on drugs or alcohol). Having some kind of overarching system in our mind that can put a stop to our &quot;natural&quot; response to pain, stress, fear, etc. can help us build resilience. I believe that inhibitory control is something that can be trained, and is a very important skill in sports and performing arts, where you need to be able to make fast decisions but also must avoid costly mistakes to prevent injury. In a way, I see it as an opposite task to vigilance (link here). In vigilance, you want to be hyperresponsive and fast. In inhibitory control, you want to be patient and slow. A combination of the two is required for effective performance, but it&#39;s hard to find that</p>
+
+<h1>The Go/no-go task</h1>
+
+<p>The Go/no-go task is a test used to assess inhibitory control by having the participant rapidly and repeatedly respond to a stimulus, but then withold their response after a stop signal. It is an &quot;easier&quot; form of the Stop-signal task, which is the same except that the stop signal only appears after the go signal appears. The task was first discussed by Donders in 1969, and implemented by Gordon and Caramazza in 1982 in a lexical decision task. Since then, studies have investigated the effect of the percentage of stop signals and the speed at which trials are served in order to create an effective motor response. The more rare the stop signals, and the faster the trial interval, the more difficult it is to stop a response when instructed.</p>
+
+<h2>Your results</h2>
+
+<div id=""results"">&nbsp;</div>
+<script type=""text/javascript"">
+const results = document.getElementById(""results"");
+if (results) {
+results.innerHTML = `Your latest score was at the ${(localStorage.getItem('gonogo')*1).toFixed(0)}th percentile.`;} else {
+results.innerHTML = ""Your personal results for completed tasks will appear here."";}
+</script>
+
+<h2>References</h2>
+
+<ol>
+	<li>van Velzen LS, Vriend C, de Wit SJ, van den Heuvel OA. Response inhibition and interference control in obsessive-compulsive spectrum disorders. Front Hum Neurosci. 2014 Jun 11;8:419. doi: 10.3389/fnhum.2014.00419. PMID: 24966828; PMCID: PMC4052433.</li>
+	<li>https://www.flexiblemeasures.com/nogo/</li>
+</ol>",2022-08-27 20:59:13,2022-08-28 04:26:29,1,11,"Our mind's inhibitory control is key factor to navigating a complex, changing, and potentially dangerous environment. Try out our online task to see how good you are at holding back.",https://images.pexels.com/photos/39080/stop-shield-traffic-sign-road-sign-39080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+36,The classic Stroop task online to determine interference control,"<div class=""buttonContainer""><a class=""button"" href=""/stroop"">Take assessment</a></div>
+
+<h1>Interference control</h1>
+
+<p><a href=""/27"">Back to Executive functions</a></p>
+
+<p>Interference theory is a theory in discussions of human memory regarding the conflict between someone&#39;s long-term memory and their short-term memory during the process of learning. Its first study began with John A. Bergstrom in 1892, who demonstrated that learning one set of instructions interfered with the learning of newer instructions. In a sense, it is the study of the phrase, &quot;You can&#39;t teach an old dog new tricks.&quot; There are two types of interference: proactive and retroactive interference. In proactive interference, older memories interfere with the retrieval of newer memories. In retroactive interference, new memories interfere with the retrieval of older memories. Interference control is a related concept in cognitive science that looks at the mind&#39;s ability to prevent interference due to competition of relevant and irrelevant stimuli. The Stroop task, the Flanker task, and the Simon task are all classic tests of interference control.</p>
+
+<p>Personally, I think interference control is incredibly important in the investigation on the mental processes that lead to learned hopelessness, a common theme of psychiatric disorders such as depression and PTSD. People typically have a hard time letting go over past memories, and those memories cause a drastic interference in their everyday lives, even after they have been removed from the environment which caused those memories. By better understanding how this interference occurs in the brain, we can perhaps improve the flexibility of our mind when needed.</p>
+
+<h1>The Stroop task</h1>
+
+<p>The Stroop effect is a concept in psychology that describes the delay in reaction time between congruent and incongruent stimuli. The classic experiment was published by John Ridley Stroop in 1935. In his experiments, he wrote down the names of various colors in black ink, in congruent ink (the same color as the name), and in incongruent ink (different ink than that defined in the name). For example, he might have the word &quot;Purple&quot; written in green ink; this was an incongruent word. As expected, he found that the incongruent words caused a drastic delay in the ability for participants to read the words. He explained such an interference due to the automatic processing of the mind on the semantic meaning of the word. When there was an incongruency, that automaticity interfered with the task at hand (identifying the color). Essentially, people are so used to reading and understanding the meaning behind symbols that it can interfere with the actual objective of the onlooker. This procedure of naming colors of incompatible words has been heavily used in the study of interference theory, as our ability to understand the meaning of words causes semantic interference of identifying the actual properties of the words themselves.</p>
+
+<h2>Your results</h2>
+
+<div id=""results"">&nbsp;</div>
+<script type=""text/javascript"">
+const results = document.getElementById(""results"");
+if (results) {
+results.innerHTML = `Your latest score was at the ${(localStorage.getItem('stroop')*1).toFixed(0)}th percentile.`;} else {
+results.innerHTML = ""Your personal results for completed tasks will appear here."";}
+</script>
+
+<h2>References</h2>
+
+<ol>
+	<li>van Velzen LS, Vriend C, de Wit SJ, van den Heuvel OA. Response inhibition and interference control in obsessive-compulsive spectrum disorders. Front Hum Neurosci. 2014 Jun 11;8:419. doi: 10.3389/fnhum.2014.00419. PMID: 24966828; PMCID: PMC4052433.</li>
+</ol>",2022-08-27 19:01:06,2022-08-28 04:26:33,1,11,The Stroop task is a classic psychology experiment in the study of our mind's ability to control our past experiences to allow us to be open to newer experiences.,https://images.pexels.com/photos/186537/pexels-photo-186537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+34,The importance of mental Task Switching to develop cognitive flexibility; an Online Test,"<div class=""buttonContainer""><a class=""button"" href=""/task_switching"">Take assessment</a></div>
+
+<h1>Task switching</h1>
+
+<p><a href=""/27"">Back to Executive functions</a></p>
+
+<p>Task switching, or set-shifting, is an executive function involving the ability to unconsciously shift attention between one task and another. It serves a similar function to cognitive shifting, which is the conscious change in attention. Together, these two functions represent the cognitive flexibility concept. Task switching involves the rapid and efficient adaptation to different situations, and is an often studied cognitive function, in part due to its difficulty. The need to switch between &#39;task-sets&#39; or &#39;schema&#39; comes at a drastic cost for mental resources. However, most scenarios in life require a responsiveness to a changing environment.</p>
+
+<p>In the past, I went through therapy for over-control, so the concept of task switching is quite important to me. I am a very objective-focused person, so when I set out to complete a task, I only think about that one task until that task is completed. In the recent years, I have worked to improve my cognitive flexibility, but there is a large tradeoff. When you ask someone to &quot;commit&quot; to something, you&#39;re asking them to forgo flexibility for rigidity. However, to accomplish most tasks in life, we require some amount of flexibility. If we&#39;re not able to adapt to a changing environment,&nbsp;we can develop maladaptive behaviors, such as those often found in psychiatric populations. However, the difficulty in task switching is not found just in those with cognitive rigidity, but in everyone. Many people find the hassle of social environments such as school and work overwhelming because of the constant interruptions caused by, say, a phone ringing or an email needing to be read. Or some people might find the nagging of family members disrupting of their work. Whenever there is an intrusion in our task &quot;flow,&quot; it causes severe damage to our efficiency in our original task. Certain careers, such as scientists or authors, that require long extensive periods of time thinking about a certain concept, are most drastically affected. In my personal belief, it is important for people to establish a task focus and attempt to filter out all distractions, until an objective is met&mdash;to be rigid&mdash;in order to stay efficient. However, they should be aware of the opportunity cost of that rigidity.</p>
+
+<h1>The Task switching paradigm</h1>
+
+<p>The task switching paradigm was first developed in 1927 by Jersild, who had participants complete one task, and then would have them perform different tasks in rapid alternation, and he studied the detrimental effect of task switching on overall performance. However, at that time, the time cost of task switching was difficult to measure. The concept was further developed by cognitive scientists Rogers and Monsell in 1995, who proposed that alternation trials placed high demand on working memory because subjects had to keep memory of different tasks.&nbsp;</p>
+
+<h2>Your results</h2>
+
+<div id=""results"">&nbsp;</div>
+<script type=""text/javascript"">
+const results = document.getElementById(""results"");
+if (results) {
+results.innerHTML = `Your latest score was at the ${(localStorage.getItem('task_switching')*1).toFixed(0)}th percentile.`;} else {
+results.innerHTML = ""Your personal results for completed tasks will appear here."";}
+</script>
+
+<h2>References</h2>
+
+<ol>
+	<li>Monsell S. Task switching. Trends Cogn Sci. 2003 Mar;7(3):134-140. doi: 10.1016/s1364-6613(03)00028-7. PMID: 12639695.</li>
+</ol>",2022-08-27 18:08:43,2022-08-28 04:26:41,1,11,Task switching is an important topic of cognitive science due to the ubiquity of shifts in attention we experience in everyday life. Just how difficult is it to switch between different tasks rapidly?,https://images.pexels.com/photos/2952834/pexels-photo-2952834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+33,How fast can you find something? An online Visual Search task,"<div class=""buttonContainer""><a class=""button"" href=""/visual_search"">Take assessment</a></div>
+
+<h1>Visual search</h1>
+
+<p><a href=""/27"">Back to Executive functions</a></p>
+
+<p>Visual search is a commonly tested perceptual task that requires the active scanning of a visual environment to locate a particular object or feature (the target) amongst other objects and features (distractions). Visual search can take place with or without eye movements. Practical examples of visual search can be seen in everyday life, such as picking out a product on a supermarket shelf, searching for a lost item, or trying to identify faces amongst a crowd. The psychology of visual search is relevant to many fields, such as studies investigating how positioning of objects on a supermarket shelf may help or distract consumers from finding a product quickly. Visual search tasks also help marketers figure out what types of features &#39;pop out&#39; from their surroundings and are most likely to attract people scanning through products. Understanding the cognitive processes underlying human visual search also enable advances in computer vision algorithms.</p>
+
+<p>In this task, you will be presented with an array of various colors, with the objective of detecting the black dot. This type of visual search is called feature search, or disjunctive search. The attractiveness of the pop out feature from an array of distractors and how it affects our cognitive processing is known as the &quot;saliency&quot; or the feature. Depending on variables such as the saliency of the feature and the size of the array, our minds may use either a serial or a parallel search method.</p>
+
+<h2>Your results</h2>
+
+<div id=""results"">&nbsp;</div>
+<script type=""text/javascript"">
+const results = document.getElementById(""results"");
+if (results) {
+results.innerHTML = `Your latest score was at the ${(localStorage.getItem('visual_search')*1).toFixed(0)}th percentile.`;} else {
+results.innerHTML = ""Your personal results for completed tasks will appear here."";}
+</script>
+
+<h2>References</h2>
+
+<ol>
+	<li>Allen L. Nagy and Robert R. Sanchez, &quot;Critical color differences determined with a visual search task,&quot; J. Opt. Soc. Am. A&nbsp;<b>7</b>, 1209-1217 (1990)</li>
+</ol>",2022-08-27 08:10:21,2022-08-28 04:26:46,1,11,Take an automated online Visual search task to see how quickly you can locate a target within an array of stimuli.,https://images.pexels.com/photos/319930/pexels-photo-319930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+32,"How good are you at counting, exactly? An online Subitizing task","<div class=""buttonContainer""><a class=""button"" href=""/subitizing"">Take assessment</a></div>
+
+<h1>The Subitizing task</h1>
+
+<p><a href=""/27"">Back to Executive functions</a></p>
+
+<p>The subitizing task was a test of enumeration developed in 1949 by E.L. Kaufman et al., and the word itself describes the feeling of immediately knowing how many items lie within a visual scene. It refers to&nbsp;the ability to discriminate the number of objects in a set without actually counting the number of objects one by one. In their experiment, Kaufman et al. presented groups of dots projected on a large screen, and participants were instructed to report the number of dots flashed on the screen, emphasizing either speed or accuracy. The results of their experiments led them to propose that people are generally able to count, or <em>subitize</em>, numbers of objects fewer than 6; on the other hand, people are only able to <em>estimate </em>numbers of objects greater than 6. Further studies have elucidated that people generally have trouble subitizing numbers larger than four without utilizing chunking, the process of breaking up large numbers into a smaller number of groups. Judgments made for one to four items are typically rapid, accurate, and confident, whereas every additional item adds a significant delay to reaction time and a drastic drop in accuracy.</p>
+
+<p>Understanding the subitizing process is important for the education of mathematics in young children; being able to quickly imagine and conceptual small sets of numbers is vital to performing mental operations on them. However, subitizing is also quite important for any process requiring quick, confident judgments. Improving our ability to perceive, process, and respond to sudden changes in patterns, and being able to make a more accurate guess, can mean the difference between life in death in a wide variety of scenarios, such as the prevention of motor vehicle accidents. These quick judgments of numbers is also relevant in gambling (dice, dominos, cards) and in science (data visualization, pattern detection).</p>
+
+<h2>Your results</h2>
+
+<div id=""results"">&nbsp;</div>
+<script type=""text/javascript"">
+const results = document.getElementById(""results"");
+if (results) {
+results.innerHTML = `Your latest score was at the ${(localStorage.getItem('subitizing')*1).toFixed(0)}th percentile.`;} else {
+results.innerHTML = ""Your personal results for completed tasks will appear here."";}
+</script>
+
+<h2>References</h2>
+
+<ol>
+	<li>KAUFMAN EL, LORD MW. The discrimination of visual number. Am J Psychol. 1949 Oct;62(4):498-525. PMID: 15392567.</li>
+</ol>",2022-08-27 04:34:23,2022-08-28 04:26:50,1,11,"Take an automated online Subitizing task to test your ability to enumerate, or determine the number of, a set of objects quickly.",https://images.pexels.com/photos/1314543/pexels-photo-1314543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+31,An online Mental Rotation Task to assess spatial reasoning,"<div class=""buttonContainer""><a class=""button"" href=""/rotation"">Take assessment</a></div>
+
+<h1>Spatial reasoning</h1>
+
+<p><a href=""/27"">Back to Executive functions</a></p>
+
+<p>Spatial reasoning is the capacity to interact with visual and spatial relations among objects and space, and is a vital cognitive skill for everyday use from navigation, understanding and fixing equipment, and approximation and measurement of distances. Spatial reasoning includes four types of spatial abilities: visuo-spatial perception, spatial visualization, mental folding, and mental rotation. Mental rotation, specifically, is the ability to manipulate and rotate 2D or 3D objects in space quickly and accurately. Mental rotation helps people visualize objects, useful in many contexts such as mathematics, sciences, and engineering, and is employed frequently in sports psychology as well as in playing video games. For example, the game Tetris is a perfect example of a mental rotation test. Jigsaw puzzles and Rubik&#39;s cube are also activities that require a high level of mental rotation and that can be practiced to improve spatial ability over time. Mental rotation, compared to other spatial reasoning skills, is more heavily linked to motor stimulation in the brain.</p>
+
+<h1>Mental rotation task (MRT)</h1>
+
+<p>In a mental rotation task, objects are displayed next to each other and the participant is instructed to quickly determine whether or not the objects are rotated copies of each other. Performance typically falls as the angle of rotation between the images increases. Sex differences in mental rotation are one of the most strongly observed sex differences in cognitive science. The original task, developed by Stephen Vandenberg and Allan Kuse in 1978, used 3D figures, but subsequent studies have frequently employed 2D images.</p>
+
+<h2>Your results</h2>
+
+<div id=""results"">&nbsp;</div>
+<script type=""text/javascript"">
+const results = document.getElementById(""results"");
+if (results) {
+results.innerHTML = `Your latest score was at the ${(localStorage.getItem('rotation')*1).toFixed(0)}th percentile.`;} else {
+results.innerHTML = ""Your personal results for completed tasks will appear here."";}
+</script>
+
+<h2>References</h2>
+
+<ol>
+	<li>Vandenberg SG, Kuse AR. Mental rotations, a group test of three-dimensional spatial visualization. Percept Mot Skills. 1978 Oct;47(2):599-604. doi: 10.2466/pms.1978.47.2.599. PMID: 724398.</li>
+</ol>",2022-08-27 00:41:34,2022-08-28 04:27:02,1,11,Take an automated online Mental rotation task to test your spatial reasoning and ability to manipulate mental images quickly.,https://images.pexels.com/photos/5063474/pexels-photo-5063474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+30,An online Mackworth Clock Test to assess vigilance,"<div class=""buttonContainer""><a class=""button"" href=""/clock"">Take assessment</a></div>
+
+<h1>Vigilance</h1>
+
+<p><a href=""/27"">Back to Executive functions</a></p>
+
+<p>Vigilance, or alertness, in modern psychology refers to sustained concentration, the ability to maintain concentrated attention over prolonged periods of time. In cognition, it is the part of active attention where one maintains a high level of awareness and is quick to react to changes. The study of vigilance started in the 1940s due to the increased interaction of people with machines for applications involving monitoring and detection of rare events and weak signals. Such applications include air traffic control, inspection and quality control, automated navigation, military and border surveillance, and lifeguarding.</p>
+
+<h1>Mackworth Clock Test</h1>
+
+<p>The Mackworth Clock Test (MCT) was a clock-like mechanical device that had a clock hand that advances in discrete jumps every second; at irregular intervals, the clock hand advances a double jump, and successful performance on the MCT was scored by an immediate response to that signal. The test was designed in 1948 by Norman Mackworth, a British psychologist and cognitive scientist recruited by the Royal Air Force to study the ability of radar operators to maintain vigilance. In an article titled, &quot;Vigilance requires hard mental work and is stressful,&quot; Mackworth used the test to determine that prolonged attention significantly deteriorated over 30 minutes to 2 hours. This finding led to the length of operator duty shifts being severely reduced.</p>
+
+<h2>Your results</h2>
+
+<div id=""results"">&nbsp;</div>
+<script type=""text/javascript"">
+const results = document.getElementById(""results"");
+if (results) {
+results.innerHTML = `Your latest score was at the ${(localStorage.getItem('clock')*1).toFixed(0)}th percentile.`;} else {
+results.innerHTML = ""Your personal results for completed tasks will appear here."";}
+</script>
+
+<h2>References</h2>
+
+<ol>
+	<li>Lichstein KL, Riedel BW, Richman SL. The Mackworth Clock Test: a computerized version. J Psychol. 2000 Mar;134(2):153-61. doi: 10.1080/00223980009600858. PMID: 10766107.</li>
+</ol>",2022-08-26 05:51:31,2022-08-28 04:27:07,1,11,"Take the Mackworth Clock Test, designed in the 1940s as a test for sustained concentration in radar operators in the British Royal Air Force, online.",https://images.pexels.com/photos/1028741/pexels-photo-1028741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+29,"AI is the new Echo Rhythm, and the Chinese Room scenario","<p>So I fell asleep watching a video about creating<a href=""https://www.youtube.com/watch?v=Rs_rAxEsAvI&amp;t=7873s&amp;ab_channel=freeCodeCamp.org"" target=""_blank""> a self-driving car using plain JavaScript</a> and also just binge watched almost the entirety of Hunter x Hunter, so when I woke up I had the wonderful shower thought that the parallelization process of using a machine learning algorithms such as an artificial neural network to solve a puzzle is quite similar to those anime scenes where the character produces multiple clones of themselves and then uses all their clones to attack the enemy at the same time. The idea is that no one clone is strong enough or fast enough to hit the enemy, but that&rsquo;s fine if you&rsquo;re capable of just making more and more clones until the enemy is defeated. Artificial intelligence can attempt to create intelligent systems by giving each of these clones a &ldquo;brain,&rdquo; identifying the best brains, and then storing those brains permanently to use as the template for the next generation of clones, thereby creating a genetic algorithm.</p>
+
+<div class=""image""><img src=""https://compsciblog.s3.us-west-1.amazonaws.com/echorhythm.webp"" />
+<div class=""caption"">Killua&#39;s Echo Rhythm from Hunter x Hunter</div>
+</div>
+
+<div class=""image""><img src=""https://compsciblog.s3.us-west-1.amazonaws.com/self_driving_car.webp"" style=""height: 312px; width: 400px;"" />
+<div class=""caption"">Self-driving car built with JavaScript</div>
+</div>
+
+<p>But what is intelligence? The computer science field of intelligent systems, or <strong>artificial intelligence (AI), simply is the study of how a system can solve difficult problems</strong>. Although I have only started being exposed to AI, it has always been a source of fascination to me, and I would imagine many others. With my background in neuroscience and neuropsychiatry, I have a slight understanding of how the mind works, but our investigations of the human brain are still extremely limited. Most neuroimaging methods are top-down in the sense that we observe what the mind is capable of, but have no good way of figuring out how this functionality works. The other way we can figure out how it works is through math, in a sense that Wolfram pushed, which was, for example, looking at <strong>cellular automata</strong>, and seeing the mathematical constructs that may lead to intelligent behavior. However, everything in between the mathematical laws of nature and human consciousness is a vast valley left to be explored.</p>
+
+<h1>The Turing Test</h1>
+
+<p>Can computers really be intelligent? This same question was brought up famously by<strong> Alan Turing</strong>, who wrote in 1950, &ldquo;I propose to consider the question<strong> </strong><em>&lsquo;can machines think&rsquo;?&rdquo;</em> I think this question has enthralled so many of us growing up in the time period of computers, and this question has inset perhaps a deep-seated fear that, rather than machines being able to think like us humans, that we humans, are in fact, just machines. The Turing test, or the imitation game, is a test of a machine&rsquo;s ability to exhibit behavior equivalent to that of a human. Turing proposed that if an evaluator could not tell a machine&rsquo;s text-only responses from that of a human, then the machine had passed the Turing test. This hypothetical game is the starting point to the area of the philosophy of artificial intelligence, in which important questions are:</p>
+
+<ul>
+	<li>Is the human brain essentially a computer?</li>
+	<li>Can a computer have consciousness? Can a computer feel?</li>
+</ul>
+
+<p>In 1956, <strong>the Dartmouth workshop </strong>summed up the basic position of most AI researchers in the statement that <em>&ldquo;Every aspect of learning or any other feature of intelligence can be so precisely described that a machine can be made to simulate it.&rdquo;</em> In order to disprove this, one must demonstrate either a practical limit of computers or present a special quality of the human mind that cannot be duplicated by a machine.</p>
+
+<p>Now, one might say that there have been plenty of machines that may have passed a Turing test, in that people might mistake a computer-generated response as a human. A great example is that of the recent news about Blake Lemoine, a software engineer at Google who was fired because he disclosed confidential information about LaMDA, the company&rsquo;s AI system for chatbots, after he determined that LaMDA had achieved sentience. Many other experts rejected his claims, stating that a language model that simply takes in input and produces an output, despite the output being human-like, cannot be &ldquo;intelligent,&rdquo; some asking the question, &ldquo;Can a Python function have feelings?&rdquo; However, when we compare this to Turing&rsquo;s original test, if a software engineer and computer scientist like Lemoine is concerned to the degree of human-like behavior, I personally think it&rsquo;s likely that were Alan Turing observing the progress in AI today, he would be remarkably shocked and understandably concerned.</p>
+
+<h1>The Chinese Room thought experiment</h1>
+
+<p>The Chinese room argument argues against the concept that intelligence can be simulated by a machine; instead, it states that no matter how human-like the program may behave, a computer cannot have a mind in the same sense that human beings have minds. This argument was presented by John Seale, best known for his work in philosophy of language, and goes as such:</p>
+
+<p>Imagine a closed room with only two slits. In one slit, you put in some text written in English, and after a while, the text is returned from the other slit, now written in Chinese. Understandably, one might suppose that there might be a person in the room who understands Chinese and English and can translate between the two. However, you find that there is simply a person inside who has a Chinese-English dictionary, and he simply uses that book to make that translation. It turns out he does not know how to translate Chinese to English at all! John Seale presented this argument to state that <em>no computer can ever understand Chinese or English, because being able to translate Chinese into English does not mean you understand Chinese nor English</em>.</p>
+
+<h1>My perspective</h1>
+
+<p>My view is that the Turing test can never be passed, because the computational resources required to create a biological network surpasses the resources available in our universe. There is the billiard board problem when comparing math and science, where you can easily predict where a single billiard ball might travel, but when you add in multiple balls, the problem quickly becomes much and much more complex. My friend describes this as most &ldquo;real&rdquo; problems as having a complexity of <em>x to the x</em>. As we humans gain more computational power, we&rsquo;ll get closer and closer to solving these problems, but our power is still as of yet drastically far away from the raw computational power of the human brain. The human brain has 86 billion neurons and 85 billion nonneuronal cells. As of yet, we have only really understood a few layers of neurons at best. As we follow the path of neurons, we find that they are in a gigantic tangle, too complex for our current scientific tools to be able to inspect. I can&rsquo;t remember the specific word to describe it, but it&rsquo;s akin to having a thick, dense forest of connections that is seemingly impossible to entangle. So, somehow, our brain, with its limited amount of resources, is able to sustain a seemingly impossibly high level of computation. Because of this energy efficiency difference, there must be something fundamental to how our mind works that we have yet to discover that explains why a computer can never reach the &ldquo;intelligence&rdquo; of the human brain. However, this is why I think biomedical engineering research in the future will create huge breakthroughs in computing research. If we can uncover pieces of how the brain works as a processor, we can unlock more information about what makes us human.</p>
+
+<p>During medical school, one of my patients was a 2-year old boy with a metabolic disorder on the verge of death. The only thing he was capable of doing was to struggle to breathe. Every moment of his life was spent twisting and turning in agony, crying, with a few moments of sleep sprinkled here and there. I often ask myself, if I compare myself, or any other person, to this suffering child, can I really consider myself more or less intelligent? My conclusion was no. No matter how many books I read, or random facts of knowledge I take in and memorize, I will never understand how to survive as well as the child, because he spent every living moment trying to survive, whereas I don&rsquo;t ever have to think about surviving. And was I any more &ldquo;human&rdquo; than the child, just because I might have been able to score higher on an IQ test, or any test for that matter? No. To me, the remarkable computational power of the human brain is not that it can compute quickly (a computer can do simple calculations much faster than we can), but its flexibility. Its ability to adapt to problems that are <em>x to the x</em>. On a side note, I&rsquo;m probably an NPC.</p>",2022-08-26 02:21:02,2022-08-27 21:56:13,1,10,"What is intelligent behavior, and what does anime have to do with artificial neural networks? In this blog post, I introduce the reader to the Turing test and the ""Chinese Room"" thought experiments, questions as to the philosophy of artificial intelligence.",https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+27,Frank's Automated Cognitive Testing System,"<h1>Your cognitive profile</h1>
+
+<div class=""canvasContainer""><canvas id=""myChart""></canvas></div>
+
+<p>Above, you can see your cognitive profile, a chart of eight different executive functions. Your executive functions are the mental processes that control your behavior. <strong>Complete assessments below to build out your cognitive profile!</strong></p>
+
+<h1>Cognitive assessments</h1>
+
+<ul>
+	<li><a href=""/38"">Working memory</a>: our capacity to store and manipulate information temporarily</li>
+	<li><a href=""/37"">Inhibitory control</a>: our ability to control our impulses</li>
+	<li><a href=""/36"">Interference control</a>: our ability to keep our mental patterns from interfering with each other</li>
+	<li><a href=""/34"">Cognitive flexibility</a>: our ability to adapt to changing task requirements</li>
+	<li><a href=""/33"">Visual search</a>: our ability to locate objects</li>
+	<li><a href=""/32"">Subitizing</a>: our ability to grasp the quantity of objects</li>
+	<li><a href=""/31"">Spatial reasoning</a>: our ability to mentally manipulate visual structures</li>
+	<li><a href=""/30"">Vigilance</a>: our capacity to sustain attention</li>
+</ul>
+
+<p><strong>Click on a link above to complete an assessment and read more about the executive function tested. </strong>Currently, I have eight different tasks, each of which tests a different area of brain function. All of these tasks have a long history in psychology and neuroscience research.</p>
+
+<h1>Benefits</h1>
+
+<p>Our cognition is the essence to our mental state, and it fluctuates based on biological and environmental factors. <strong>Having an objective measure of cognition helps us to better understand ourselves. </strong>Cognitive assessments don&#39;t diagnose cognitive problems, but they may certainly help you uncover your own strengths and deficits.&nbsp;</p>
+
+<p>Many types of groups may benefit particularly from automated, quick cognitive testing. People with concern for neuropsychiatric or personality disorders may find it enlightening to test themselves on a regularly basis to see how their performance changes over time. Athletes, pilots, musicians, surgeons, gamers and other high-performance individuals may find the tasks an engaging challenge. Educators might find the tasks an enjoyable alternative to longer, less intuitive assessments. In addition, brain training is a popular concept that uses cognitive tasks to improve brain function, especially for traumatic brain injury victims that have damaged parts of their brain and need repetitive reinforcement to rebuild specific neural connections.</p>
+
+<h1>Limitations</h1>
+
+<p>Because this is a web-based, automated cognitive testing system, it lacks the capability to provide in-depth cognitive assessments that require in-person testing. Users are able to assess the test from any device that has access to the web, and so they might be completing the tasks on different devices with widely varying screen sizes and input controls, which can heavily affect results. In addition, I have purposely made the tasks very short (1-3 minutes) in compared to an actual psychology task you might complete in a professional research environment. Therefore, these tasks have very low statistical power and very limited validity, designed more as an introduction to psychological testing and for entertainment purposes. <strong>These tasks are not designed for the assistance of the diagnosis of mental disorders nor for performance screening in a professional setting. </strong>The score that I give at the end of each task is of my own opinion, combined with results from previous published studies and data collected from participants of this online system. Most of these assessments assume normal vision and motor function, and results are not as applicable to those with motor or visual impairments.</p>
+
+<p><a href=""/46""><script src=""https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js""></script><script src=""/static/js/cognitive/overview.js""></script></a></p>",2022-08-24 03:22:12,2022-08-28 04:27:12,1,11,"Cognitive tests are short, quick tests to check how well your brain is functioning. Here, I've created eight tasks of basic cognitive functions for anyone to try out for themselves!",https://images.pexels.com/photos/7269615/pexels-photo-7269615.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,1,0,0
+26,10 tips for reducing the gulf of execution and the gulf of evaluation,"<h1>Gulf of execution</h1>
+
+<p>The <strong>gulf of execution</strong> is a concept in user experience or human-computer interaction which describes the bridge between the task that the user intends to accomplish with the user interface and the actual process of accomplishing that task. The gulf of execution includes<em> identifying intentions, identifying actions, and executing those actions in the interface</em>.</p>
+
+<p>At each of these stages, there are ways to reduce the human effort required to cross the gulf of execution. Here are five design guidelines on how:</p>
+
+<h3>1. Make functions discoverable</h3>
+
+<p>The concept behind this guideline is to make the user interface intuitive. What each interactable component does should be clear. In the context of buttons, buttons should have clear labelling of what it should do; if the function is complicated, there should be intuitive ways to learning more about the function, such as adequate documentation.</p>
+
+<h3>2. Let the user mess around</h3>
+
+<p>Let the user play around with the interface to let them feel safe and encourage them to explore more. This means avoiding buttons that can cannot be undone, or that will irreversibly mess things up. This also might mean having a good way for the user to reset the task and allow them to start over again. In game design, I might consider this as giving the player a tutorial stage where they can jump around and explore without any negative consequences.</p>
+
+<h3>3. Be consistent with other tools</h3>
+
+<p>Make your interface consistent with the knowledge base that the user has already. This might mean using consistent imagery to indicate different functions (such as a floppy disk icon for save, or a burger menu icon to toggle a noble navigation). By designing your interface in a way that people are familiar with, it&#39;ll allow them to bridge the gulf of execution much more quickly.</p>
+
+<h3>4. Know your user</h3>
+
+<p>This tip is to keep in mind that the user can vary. You will have users that are more experienced that care more about executing their task, versus novice users who may need to figure out what your interface does in the first place. Because of this, the interface design should be cognizant of the need to maintain flexibility or customizability based on user experience.</p>
+
+<h3>5. Feedforward</h3>
+
+<p>Feedforward is information provided that encourages the user to keep moving forward. For example, a blog application might have a &quot;Read more&quot; section at the end of each blog post, in order to encourage readers to keep reading. Or an online form might form a green border around a form element if the input is properly validated.</p>
+
+<h1>Gulf of evaluation</h1>
+
+<p>The <strong>gulf of evaluation&nbsp;</strong>is the reverse concept, where, after the user has executed a task, they should receive some sort of feedback in order to know that what they intended to do has actually been accomplished. The process of reaching that understanding is the gulf of evaluation, and involves the steps of <em>presenting interface output, the interpretation of that output by the user, and the evaluation by the user</em> of whether their goal has been accomplished.</p>
+
+<p>Again, here are five design guidelines on how to reduce the gulf of evaluation:</p>
+
+<h3>1. Give feedback constantly</h3>
+
+<p>Feedback shoudl be given on whether feedback was received, on what specific input was received, and where the system is in executing its actions because of that input. If a button is clicked on a webpage, the button should have some sort of animation or visual change (perhaps even disabling the button) indicating that it has been pressed. If the server is running some process as the result of the button, let the user know what the server is doing. This keeps the user interested and more confident that what they set out to do is being done.</p>
+
+<h3>2. Give feedback immediately</h3>
+
+<p>Even if the application takes a while to do something, give feedback as soon as the user has executed a task. That way the user knows that their action has registered, even if the result that they&#39;re looking for hasn&#39;t quite shown up yet. Then, while the user is waiting, you can display a progress bar or a loading icon to indicate the execution has been received and is in process.</p>
+
+<h3>3. Match the feedback to the action</h3>
+
+<p>Providing feedback for everything all the time has its consequences and can overload the user. This is why it&#39;s important to provide subtle feedback to subtle actions and significant feedback to significant actions. If the user is just hovering over a button, a slight change in the color of the button is enough for the user to recognize that they are mousing over a button. On the other hand, if the user clicks on the button, that might warrant the button to change colors completely, perhaps to gray, to indicate the button has been clicked and is now disabled.</p>
+
+<h3>4. Vary your feedback</h3>
+
+<p>Another way of preventing the user from being overwhelmed by feedback is to vary the modality of the feedback. Not every action performed by the user needs an alert that popups up and indicates what the user has done. Instead of a visual signal that an action has been started or completed, perhaps a verbal cue or even haptic signal can provide a more pleasant user experience.</p>
+
+<h3>5. Leverage direct manipulation</h3>
+
+<p>Allow the user to directly manipulate the objects that they are trying to control when possible. For a graphics software or a desktop UI, this might mean allowing users to drag objects around, or allow users to pull and stretch objects to different sizes. For a video game, this might mean giving the player various means to interact with their avatar&#39;s surroundings. In short, try to make things as realistic as possible, and try to minimize the overhead of the interface, making it seem like the interface isn&#39;t even there.</p>",2022-08-22 20:40:33,2022-08-22 21:10:32,1,9,Improve the effectiveness of your user interface by keeping true to the basic principles of reducing the gulf of execution and evaluation.,https://images.pexels.com/photos/3584924/pexels-photo-3584924.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+25,Add a 3D waifu to your website with the basic graphics pipeline,"<div id=""scene-container"">&nbsp;</div>
+
+<h1>Web 3D graphics using Three.js</h1>
+
+<p><strong>Three.js</strong> is a JavaScript library used to create GPU-accelerated 3D animations on top of WebGL. It&#39;s great for displaying 3D models and animations and integrating them visually and interactively into web pages, such as on this post. There are a lot of examples of websites created using Three.js, and it really shows how powerful the browser can be. In this post, I&#39;m going to explain a simple process for setting up an HTML file that loads a 3D model using Three.js. The model will be able to be rotated, zoomed, panned as in the above example. Do note that you need to have a live server of some sort to be able to load models into your page. To see a more in-depth explanation, <a href=""https://discoverthreejs.com/book/introduction/about-the-book/"" target=""_blank"">discoverthreejs</a>&nbsp;is a great resource and is what I followed.</p>
+
+<p>First off, let&#39;s do the fun part: picking a model to display! There are lots of free models online to experiment with, so feel free to search for one yourself. You can use the <a href=""https://sketchfab.com/3d-models/fanart-hutao-in-idol-outfit-genshin-impact-498d675907c3485a812a9581928d18a5"" target=""_blank"">Genshin Impact Hu Tao</a> model as shown above if you&#39;re a degenerate like me. On the SketchFab website, you have to make an account, but once you do so, you can download the the .gltf file. Convert this file to binary, packing it all into one file, via a tool such as this <a href=""https://sbtron.github.io/makeglb/"" target=""_blank"">gltf to glb converter</a>.</p>
+
+<p>Now, create your project directory and add an <code>index.html</code>, <code>script.js</code>, <code>style.css</code>, and your newly downloaded .glb file.</p>
+
+<p>In your index file, link your stylesheet, add a container div where we will load our model, and then import three scripts, as shown below:</p>
+
+<pre data-file=""index.html"">
+<code class=""language-html"">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;&lt;/div&gt;
+    &lt;script
+      async
+      src=&quot;https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js&quot;
+    &gt;&lt;/script&gt;
+    &lt;script type=&quot;importmap&quot;&gt;
+      {
+        &quot;imports&quot;: {
+          &quot;three&quot;: &quot;https://unpkg.com/three@0.143.0/build/three.module.js&quot;
+        }
+      }
+    &lt;/script&gt;
+    &lt;script type=&quot;module&quot; src=&quot;script.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</code>
+</pre>
+
+<p>Our <code>script.js</code> file will be where our Three.js script will be written, and it has to have a &quot;module&quot; type, as we will be making imports. You can read more about <a href=""https://javascript.info/modules-intro"" target=""_blank"">modular Javascript here</a>. The importmap is required in order to properly import the Three.js library, and the first script es-module-shims is required because importmap is not supported on all browsers. We&#39;ll be importing Three.js from a CDN, but you can of course use other methods.</p>
+
+<p>Now here&#39;s the script.js file:</p>
+
+<pre data-file=""script.js"">
+<code class=""language-javascript"">
+import * as THREE from &quot;three&quot;;
+import { GLTFLoader } from &quot;https://unpkg.com/three@0.143.0/examples/jsm/loaders/GLTFLoader.js&quot;;
+import { OrbitControls } from &quot;https://unpkg.com/three@0.143.0/examples/jsm/controls/OrbitControls.js&quot;;
+
+const main = async () =&gt; {
+  const container = document.querySelector(&quot;#container&quot;);
+
+  // load model and set position of model
+  const loader = new GLTFLoader();
+  const modelData = await loader.loadAsync(&quot;scene.glb&quot;);
+  const model = modelData.scene.children[0];
+  model.position.set(0, -0.7, 0);
+
+  // load camera and set position of camera
+  const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+  camera.position.set(0, 0.7, 3.5);
+
+  // load lights and set position of lights
+  // const light = new THREE.DirectionalLight(&quot;white&quot;, 60);
+  // const ambientLight = new THREE.HemisphereLight(&quot;white&quot;, &quot;darkslategrey&quot;, 60);
+  // light.position.set(0, 10, 10);
+
+  //load scene and add model to our scene
+  const scene = new THREE.Scene();
+  // scene.add(model, light, ambientLight);
+  scene.add(model);
+
+  // add renderer using WebGL
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+  // add ability to zoom, pan, rotate the camera
+  const controls = new OrbitControls(camera, renderer.domElement);
+
+  // resizes the model when the viewport resizes
+  const resize = () =&gt; {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+  };
+  resize();
+  window.addEventListener(&quot;resize&quot;, resize);
+
+  // renders and re-renders the scene
+  renderer.render(scene, camera);
+  renderer.setAnimationLoop(() =&gt; {
+    renderer.render(scene, camera);
+  });
+  container.append(renderer.domElement);
+};
+
+main();
+
+</code>
+</pre>
+
+<h1>An explanation of the script</h1>
+
+<p>I&#39;ll explain how this works. The code might be self-explanatory to some, so if it all makes sense, then skip this explanation. First, we&#39;ll import Three.js from the keyword that we used, &quot;three&quot;. So whenever we need to use something from the core Three.js library, we&#39;ll call THREE.whatever. We&#39;ll also import a GLTFLoader, which comes separately from the core library. The GLTFLoader will, of course, load our .gltf file (which we converted to .glb). We&#39;ll also import OrbitControls which will allow us to zoom, pan, and rotate our model.</p>
+
+<p>We&#39;re going to make our main function <a href=""https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous"" target=""_blank"">asynchronous</a> because we need to load our .glb file, which can take some time, before we do anything else.</p>
+
+<p>We select our container in our HTML file with querySelector. The GLTFLoader can load a file asynchronously, so we&#39;ll add the <code>await </code>keyword to signal that we should wait for our file before continuing. If we did not wait for it, then it&#39;ll throw an error since we won&#39;t have our <code>modelData </code>before we need it. To get the actual <strong>model</strong>, we&#39;ll get the <code>modelData </code>that the loader has loaded, and retrieve the model itself via <code>scene.children[0]</code>. Then we set the position of the model so that it aligns properly for our camera. Perfect! We now have our custom model loaded up and ready to go!</p>
+
+<p>Next, we&#39;ll need to set up our <strong>scene</strong>, similar to how you might set up a scene when filming a movie. What does every scene need? Well, first, we need our models, but we have that already. Next, we need a <strong>camera</strong>, so we use a PerspectiveCamera, which takes on several properties to create its frustum, which is basically the &quot;view&quot; of the camera. The four values correspond to the field of view, or how wide our camera can see, the aspect ratio, the near clipping plane (how close we can see), and the far clipping plane (how far we can see). Then, we&#39;ll set the position of our camera. At default, the camera is placed at the origin. Where is the camera aiming at? Well, at default it aims at the origin, but we&#39;ll adjust it to aim at our model in a second. You will probably have to adjust the camera and model positions yourself depending on what model you use to make it look good and what angle you want to view the model from.</p>
+
+<p>Next, we need some <strong>lights</strong>. We can add a directional light, which is a light from one point. We can also add a &quot;surround&quot; light without any specific direction, which is an ambient light. In this specific case, we&#39;ll use a Hemisphere light for our ambient light. Now, not all models need lights, as how the light interacts with the model depends on the materials placed on the model. In the case of the Hu Tao model, it doesn&#39;t interact with lights, so I&#39;ve commented out the lights here.</p>
+
+<p>Now, we add any models and lights to our scene, and then render these objects from the perspective of our camera using a renderer. The <strong>renderer </strong>is what does all the computations and converts everything we added into an actual image on our screen. We&#39;re using WebGL, so our renderer is the WebGLRenderer, and then I added a couple of properties to allow for antialiasing to smooth out edges and to allow for transparency. Finally, we add OrbitControls to add some interactivity with our model, which basically allows the DOM element of the renderer to control the camera.</p>
+
+<p>We add an event listener to detect when our screen resizes, to make our model responsive, in case people rotate their mobile device or resize their window.</p>
+
+<p>Finally, we render our scene using our renderer and add the DOM element produced by the renderer to our container. Then, to allow for the interactivity, we set the renderer on an <strong>animation loop</strong> in which it re-renders the scene at each frame, thereby allowing us to see any changes to the camera that we make using OrbitControls.</p>
+
+<h1>The basic graphics pipeline</h1>
+
+<p>So what we&#39;ve done is go through the basic graphics pipeline in a practical sense. A graphics pipeline is a model that describes the steps a graphics system performs in order to render a 3D scene to a 2D screen. There is no universal graphics pipeline suitable for all cases because the steps depend on the software and hardware used. Graphics APIs such as Direct3D and OpenGL were created to unify similar steps, and abstract away underlying hardware. What we just used, Three.js, was a library built to utilize WebGL, a Javascript API for OpenGL. Most of the graphics pipeline was abstracted away for us so we don&#39;t have to deal with all of the computation. All we did was add in the elements we wanted to see, and the graphics pipeline did all the work for us. But what if we wanted to change the pipeline? Well, then, we&#39;d need a basic understanding of how it works. <strong>The three main parts to a graphics pipeline is the application, geometry, and rasterization.</strong></p>
+
+<h2>Application</h2>
+
+<p>The application step is executed by the CPU, and forms the scene with its geometric primitives. A <strong>geometric primitive, or prim</strong>, or the simplest geometric shape that a system can handle&mdash;usually a point, line, or some planar surface such as a triangle. Note that a primitive with four points (a &quot;rectangle&quot;) would not always be in the same plane. Animation, collision, morphing, and acceleration, as well as spatial subdivision techniques such as Quadtrees, are done at this step.</p>
+
+<h2>Geometry</h2>
+
+<p>Next, the primitives pass through the Geometry pipeline, which performs operations on the polygons and their vertices. First, the primitive objects undergo a series of linear transformations (translations, rotations, scaling) to create a world matrix. Then the scene is transformed so that the camera is at the origin looking along the Z axis, creating a camera coordinate system; this transformation is the <strong>camera transformation</strong> and creates a <strong>view matrix</strong>, which is typically in the shape of a <em>frustum</em>, or a truncated pyramid, with a field of view, aspect ratio, near clipping pane, and far clipping pane. All primitives that are completely outside of this view matrix is discarded; this process is known as frustum culling, or <strong>clipping</strong>.</p>
+
+<div class=""image""><img alt=""camera transformation"" src=""https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/View_transform.svg/330px-View_transform.svg.png"" style=""width: 330px; height: 158px;"" />
+<div class=""caption"">Camera transformation: note the gray trapezoid indicative of the frustum of the view volume</div>
+</div>
+
+<p>The view matrix is then transformed in the 3D projection step into a cube with corner point coordinates (-1, -1, 0) and (1, 1, 1). However, the Z coordinates are not used in further processing until the later Z-buffering step; therefore, the 3D view matrix is essentially converted into a 2D plane. The type of <strong>projection</strong>, or transformation, depends on what type of view is desired. A <em>central projection</em> is used for perspecitve illustrations, and an <em>orthogonal projection</em> is used for technical representations (such as maps) because the objects retain their parallelism with each other. This area is the area of projective geometry, quite a fascinating area of linear algebra but I haven&#39;t yet been able to wrap my head around it yet.</p>
+
+<p>Lights are placed at different positions, with a directional light representing something such as the sun, and oftentimes a general, or ambient, light that is applied to all surfaces regardless of direction. The lighting is combined with the material properties of the primitives, and the<em> gain factor </em>for the texture from the light is later <em>interpolated </em>over the surface of the primitive.</p>
+
+<h2>Rasterization and shading</h2>
+
+<p>Finally, the last step of the basic graphics pipeline is <strong>rasterization</strong>, which is the mapping of scene geometry to actual pixels. The specific color of each pixel is assigned by a pixel <strong>shader</strong>. During this process, <em>antialiasing </em>can create &quot;smooth&quot; edges by allowing for decreasing precision during the rasterization process.</p>
+
+<h1>Forward and backward rendering</h1>
+
+<p>Note that what I have just described is the most common form of computer 3D rendering, which is <strong>3D polygon rendering</strong>. As you have seen, first the world matrix is created and then rays are produced from the surface of the models and traced to the camera, and those rays are rasterized in the final image&mdash;this is <strong>forward </strong>rendering, as this is what is more representative to how light actually travels. On the other hand, <strong>raytracing </strong>does the reverse of this, by sending a ray from the camera. The idea here is that instead of trying to calculate all of the light bouncing around the scene, we only care about the light that reaches our eye. This way, this reverse &quot;raytracing&quot; method can avoid a lot of computation. By reducing the amount of computation necessary to create the scene, raytracing can handle a lot more &quot;bounces&quot; of light, thereby producing a more realistic image.</p>
+
+<div class=""image""><img alt="""" src=""https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Glass_ochem.png/1920px-Glass_ochem.png"" style=""width: 800px;"" />
+<div class=""caption"">This image was created by raytracing up to a reflection depth up to 9 times using the Fresnel equations</div>
+</div>
+<script src=""https://polyfill.io/v3/polyfill.min.js?features=es6""></script><script async src=""https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js""></script><script type=""importmap"">
+    {
+    ""imports"": {
+        ""three"": ""https://unpkg.com/three@0.143.0/build/three.module.js""
+    }
+    }
+</script><script type=""module"" src=""/static/js/three/main.js""></script><script src=""/static/prism/prism.js"" defer></script>",2022-08-15 05:28:04,2022-08-16 19:56:02,1,"8,2","The web platform is not typically thought of as the most powerful graphics platform, as graphics take up a lot of bandwidth. However, when it comes to producing graphics, the web is actually quite capable. Here, I explain and demonstrate the basic graphics pipeline in the web environment using Three.js.",https://images.pexels.com/photos/8832898/pexels-photo-8832898.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+24,The light transport problem and its relation to numerical integration,"<h1>Graphics rendering</h1>
+
+<p><strong>Rendering is the process of generating an image from a model by means of a computer program</strong>&mdash;the resulting image is a render. Rendering is a major subtopic in 3D computer graphics, and is t<strong>he last major step of the graphics pipeline</strong>, giving the models in a scene their final appearance. An important problem in the rendering process is the light transport problem. <strong>The light transport problem is the problem of calculating how light is emitted, transmitted through a visual scene, scattered by various objects in that scene, and then measured by the human eye</strong>. Solving this problem is important in creating realistic images, which are particularly important for computer-generated images (CGI) in films and video games where the speed of the computation must be fast to occur in real-time.</p>
+
+<h1>Radiance, radiant exitance, and irradiance</h1>
+
+<p>Radiometry is a set of techniques for measuring light. Radiant flux, or luminosity, is the radiant energy emitted, reflected, or transmitted by a surface per unit time, in units of Watts (J/s). <strong>Radiant exitance \(M\) or radiosity</strong> is the radiant flux per unit area, in units of Watts over square meters.</p>
+
+<p>Before we go further into the study of measuring light, we should understand that computer graphics typically relies on the simplest model of studying the behavior of light, which is called ray optics or geometric optics. In this model, several assumptions are made to simplify the mathematics. <strong>First, light can only be emitted, reflected, and transmitted. Second, light can only travel in straight lines and travels at infinite speed.</strong> Therefore, much of the physics underlying wave, electromagnetic, or quantum optics is ignored.</p>
+
+<h1>The rendering equation</h1>
+
+<p>Now let&#39;s say our scene is built of however many points \(p\). Let&#39;s suppose that in our scene, there isn&#39;t any light being emitted or reflected, and every point simply transmits a color. In that case, our function for radiant exitance is pretty simple:</p>
+
+<p>\[M(p)=f(p)\]</p>
+
+<p>Now, let&#39;s account for radiant emittance \(L_e\) to account for light that is being emitted, such as from a light source.</p>
+
+<p>\[M (p) = L_e (p) + f(p)\]</p>
+
+<p>Now, a light source creates a different scene depending on your perspective. If you look at a green blob, but there&#39;s a wall blocking you from that blob, then it&#39;s as if the blog isn&#39;t even there. Or, if you look at a mirror, you&#39;ll see completely different things if you look at it straight on as opposed to looking at it from the side. In order to account for this, we have to add another term for the direction (angle) \(\omega\) of the ray leaving the point to our eye.&nbsp;This is the radiance of the point, or intuitively, how the point looks to our eye. <strong>Radiance</strong> \(L\) is a directional quantity and <strong>is most directly related to the perceived brightness of the point, and is the ultimate quantity that must be computed in order to render an image.</strong> Radiance is the radiant exitance per unit angle, and so the units is watts per square meter per seradian.</p>
+
+<p>\[L (p,\omega_o) = L_e(p, \omega_o)+f(p,\omega_o)\]</p>
+
+<p>Now, objects also reflect light. The light it reflects is a function of the light that the object receives. <strong>The light a surface receives at any given angle is termed irradiance \(L_i\).</strong> In almost all cases, we need to add up, or integrate, all of the incident radiance on our point from all angles in order to properly compute the radiance that is emitted towards our eye. <strong>This is why integration is a key aspect of the light transport problem.</strong> In the following equation \(\Omega\) denotes the hemisphere that we care about (if a light source is behind the object you&#39;re looking at, then no light is reflected in our direction, so we only care about light rays from one hemisphere).</p>
+
+<p>\[L(p, \omega_o)=L_e(p,\omega_o)+\int_\Omega{L_i(p,\omega_i)d\omega_i}\]</p>
+
+<p>In order to get from the irradiance (input light) to an output light, we need to put our integration through the <strong>BRDF, or the bidirectional reflectance distribution function. </strong>The BRDF \(f_r\) is a function of the four variables: the incident and reflected light and each of their azimuth and zenith angles (the two dimensions since this is a discussion of 3D scenes, kind of like latitude and longitude). In the ideal diffuse, or Lambertian, BRDF, light is reflected equally in all directions. On the other extreme, perfectly specular materials reflect light in only in the mirror direction. Add this, along with a weakening factor \(\cos{\theta_i}\) (which I will neglect to explain here), and we will arrive at our <strong>rendering equation</strong>, scattering/reflection equation, or the hemispherical local illumination model:</p>
+
+<p>\[L(p, \omega_o)=L_e(p,\omega_o)+\int_\Omega{f(p,\omega_o,\omega_i)L_i(p,\omega_i)\cos{\theta_i}d\omega_i}\]</p>
+
+<h1>Solving the rendering equation</h1>
+
+<p>Now, this rendering equation is very difficult to compute. In addition, this is only the local illumination model, which simply accounts for a light source, an object, and the observer&#39;s eye. Account for multiple objects reflecting light all at once and accounting for all possible paths that a ray can be traced, and you start to have to deal with very high dimensional integrals. To solve this, early approaches used finite element modeling, which required certain limitations such that scenes must have large area light sources and reflection of light must be Lambertian (perfectly diffuse). Now, <strong>Monte Carlo integration</strong> uses random sampling in order to overcome some of the limitations of finite element modeling; however, they result in a larger degree of variance, which manifests as high-frequency noise in the rendered image. As for how the technique actually works, I&#39;ll save that adventure for another time.</p>
+<script id=""MathJax-script"" async src=""https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js""></script>",2022-08-14 04:38:22,2022-08-15 20:30:06,1,8,"The rendering process is the last step of the graphics pipeline, and gives the models in a scene their final appearance. But computing how light is emitted, reflected, and transmitted through a scene is no small feat. Here's a brief introduction to the importance of the numerical integration underlying the light transport problem.",https://images.pexels.com/photos/1252893/pexels-photo-1252893.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+23,"Additive and subtractive color models, and vector and raster rendering","<h1>Color models</h1>
+
+<p>A color model is a system for creating a range of colors from a small set of primary colors. The <strong>RGB (Red, Green, Blue)</strong> color model is an <strong>additive color model</strong> corresponding to the perception <strong>transmitted light</strong>, whereas <strong>CMYK (Cyan, Magenta, Yellow, and Key)</strong>&nbsp; is a <strong>subtractive color model </strong>corresponding to the perception of <strong>reflected light</strong>. <strong>RGB is used for displays in which light is used to transmit color, whereas CMYK is used for printed material, where light is reflected.</strong> The addition of the colors in the RGB model produce the colors of the CMYK model, and the subtraction of the colors in the CMYK model produce the colors of the RGB model.</p>
+
+<p>Computer monitors typically display RGB using 24-bit color, meaning there are 8 bits allotted for each color. 8 bits allows for a total of 256 different values for each color. Therefore, the 24-bit RGB model is capable of producing 256 x 256 x 256 = 16,777,216 different colors. As such, when selecting an RGB value, you can select from 0 to 255. Black is with all values at 0, whereas white is with all values at 255.</p>
+
+<p>CMYK is used for printing on lighter, usually white, backgrounds, and work by subtracting red, green, and blue to produce cyan, magenta, and yellow. Because of impurities in ink, cyan, magenta, and yellow inks, when combined, produce a dark brown color rather than black, and so the Key (black) ink is added to make printing black more easily. CMYK is measured in percentages rather than in values, where white is 0% cyan, 0%, magenta, 0% yellow, 0% black.</p>
+
+<h1>Raster and vector rendering</h1>
+
+<p>A <strong>raster image</strong>, which uses a bitmap, is an image made up of individual pixels of color. JPEG, PNG, GIF are all raster images, and their quality can be measured in pixels per inch (ppi). Because each pixel of color is encoded in the image, they <strong>lose quality when scaled</strong> to larger sizes, as software must add in extra pixels to make up for that space. In addition, as the images are scaled up, more space is needed to store the raster image.</p>
+
+<p><strong>Vector images </strong>are made up of vectors/paths, each with a mathematical formula indicating its shape and the colors it is bordered with or filled by. These paths can then be transformed using linear algebra to create images of all sorts of transformations, such as scale, skew, rotation, etc. This enables vector images to be <strong>easily scalable</strong> (without increasing file size) and the <strong>file sizes are smaller</strong> because only information necessary for re-constructing the image, and not every pixel itself, must be stored. However, vector images are <strong>not optimal for detailed images</strong> such as a photograph, since vector graphics are limited to vectors which typically represent continuous or smooth lines.</p>",2022-08-13 17:43:56,2022-08-13 17:43:56,1,8,A quick overview on additive and subtractive color models and the tradeoffs between storing data and re-computing data via vector and raster images.,https://images.pexels.com/photos/1279813/pexels-photo-1279813.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+22,"Lossy and lossless image compression, and efficient loading of web images","<h1>Lossy vs lossless</h1>
+
+<p>Lossy, or irreversible compression, is a concept in information technology in which <strong>data is compressed using approximations and insignificant data is discarded</strong> in order to reduce the size necessary to store and process the data. The most widely used lossy compression algorithm is the discrete cosine transform (DCT).<strong> Audio, videos, and images</strong> often use lossy compression due to their large size and their tendency to produce bottlenecks in network bandwidth (for example, YouTube at one point was using up an extraordinary fraction of the web&#39;s available bandwidth). Examples of media formats using lossy compression include <strong>JPEG, MPEG, MP3, MP4, WMA</strong>.</p>
+
+<p>On the other hand, lossless, or reversible, compression <strong>removes statistical redundancy</strong> in order to reduce the size of data (as opposed to approximations in lossy compression). It creates a version of the data that takes up less space but can be used to reconstruct the original data. An analogy (courtesy of ELI5 reddit) is that you can take a ball and remove the air from inside of it. It takes up less space now, but you can put the air back in later and have it just it be the same ball from the start. In terms of images, for example, instead of storing the color of a red square for every pixel (which can take a lot of space), you can store the red value in the first pixel, and then remember that the rest of the square is the same as the first pixel, and decode that pattern when reproducing the image. The actual algorithms used are quite fascinating, and I&#39;ll attempt to explore these later, but they are<strong> specific to certain data types</strong>, and so different algorithms must be generated to deal with different data types. As such, the main data types using lossless compression is <strong>programming code and text documents</strong>. Examples of media formats using lossless compression include <strong>ZIP</strong>,&nbsp;<strong>PNG&nbsp;</strong>and <strong>GIF</strong>.</p>
+
+<h1>Web multimedia</h1>
+
+<p>The concern of image compression is fairly significant for web development, as <strong>over 70% of the data for an average website is in the form of images and video</strong> (and a video is just a sequence of images). Minimizing the amount of data transferred from your site allows your site to perform more smoothly and limits data usage by your users. If your user is there mostly for your text content and the images are second-hand, a slow loading image might not be too important. But if your site is mostly concerned about media (say an art site or a video streaming site), then it&#39;s needless to say that the faster you load your media, the more engaged your user will be.</p>
+
+<h2>Lazy loading</h2>
+
+<p>One of the biggest improvements to modern web development is the use of lazy loading. &quot;Lazy&quot; in programming contexts means that it doesn&#39;t do your work unless it has to&mdash;it procrastinates. So a lazily loaded website <strong>only loads non-critical elements (such as decorative images) when necessary</strong>, thereby improving user experience. Lazy loading is typically achieved by splitting all of the data from a website into smaller chunks. For example, the <code class=""language-html"">loading</code> attribute can be placed onto an HTML image, and so the image will not be loaded until the user scrolls near it.</p>
+
+<pre>
+<code class=""language-html"">
+&lt;img src=&quot;image.jpg&quot; alt=&quot;...&quot; loading=&quot;lazy&quot;&gt;
+</code></pre>
+
+<h2>Optimal image format</h2>
+
+<p>In addition to lazy loading, the images that you use should use <a href=""https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types"" target=""_blank"">an appropriate file type</a>. The optimal file format for most images and animations is the <strong>WebP (web picture)</strong> format, which uses both lossy and lossless compression techniques to offer better compression than PNG and JPEG while having support for animation and transparency. <strong>SVG</strong> <strong>(scalable vector graphics)</strong> should be used for&mdash;well, you guessed it&mdash;vector graphics that need to be scaled, such as user interface elements, icons, and diagrams. As mentioned before, <strong>PNG (portable network graphics)</strong> is lossless and so therefore should be used when quality of the image needs to be maintained. <strong>JPEG (joint photographic expert group)</strong> images are the most popular for lossy compression, and so is great if it&#39;s okay to sacrifice some quality for faster loading. SVG and PNG support transparency whereas JPEG does not. GIF (graphics interchange format) is good for simple images and animations. The reason WebP is not as popular as JPEG or PNG is because it is a newer format recently released by Google in 2018 and is not technically working on Safari even though it&#39;s supposed to be. However, loading your images in WebP seems to be best practice for now where performance is a concern.</p>
+
+<h2>Optimal image size</h2>
+
+<p>Finally, the most important thing you can do to &quot;compress&quot; your image is simply to make it smaller. If you have a small mobile screen, you don&#39;t need to load a gigantic image at full resolution for a 4K monitor. Therefore, a well-designed website with large images typically will have <strong>a separate version of their images for mobile users</strong>. Once you have multiple sizes, you can then use HTML or CSS to load the proper image for the given screen size.&nbsp;</p>
+
+<p>For example, for CSS:</p>
+
+<pre>
+<code class=""language-css"">
+img {
+  content: url(&quot;big_image.jpg&quot;);
+}
+
+@media only screen and (max-width:600px) {
+  img {
+    content: url(&quot;small_image.jpg&quot;);
+  }
+}
+</code>
+</pre>
+
+<p>Or in HTML:</p>
+
+<pre>
+<code class=""language-html"">
+&lt;picture&gt;
+  &lt;source srcset=&quot;small_image.jpg&quot; media=&quot;(max-width:600px)&quot;&gt;
+  &lt;img src=&quot;big_image.jpg&quot;&gt;
+&lt;/picture&gt;
+</code>
+</pre>
+<script src=""/static/prism/prism.js"" defer></script>",2022-08-12 17:36:28,2022-08-22 15:58:41,1,"8,2","Lossy and lossless compression algorithms reduce the size of data, which is especially important for transmission of large datasets over networks such as the Internet. On the web, the practice of using proper compression techniques, file formats, and image sizes can drastically improve user experience and limit data usage.",https://images.pexels.com/photos/958026/assembly-smartphone-photography-photograph-958026.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+21,"Digitization of analog data, resolution, and the limits of human perception","<h1>Digital vs. analog</h1>
+
+<p>An important topic in engineering, especially in electrical engineering, is the conversion from an entity that maintains information in discrete quanta (eg. computers) to an entity that maintains information in analog signals (eg. the &quot;real world&quot;). Coming from a background in neuroscience, medicine, and neural engineering, this was a particularly fascinating question, as the neuron, the basic unit of information transfer in the nervous system, has its own methods of converting analog signals such as pressure or biochemical signaling into distinct action potentials that ultimately create a seemingly continuous &quot;consciousness.&quot;</p>
+
+<p>An<strong> analog signal </strong>is any signal that is <strong>continuous </strong>in both amplitude and time, and most signals in the world are analog signals. For example, when you look at an object, the signal your eyes receive is continuous in that the image seems whole rather than disjointed. In mathematical terms, most measurements take on a real number. In order for signals to be processed by a computer, these signals must be converted into discrete values&mdash;into integers, and, in the context of computers, into 0s and 1s. Both amplitude and time must be quantized in order for the signal to be processed by a computer.&nbsp;It&#39;s important to understand that a digital signal is not simply an approximation of an analog signal, but that it can be converted back into an analog signal completely&mdash;that is, <strong>the digital signal can be just as complete as the analog signal</strong>. The computer is the cornerstone of our ability to transform these signals back and forth from one another, because the computations utilized, such as the Fourier transform, can only be performed quickly enough by computers, and computer programs allow us to transform the signal in ways that circuits cannot.&nbsp;</p>
+
+<p>The computer typically operates in discrete units. For time, computers work in discrete timepoints, according to the ticks of a clock. This is the <strong>&quot;clock speed&quot;</strong> of the computer&#39;s central processing unit (CPU). A 1 GHz computer operates at a billion times per second. For amplitude, a computer performs operations in integers in the form of<strong> bits (binary digits)</strong>. If we want to represent an integer, for example, in a computer, we can designate a certain number of bits to represent it. An 8-bit integer is capable of representing any integer from 0 to 255. If we use one of the bits to designate the sign of the integer, we can now go from -128 to 127. In order to represent non-integers (real numbers), the computer uses the floating-point system which are approximations based on exponents. Bits are expressed in computers using high and low voltage values, and operations on these bits are performed by logic circuits.</p>
+
+<p>If we quantize the time axis of an analog signal, we can break it up into discrete moments of time; this process of reduction is called <strong>sampling</strong>. Mathematically, these samples are <strong>sequences</strong>, which are functions defined for only discrete units (integers) of time. In practice, this is typically an analog to digital converter (ADC) with a periodic timer that takes a measurement at a periodic interval, or a digital to analog converter (DAC) that outputs new data at a periodic interval. A common example in the context of human-computer interaction for the importance of sampling is in audio engineering, as important sounds typically change quickly over time. However, a lot of the the information we&#39;re trying to convey does not actually vary over time, so the only value we need to quantize is the amplitude. This can be done for visual displays by transforming them into individual pixels, or for laser printers by transforming them into dots.</p>
+
+<h1>Limits of human perception</h1>
+
+<p>So as you can probably tell, an important area of computer science and electrical engineering is how we can reduce error in the analog-to-digital conversion process, and how we can trade off computational power for error. How much error we can add to our representation of data depends on the impact on the human for which that data is being used. When we look at an image, we don&#39;t really care how precise the data is unless it starts to impact how well we can tell what that image represents. Therefore, a digital signal must have high enough <strong>precision </strong>for us to tell values apart in order to reach a specific <strong>resolution</strong>, the smallest change in value that is significant. This ties into our discussion of algorithms, because the purpose of an algorithm is to solve a problem in terms of decidability&mdash;that is, it must be able to make a decision in the end. Therefore, the data structures used in the algorithm must have enough precision for the algorithm to function and be significant. But if the data is too large, then computations can take too long and render the algorithm ineffective.</p>
+
+<p>As I touched on before, <strong>human perception</strong> is akin to that of a computer, except at a level that we don&#39;t quite yet understand. Light photons enter our eyes and activate light-sensing cells in our retina, but as soon as it hits the level of biological signal processing, the complexity becomes impossible to compute. In addition, even if we knew where the signal pops up at the level of the primary sensory neurons, as it travels through the tangle of nerve fibers it becomes lost in a jungle of biological operations that are at this time impossible to follow. However, the limits of what a human is able to perceive is frequently tested in the realm of <strong>cognitive science</strong>, which I will undoubtedly have many posts about later on as that is my background.</p>",2022-08-11 17:06:05,2022-08-26 18:36:13,1,8,"The fundamentals to graphics and visualization starts with the understanding that most real-world measurements are conveyed in analog, or continuous, signals, whereas computers are organized to deal with information in discrete units.",https://images.pexels.com/photos/865711/pexels-photo-865711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+20,The importance of algorithms in the problem-solving process,"<h1>Overview and history</h1>
+
+<p><strong>Algorithms</strong> in the field of computer science and mathematics refers to a sequence of instructions used to solve a problem. They are typically contrasted with <strong>heuristics</strong>, which refers to solving problems that may not have a correct result. The algorithm uses a language to describe how transform an initial state through a finite number of successive states to eventually produce an ending state.</p>
+
+<p>The word algorithm is derived from the Latinization of the name <strong>al-Khwarizmi</strong>, a Persian polymath who was the most widely read mathematician in Europe in the late Middle Ages due to his book<em> Al-Jabr</em> (<em>Algebra</em>).</p>
+
+<figure class=""image""><img alt=""Al-Khwarizmi"" src=""https://upload.wikimedia.org/wikipedia/commons/1/11/1983_CPA_5426_%281%29.png"" style=""height: 402px; width: 300px;"" />
+<figcaption class=""caption"">A stamp in the Soviet Union around 1983 celebrating Al-Khwarizmi&#39;s approximately 1200th birthday</figcaption>
+</figure>
+
+<h1>Definition of an algorithm</h1>
+
+<p>An algorithm can be seen as <strong>a set of rules that define a sequence of operations</strong>, a set of the instructions that must be explicit and <strong>must be able to be followed by a computing machine</strong>, human or otherwise. All computer programs are algorithms, and so are prescribed procedures such as basic life support and cookbook recipes. Formally, an algorithm is a sequence of operations that can be simulated by a Turing-complete system. The formal definition of an algorithm does not require the computational processes to terminate, but<strong> informal definitions generally do require termination</strong> (see more about the halting problem).</p>
+
+<p>The initial emergency room management of status epilepticus, or a continuous seizure lasting at least 5 minutes, is a sequence of operations to solve a problem, but its instructions cannot necessarily be followed by a computer. Would you consider this an algorithm? If not, what is it?</p>
+
+<ul>
+	<li>Call for help</li>
+	<li>Check airway, breathing, circulation, and glucose levels</li>
+	<li>Open the airway</li>
+	<li>Obtain IV access and check for venous blood gas, glucose, electrolytes, toxins, pregnancy, kidney function, and lactate</li>
+	<li>Manage blood pressure</li>
+	<li>IV lorazepam 4mg (repeat in 4min as needed) or IM midazolam 10mg</li>
+	<li>If no response, start phenytoin/fosphenytoin, valproate or levetiracetam</li>
+	<li>Prepare for rapid sequence intubation with propofol and rocuronium</li>
+	<li>Consider other life threats</li>
+	<li>Perform head imaging to rule out space-occupying lesion</li>
+</ul>
+
+<div id=""votebox1"">Votebox1</div>
+
+<p>When an algorithm <strong>processes information</strong>, it <strong>reads from an input</strong>, <strong>stores any data</strong> in an internal state represented by one or more data structures, and then <strong>writes an output</strong> for further processing. Its instructions, a precise list of steps, has a certain order defined as its <strong>flow of control</strong>. There are many ways to express an algorithm; frequently used methods include natural language, pseudocode, flowcharts, drakon-charts, programming languages, and control tables.</p>
+
+<h1>An effective algorithm</h1>
+
+<p>It is obvious that many problems have many correct solutions, and many problems have no solution at all. In the context of computer algorithms, there can be many possible solutions to a problem, but an algorithm can be ranked subjectively. There is the concept of <strong>&quot;elegant&quot; or &quot;good&quot; algorithms</strong>. An &quot;elegant&quot; algorithm might be short and sweet but take much longer time than a &quot;good&quot; algorithm.</p>
+
+<p>In order for an algorithm to be effective, however, there are a few elements that it must have:</p>
+
+<ol>
+	<li>Discrete locations</li>
+	<li>Discrete counters</li>
+	<li>An agent</li>
+	<li>A list of instructions effective relative to the capability of the agent</li>
+</ol>
+
+<p>An example of an algorithm using these four elements is the following <strong>Euclid&#39;s algorithm</strong>&nbsp;for finding the greatest common divisor of two integers:</p>
+
+<pre>
+<code class=""language-basic"">
+5 REM Euclid&#39;s algorithm for greatest common divisor
+6 PRINT &quot;Type two integers greater than 0&quot;
+10 INPUT A,B
+20 IF B=0 THEN GOTO 80
+30 IF A &gt; B THEN GOTO 60
+40 LET B=B-A
+50 GOTO 20
+60 LET A=A-B
+70 GOTO 20
+80 PRINT A
+90 END
+</code>
+</pre>
+
+<p>In this example, each line is a <strong>location</strong>, and you have <strong>counters </strong>A and B. An agent follows instructions, such as printing, recording input, and moving from location to each location. This is an <strong>&quot;elegant&quot; solution because it has a minimal number of types of instructions</strong>. Here&#39;s a demo of how this algorithm might work on the web!</p>
+
+<p>An example where you might have an ineffective algorithm is one which requires the computer to find the square root of a number in order to ultimately find the roots of a quadratic equation. Unfortunately, if the computer does not know how to do that, that algorithm is ineffective until it provides the rules for finding a square root.</p>
+
+<h1>Algorithm correctness and analysis</h1>
+
+<p>So how do you know if an algorithm is correct, or if it&#39;s efficient? Formally, this is is typically done by <strong>proofs</strong>, either indirectly through a counterexample, directly through induction, or a variety of other techniques such as contradiction, cases, and contrapositive. An algorithm is only correct if it always returns the desired output for all instances of the problem. Algorithms can also be tested empirically, via testing; although <strong>empirical testing</strong> cannot replace formal analysis, it is possible to perform empirical testing on problems that are inaccessible to formal analyses such as those involving hard combinatorial problems.</p>
+
+<h1>Algorithms and problem-solving</h1>
+
+<p>So how do algorithms help us with solving problems? I think an essence to this is that problems in computer science distinguishes itself from those of other fields in that it attempts to apply formal analysis to problems, and as such, is <strong>constrained to specific types of problems</strong>. Whereas in our daily lives, we will have problems that can be solved in many ways. In the real world, most problems cannot be solved formally through mathematical proof. However, in the realm of computer science, algorithms must account for all cases, must be precise, and must be understandable to the agent, aka the computer. This means that the problem itself, which originally is typically complex, must be simplified into digestible components, to the point where a computer can follow direct instructions on how to solve it. By attaching precise instructions, <strong>we are connecting a complex problem slowly into something that can be proved formally</strong>, thereby applying rigor to the problem solving process, and making the problem-solving process systematic. Therefore, <strong>the key to the power of algorithms is simplicity</strong>.&nbsp;</p>
+
+<p>In addition, algorithms typically allow a more distant view of problem-solving, and its practice reinforces the<strong> importance of creativity and out-of-the-box thinking</strong>. When you look at elegant algorithms, you can&#39;t help but to be in awe, because the steps themselves are simple, but the end result they create is complex. As I always say, simplicity is a most complicated matter.</p>
+<script src=""/static/prism/prism.js"" defer></script>
+<script src='https://cdn.plot.ly/plotly-2.12.1.min.js' defer></script><script src=""/static/js/voteBoxes.js"" defer></script>",2022-08-11 07:53:04,2022-08-15 20:28:05,1,"6,7",The concept of algorithms and its role in problem-solving is one of the cornerstones to programming solutions to various computer science problems. What exactly is an algorithm and why is it so important?,https://images.pexels.com/photos/1389460/pexels-photo-1389460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+19,8 topics beginner computer scientists should be aware of,"<p>I&#39;ve taken excerpts from <a href=""https://teachyourselfcs.com/"" target=""_blank"">teachyourselfcs.com</a> and the <a href=""https://www.acm.org/binaries/content/assets/education/cs2013_web_final.pdf"" target=""_blank"">IEEE&#39;s guidelines on computer science curriculum for undergraduates</a> to create a brief overview on the areas in which computer scientists study and challenge themselves in. Obviously, in order to really understand the content of any one of these fields could take several lifetimes, but it&#39;s nice to get a primer in what&#39;s to come ahead. This list is ranked based on how many core hours are suggested to be spent in the certain topic, and is not meant to be a comprehensive overview of everything that is important to learn in computer science. All computer scientists should have at least an awareness of what these concepts are, but it is highly unexpected for any one scientist to have mastery over any specific domain. For a learner of computer science (such as myself), it is likely you will be hopping back and forth from one topic to the next, and so it may not be optimal to have a strong temporal order in which to investigate these topics. However, for practical purposes such as finding a job, software development, the first topic, is likely to be first on most people&#39;s minds.</p>
+
+<h1>Software development and engineering</h1>
+
+<p><strong>Software development is the process of using computers to solve problems</strong>, and is a prerequisite to studying computer science. Software development is akin to the &quot;practice&quot; of computer science, as playing music might be the &quot;practice&quot; of a musical theorist. The entire software development process goes beyond simply being able to navigate various programming languages, but also understanding how to design and analyze algorithms, select proper methodology, and familiarity with modern tools to solve problems. This is most likely the area in which people who enter computer science for the purpose of finding a job need to really master, as it is the practice for which we are paid. It can also be seen as a comprehensive introduction to other deeper fields of computer science study, so the topics you see here are likely to be repeated later.</p>
+
+<p>Key elements in software development includes the understanding the importance of <strong>algorithms and strategies for problem-solving</strong>, <strong>design concepts and principles</strong> such as abstraction, decomposition, and encapsulation. It involves fundamental programming concepts such as <strong>syntax and semantics</strong> of high-level languages, variables, expressions, and the concept of <strong>recursion</strong>. It also covers basic <strong>data structures</strong> such as arrays, strings, stacks, linked lists, etc. It goes into development methods, and how to analyze for <strong>program correctness</strong>, how to document software appropriately, and program refactoring.</p>
+
+<p><strong>Software engineering is the application of engineering principles to software</strong>, and is concerned with how to the selection of the appropriate techniques to maximize value. This is an area of applied computer science, of creating software systems to satisfy the requirements of customers and users, with particular emphasis on the specific platform, eg. real-time systems, web-based, high-integrity, gaming, scientific/business, etc. I have a summarized version of the Software Engineering Body of Knowledge on my <a href=""https://neuralhuborg.herokuapp.com/learn/computer_science/index#sets"" target=""_blank"">neural engineering site</a>. In brief, software engineering discusses <strong>software processes, project management, tools and environments (configuration management and version control), requirements engineering (understanding the needs of the users/customers aka stakeholders), software design, construction, verification and validation</strong>, and was to analyze the afore-mentioned topics.</p>
+
+<h1>Discrete Structures &amp; Algorithms</h1>
+
+<p>Discrete structures is where you really make the tie between math and programming. Few computer scientists work primarily with discrete structures, but most will be working with concepts <em>from </em>them. In formal settings, this course might be titled something like &quot;Mathematics for Computer Scientists.&quot; The key elements include <strong>set theory, logic, proofs, combinatorics (aka counting), graphs and trees, and probability</strong>.</p>
+
+<p>Algorithms are ways to solve a difficult problem in an efficient and effective manner. Studying algorithms involves selecting appropriate algorithms while also recognizing there may not be any real solution, similar to how a lot of math problems work. Key elements in algorithms are <strong>basic analysis</strong>, looking at best, average, and worst case scenarios of a solution, big O notation, <strong>time and space trade-off</strong>, <strong>algorithmic strategies</strong> such as brute-force, greedy, divide-and-conquer, recursion, and dynamic programming, and the interplay between data structures and algorithms such as finding attributes of (min, max, mode), <strong>sorting, and searching</strong> various data structures. Algorithms also cover the basics of <strong>automata</strong> and provide an introduction to <strong>NP-completeness</strong>.</p>
+
+<p>Although the concepts discussed will rarely come up in discussions during software development, DS&amp;A are the backbone to one&#39;s ability to solve problems. There is a reason why the most high-paid positions in software engineering frequently use <a href=""https://leetcode.com/"" target=""_blank"">Leetcode</a> to assess a programmer&#39;s general level of &quot;skill&quot;--it&#39;s easy to tell which students has had the discipline to master the mathematical foundations, and how to use these foundations to solve a large variety of problems.</p>
+
+<h1>Architecture</h1>
+
+<p>Computer architecture looks below the surface level of software and starts to inspect how software interacts with computer hardware, and how a computer system works to allow us to program it. It is another approach to learning about the fundamentals, except that instead of the math, you&#39;re now looking at the physical basis of computers. Architecture and organization involves an understanding and appreciation of the different components of the computer and how they are able to work together to perform algorithms in a way that a programmer can interact with. This is an area that many engineers may neglect to understand, because it&#39;s not really necessary until you really start to suffer from performance concerns and pushing the limits of what your system is capable of. This is a main field of study for computer engineers.</p>
+
+<p>Key elements to computer architecture are <strong>digital logic and digital systems</strong> which describe the <strong>basic building blocks of a computer</strong> (logic units, registers, central processing units, memory), how hardware and architecture is designed, and <strong>physical constraints</strong> of computers. It goes into the <strong>machine level representation of data</strong>, from bits and bytes to representation of numbers and non-numeric data. It goes through <strong>assembly/machine language programming</strong>, discusses how instructions are representated at the machine level and in the context of a symbolic assembler, and shows how high-level programming languages build off of machine languages. Importantly, it covers the computer <strong>memory system</strong>, and how the operating system interfaces with other devices. Finally, it discusses functional organization, and introduces us to <strong>parallelism and latency</strong> for high performance computing.</p>
+
+<h1>Operating Systems</h1>
+
+<p>Computer architecture, operating systems, computer networks, and distributed systems all might be described as systems principles, where they are sometimes distinct and sometimes overlapping concepts in understanding a computer system. Operating systems is the abstraction of hardware and how this abstraction manages the sharing of resources between different users. Its study explains the basics of how an operating system interfaces with networks and the difference between <strong>kernel </strong>and user modes. An overview of operating systems typically discusses <strong>how and why operating systems works</strong>, how they are structured, the concepts of an <strong>application programming interface (API) and middleware</strong>, and may delve into <strong>concurrency, scheduling and dispatch</strong> (eg. processes and threads), <strong>memory management, and security</strong>. A deeper dive into operating systems might inspect the use of <strong>virtual machines</strong>, <strong>device management</strong>, file systems, embedded systems, fault tolerance, and evaluation of system performance.</p>
+
+<h1>Computer Networks</h1>
+
+<p>Seeing as how the distinction between computer science and developing for computer networks has become so blended due to the ubiquity of the Internet, an understanding of how networks work is a frequently sought after topic. An introduction to computer networks starts with understanding the<strong> Internet </strong>and the<strong> physical pieces of networks (hosts, routers, ISPs, LANs, etc.)</strong>, how applications might be served over networks (<strong>client/server, peer-to-peer, cloud, etc.</strong>),<strong> various protocols (TCP, UDP)</strong> for information transfer, how information is <strong>routed and forwarded</strong>, and may even extend to topics such as social networks.</p>
+
+<h1>Databases</h1>
+
+<p>Databases and information management is concerned with all the operations that we can perform on information, including its capture and storage, how it is represented, transformed, and presented. It discusses the<strong> best ways to access and update stored information</strong>, <strong>how data is modeled and abstracted</strong>, and the <strong>physical storage of files</strong>. The exploration into databases distinguishes between programming with data files and <strong>programming with databases</strong>, and describes the components of databases and how they are used. <strong>Data modeling</strong> is an area that discusses how data is modeled and its notation (eg. entity-relation diagrams or unidified modeling language), relational data models, and object-oriented models. A deeper dive may go into <strong>query languages (SQL)</strong>, indexing and query performance, <strong>transactions, data mining, information storage, and multimedia systems</strong>.</p>
+
+<h1>Languages and compilers</h1>
+
+<p>Programming languages are how computer scientists can communicate their problems and solutions, and computer scientists work with many different languages. Therefore, a computer scientist typically needs to understand some of the principles underlying what a programming language is, how they are used, and their limitations. Important topics in programming languages are <strong>object-oriented programming (OOP)</strong> and <strong>functional programming</strong>. In OOP, you learn how to use classes and subclasses to decompose objects into states with varying behaviors and how methods are called during dynamic dispatch. Typical languages using OOP are Java, C++, and Python. This contrasts with functional programming, in which the emphasis is on the functions rather than objects as the &quot;source of truth&quot; and stems more closely from applied math; for example, JavaScript. Another form of programming is <strong>event-driven and reactive programming</strong>, which revolves closely around event handlers and event loops.</p>
+
+<p>For a deeper understanding of languages, one may venture into <strong>type systems</strong>, which define operations that can performed on symbols,<strong> program representation</strong>, which discusses programs that interpret other programs (eg.<strong> interpreters, compilers</strong>, type-checkers, documentation generators),<strong> language translation and execution</strong> (including the language translation pipeline of parsing, type-checking, translating, linking, and executing), <strong>semantic analysis, code generation, and runtime systems</strong>.</p>
+
+<h1>Artificial intelligence</h1>
+
+<p>Artificial intelligence (AI) creates approaches to solve problems that may not be solvable under conventional means, and deals with the representation of knowledge in a broad set of environments, from sensing the world around us (eg. speech recognition, natural language understanding, computer vision), to problem-solving, performing tasks (eg. robotics), and the systems that support these traits (eg. agents). AI is less of a core topic in computer science but is in my eyes more so the application of computer science to human tasks. I&#39;ve added this here just because I believe a lot of people are likely to have been inspired to study computer science more deeply due to the high impact of artificial intelligence developments.</p>
+
+<p>Key issues in AI may discuss the <strong>nature of agents (eg. autonomy)</strong> and the <strong>characteristics of AI problems</strong> (deterministic vs. stochastic, static vs. dynamic, discrete vs. continuous). An understanding of <strong>basic search strategies</strong> is crucial, investigating how problems are defined, how solutions may be searched, and approaching<strong> the tradeoff between completeness, optimality, time complexity, and space complexity</strong>. Knowledge representation and reasoning is reviewed in studying<strong> logic, proofs, and probabilistic reasoning</strong>. <strong>Machine learning</strong> topics such as the different types of learning (supervised, reinforcement, unsupervsied), classification, and statistical learning algorithms are reviewed. A closer inspection may investigate advanced search methods, such as search trees and stochastic searches, techniques for understanding uncertainty and probability and models based upon probability (eg. Bayesian, Markov networks), <strong>agents and game theory</strong>,<strong> natural language processing, robotics and computer vision</strong>.</p>
+
+<h1>Additional topics</h1>
+
+<p>Obviously, the areas I discussed are not nearly exhaustive of all that computer science covers. Other very important topics include <strong>computational science</strong> (the application of computer science to the other sciences), <strong>graphics and visualization</strong> (the science of enabling visual communication through computation), <strong>human-computer information</strong> (the design of interactions between humans and computers),<strong> information assurance and security</strong> (the protection and defense of information), and <strong>parallel and distributed computing</strong> (the simultaneous execution of multiple processes). Most of these are advanced topics and relate more to the intersection between computer science and other fields. It is, however, important to note it is key to learn soft skills such as <strong>social issues and professional practice</strong>&nbsp;if one wishes to become an effective programmer and scientist.</p>",2022-08-09 22:04:54,2022-08-28 03:13:11,1,5,"The body of knowledge of computer science is vast and immensely deep. For a primer on the broad field of computer science, here are some of the main topics you'll be encountering if you choose to learn computer science, whether self-taught or in a formal setting.",https://images.pexels.com/photos/13095904/pexels-photo-13095904.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load,0,0,0
+18,The PrismPrepper: a tool for creating Prism.js code snippets,"<p><a href=""https://prismjs.com/"" target=""_blank"">Prism.js</a> is a lightweight syntax highlighter that is used to create pretty code snippets often used on blog posts, documentation, and tutorials. In order to use it, you have to place your code within a set of &lt;pre&gt; and &lt;code&gt; tags, and specify the language. You additionally have to add extra attributes if you want to use plugins such as the line highlighter. This isn&#39;t difficult, but if you&#39;re trying to highlight lots of pieces of code from a variety of languages, it can take a while getting the format correct. As such, I made a simple tool using React to combine the different code tags together so you don&#39;t have to. The tool will also create a preview using the Prism.js default theme (the one used by this blog). I call it the PrismPrepper!</p>
+
+<h1>Using the PrismPrepper tool</h1>
+
+<div id=""root"">&nbsp;</div>
+
+<div class=""instructions"">
+<h1>Instructions on installing Prism.js</h1>
+
+<p>For details on using Prism.js, please view <a href=""https://prismjs.com/"" target=""_blank"">the official website</a>. One way to add Prism.js is to simply link to the CDN. You can use the following links, which uses jsDelivr. Add the stylesheets within your HTML head tag and the scripts at the bottom of your HTML body tag. This will load Prism.js and the plugins AutoLoader, Line Highlight, and Normalize Whitespace. You can add any additional plugins as desired.</p>
+
+<pre>
+        <code class=""language-html"">
+        &lt;!-- Load Prism.js stylesheets --&gt;
+        &lt;link
+          rel=&quot;stylesheet&quot;
+          href=&quot;https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism.min.css&quot;
+        /&gt;
+        &lt;link
+          rel=&quot;stylesheet&quot;
+          href=&quot;https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-highlight/prism-line-highlight.min.css&quot;
+        /&gt;
+        
+        &lt;!-- Load Prism.js --&gt;
+        &lt;script src=&quot;https://cdn.jsdelivr.net/npm/prismjs@1.28.0/components/prism-core.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/autoloader/prism-autoloader.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/line-highlight/prism-line-highlight.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js&quot;&gt;&lt;/script&gt;
+        </code>
+        </pre>
+
+<p>To use the file path function, add the following to your css, and modify as needed:</p>
+
+<pre>
+<code class=""language-css"">pre[data-file]::before {
+    content: attr(data-file);
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+pre[data-file] {
+    position: relative;
+}</code></pre>
+<script
+      src=""https://unpkg.com/react@18/umd/react.development.js""
+      crossorigin
+    ></script><script
+      src=""https://unpkg.com/react-dom@18/umd/react-dom.development.js""
+      crossorigin
+    ></script><script src=""https://unpkg.com/babel-standalone@6/babel.min.js""></script></div>
+<script src=""/static/prism/prism.js"" defer></script><script src=""/static/js/prismPrepper.js"" type=""text/babel"" defer></script>",2022-08-06 07:10:16,2022-08-15 20:26:15,1,"2,4","Prism.js is a lightweight syntax highlighter that is used to create pretty code snippets often used on blog posts, documentation, and tutorials. The PrismPrepper is a quick tool to generate code snippets to be processed by Prism.js.",https://images.pexels.com/photos/1684187/pexels-photo-1684187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,1,0
+17,Import and export data from a Django app,"<p>Integrating import and export in your Django app is straightforward using the Django import / export tool. All instructions can be detailed in the <a href=""https://django-import-export.readthedocs.io/en/latest/index.html"" target=""_blank"">documentation</a>. Here&#39;s how I implemented it for my application.</p>
+
+<h2>Install</h2>
+
+<p>First, install the tool in your virtual environment using pip:</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""PS C:\app_directory"">
+<code class=""language-powershell"">
+pip install django-import-export
+</code>
+</pre>
+
+<p>Next, add the app to your list of installed apps in your settings.py file:</p>
+
+<pre data-line=""10"">
+<code class=""language-python"">
+INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;blog.apps.BlogConfig&#39;,
+    &#39;ckeditor&#39;,
+    &#39;import_export&#39;,
+]
+</code>
+</pre>
+
+<h2>Register</h2>
+
+<p>Finally, create the resource and admin classes for the model you&#39;re trying to import/export in admin.py:</p>
+
+<pre data-line=""1-2,6-14"">
+<code class=""language-python"">
+from import_export.admin import ImportExportModelAdmin
+from import_export import resources
+from django.contrib import admin
+from .models import Post, Author, Category, Comment, Subscriber
+
+class PostResource(resources.ModelResource):
+
+    class Meta:
+        model = Post
+
+class PostAdmin(ImportExportModelAdmin):
+    resource_class = PostResource
+
+admin.site.register(Post, PostAdmin)
+admin.site.register(Author)
+admin.site.register(Category)
+admin.site.register(Comment)
+admin.site.register(Subscriber)
+</code>
+</pre>
+
+<h2>Finished!</h2>
+
+<p>Now, you should be able to access the import and export functions in your Post model in your admin control panel:</p>
+
+<p style=""text-align: center;""><img src=""https://compsciblog.s3.us-west-1.amazonaws.com/importexport.png"" /></p>",2022-08-04 04:39:31,2022-08-09 16:49:30,1,1,Importing and exporting data from a Django application is a great way to backup and share data.,https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+16,Add subscribers to Django blog,"<p>Add Subscriber model with a confirmation number that will be used for confirming and deleting the subscriber:</p>
+
+<p><code>class Subscriber(models.Model):</code></p>
+
+<p><code>&nbsp; &nbsp; email = models.EmailField(null=True, blank=True)</code></p>
+
+<p><code>&nbsp; &nbsp; conf_num = models.CharField(max_length=15)</code></p>
+
+<p><code>&nbsp; &nbsp; confirmed = models.BooleanField(default=False)</code></p>
+
+<p>&nbsp;</p>
+
+<p><code>&nbsp; &nbsp; def __str__(self):</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; return self.email + &quot; (&quot; + (&quot;not &quot; if not self.confirmed else &quot;&quot;) + &quot;confirmed)&quot;</code></p>
+
+<p>Create a subscribe to mailing list template:</p>
+
+<p><code>{% extends &#39;base.html&#39; %}</code></p>
+
+<p>&nbsp;</p>
+
+<p><code>{% block content %}</code></p>
+
+<p><code>&lt;div style=&quot;border: 1px solid darkgreen; border-radius: 2px; padding:10px; text-align: center;&quot;&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;div&gt;&lt;strong&gt;SUBSCRIBE&lt;/strong&gt;&lt;/div&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;div style=&quot;margin-bottom: 10px;&quot;&gt;Please subscribe to get the latest articles in your mailbox.&lt;/div&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;div&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;form action=&quot;{% url &#39;subscribe&#39; %}&quot; method=&quot;post&quot; class=&quot;form-horizontal&quot;&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {% csrf_token %}</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type=&quot;email&quot; name=&quot;email&quot; class=&quot;form-control&quot; placeholder=&quot;Your Email ID Please&quot; required&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;br&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;input type=&quot;submit&quot; value=&quot;Subscribe&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/form&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;/div&gt;</code></p>
+
+<p><code>&lt;/div&gt;</code></p>
+
+<p><code>{% endblock %}</code></p>
+
+<p>Create views for subscribing, confirming the subscription ,and deleting the subscription:</p>
+
+<p><code>def random_digits():</code></p>
+
+<p><code>&nbsp; &nbsp; return &quot;%0.12d&quot; % random.randint(0, 99999999999)</code></p>
+
+<p>&nbsp;</p>
+
+<p><code>def subscribe(request):</code></p>
+
+<p><code>&nbsp; &nbsp; if request.method == &#39;POST&#39;:</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; sub = Subscriber(email=request.POST[&#39;email&#39;], conf_num=random_digits())</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; sub.save()</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; to_emails=[sub.email]</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; subject=&#39;Blog Subscription Confirmation&#39;</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; html_content=&#39;Thank you for signing up for my email newsletter! Please complete the process by &lt;a href=&quot;{}/confirm/?email={}&amp;conf_num={}&quot;&gt; clicking here to confirm your registration&lt;/a&gt;.&#39;.format(request.build_absolute_uri(), sub.email, sub.conf_num)</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; send_mail(subject, html_content, None, to_emails, fail_silently=False, html_message=html_content)</code></p>
+
+<p><code>&nbsp; &nbsp; return render(request, &#39;subscribe.html&#39;)</code></p>
+
+<p>&nbsp;</p>
+
+<p><code>def confirm_subscription(request):</code></p>
+
+<p><code>&nbsp; &nbsp; sub = Subscriber.objects.get(email=request.GET[&#39;email&#39;])</code></p>
+
+<p><code>&nbsp; &nbsp; if sub.conf_num == request.GET[&#39;conf_num&#39;]:</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; sub.confirmed = True</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; sub.save()</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; return render(request, &#39;confirm_subscription.html&#39;, {&#39;email&#39;: sub.email, &#39;action&#39;: &#39;confirmed&#39;})</code></p>
+
+<p><code>&nbsp; &nbsp; else:</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; return render(request, &#39;confirm_subscription.html&#39;, {&#39;email&#39;: sub.email, &#39;action&#39;: &#39;denied&#39;})</code></p>
+
+<p>&nbsp;</p>
+
+<p><code>def delete_subscription(request):</code></p>
+
+<p><code>&nbsp; &nbsp; sub = Subscriber.objects.get(email=request.GET[&#39;email&#39;])</code></p>
+
+<p><code>&nbsp; &nbsp; if sub.conf_num == request.GET[&#39;conf_num&#39;]:</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; sub.delete()</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; return render(request, &#39;confirm_subscription.html&#39;, {&#39;email&#39;: sub.email, &#39;action&#39;: &#39;unsubscribed&#39;})</code></p>
+
+<p><code>&nbsp; &nbsp; else:</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; return render(request, &#39;confirm_subscription.html&#39;, {&#39;email&#39;: sub.email, &#39;action&#39;: &#39;denied&#39;})</code></p>
+
+<p>So when someone submits the subscribe form, a new subscriber is added to the database and an email is sent (I&#39;m using SendGrid) to establish confirmation that the email is correct with a confirmation link with a random confirmation number. The user clicks that link and calls the confirm_subscription view and if the confirmation number is correct then the subscription is confirmed.&nbsp;</p>
+
+<p>A simple template for displaying results of confirming or deleting the subscription:</p>
+
+<p><code>{% extends &#39;base.html&#39; %}</code></p>
+
+<p>&nbsp;</p>
+
+<p><code>{% block content %}</code></p>
+
+<p><code>{% if email %}</code></p>
+
+<p><code>&lt;p&gt;{{ email }} has been {{ action }}.&lt;/p&gt;</code></p>
+
+<p><code>{% endif %}</code></p>
+
+<p><code>{% endblock %}</code></p>
+
+<p>Edit the PostCreateView to send an email to all subscribers automatically when a new post is created (most likely don&#39;t want to do this but rather control sending emails via a different method, but it is here for simple use case):</p>
+
+<p><code>class PostCreateView(CreateView):</code></p>
+
+<p><code>&nbsp; &nbsp; model = Post</code></p>
+
+<p><code>&nbsp; &nbsp; fields = [&#39;title&#39;, &#39;body&#39;, &#39;author&#39;, &#39;categories&#39;]</code></p>
+
+<p>&nbsp;</p>
+
+<p><code>&nbsp; &nbsp; def form_valid(self, form):</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; subscribers = Subscriber.objects.filter(confirmed=True)</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; from_email = None</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; subject = form.cleaned_data[&#39;title&#39;]</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; for sub in subscribers:</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; to_emails = [sub.email]</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; html_content = form.cleaned_data[&#39;body&#39;] + (&#39;&lt;br&gt;&lt;a href=&quot;{}/delete/?email={}&amp;conf_num={}&quot;&gt;Unsubscribe&lt;/a&gt;.&#39;).format(self.request.build_absolute_uri(&#39;/subscribe&#39;), sub.email, sub.conf_num)</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; send_mail(subject, html_content, from_email, to_emails, fail_silently=False, html_message=html_content)</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; return super().form_valid(form)</code></p>
+
+<p>So after a post is created, an email is sent with the post title and body, as well as a link to unsubscribe.</p>",2022-08-01 07:07:59,2022-08-09 16:49:25,1,"1,2,3",Add subscribers form and confirmation to your newsletter.,https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+13,Add comments to posts in Django,"<p>Add Comment model and register on Admin.site, makemigrations and migrate:</p>
+
+<p><code>class Comment(models.Model):</code></p>
+
+<p><code>&nbsp; &nbsp; name = models.CharField(max_length=255, null=True, blank=True)</code></p>
+
+<p><code>&nbsp; &nbsp; post = models.ForeignKey(Post, related_name=&quot;comments&quot;, on_delete=models.CASCADE)</code></p>
+
+<p><code>&nbsp; &nbsp; body = models.TextField(blank=True, null=True)</code></p>
+
+<p><code>&nbsp; &nbsp; date_added = models.DateTimeField(auto_now_add=True, null=True,blank=True)</code></p>
+
+<p>Add Create Comment view:</p>
+
+<p><code>class CommentCreateView(CreateView):</code></p>
+
+<p><code>&nbsp; &nbsp; model = Comment</code></p>
+
+<p><code>&nbsp; &nbsp; fields = [&#39;name&#39;, &#39;body&#39;]</code></p>
+
+<p><code>&nbsp; &nbsp; def form_valid(self, form):</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; form.instance.post_id = self.kwargs[&#39;pk&#39;]</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; return super().form_valid(form)</code></p>
+
+<p><code>&nbsp; &nbsp; def get_success_url(self):</code></p>
+
+<p><code>&nbsp; &nbsp; &nbsp; &nbsp; return reverse_lazy(&#39;post-view&#39;, kwargs={&#39;pk&#39;: self.kwargs[&#39;pk&#39;]})</code></p>
+
+<p>&nbsp;</p>
+
+<p>Add URL pattern for the view:</p>
+
+<p>&nbsp; <code>&nbsp;path(&#39;&lt;int:pk&gt;/create_comment&#39;, views.CommentCreateView.as_view(), name=&#39;comment-create&#39;),</code></p>
+
+<p>&nbsp;</p>
+
+<p>Create comment_form.html similar to post_form.html:</p>
+
+<p><code>{% extends &quot;base.html&quot; %}</code></p>
+
+<p><code>{% block content %}</code></p>
+
+<p><code>&nbsp; &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; {% csrf_token %}</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;table&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; {{ form.as_table }}</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;/table&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</code></p>
+
+<p><code>&nbsp; &lt;/form&gt;</code></p>
+
+<p><code>{% endblock %}</code></p>
+
+<p>Add comments to detailed post template:</p>
+
+<p><code>&lt;div class=&quot;comments&quot;&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;h3&gt;Comments&lt;/h3&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; {% for comment in post.comments.all %}</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;div&gt;{{ comment.name }} posted {{ comment.date_added | timesince }} ago:&lt;/div&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;div&gt;{{ comment.body | safe }}&lt;/div&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; &lt;hr&gt;</code></p>
+
+<p><code>&nbsp; &nbsp; {% endfor %}</code></p>
+
+<p><code>&lt;/div&gt;</code></p>
+
+<p><code>&lt;a href={% url &#39;comment-create&#39; post.id %} class=&quot;button&quot;&gt;Add comment&lt;/a&gt;</code></p>
+
+<p>&nbsp;</p>",2022-08-01 01:25:29,2022-08-09 16:49:17,1,"1,2,3",Make it possible so guests can leave comments on your posts!,https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+12,Send emails via SMTP (SendGrid) for Django password reset,"<p>So this already assumes that you&#39;re using the Django default authentication paths in the entrypoint urls.py file and have default templates set up for a password reset form and confirmation.</p>
+
+<p>Create a SendGrid account with a verified sender and create an API key and enable full access (should be free). Copy the API key into your environmental variables file.</p>
+
+<p>Then in your settings.py file load your key and set your default &quot;From&quot; email address to whatever you put for your verified sender above.</p>
+
+<p><code>EMAIL_BACKEND = &quot;django.core.mail.backends.smtp.EmailBackend&quot;</code></p>
+
+<p><code>EMAIL_FILE_PATH = BASE_DIR / &quot;sent_emails&quot;</code></p>
+
+<p>&nbsp;</p>
+
+<p><code>SENDGRID_API_KEY = env(&#39;SENDGRID_API_KEY&#39;)</code></p>
+
+<p>&nbsp;</p>
+
+<p><code>EMAIL_HOST = &#39;smtp.sendgrid.net&#39;</code></p>
+
+<p><code>EMAIL_HOST_USER = &#39;apikey&#39;</code></p>
+
+<p><code>EMAIL_HOST_PASSWORD = SENDGRID_API_KEY</code></p>
+
+<p><code>EMAIL_PORT = 587</code></p>
+
+<p><code>EMAIL_USE_TLS = True</code></p>
+
+<p><code>DEFAULT_FROM_EMAIL = env(&#39;DEFAULT_FROM_EMAIL&#39;)</code></p>",2022-07-31 19:10:07,2022-08-09 16:49:13,1,"1,2,3",Integrate an email server to your Django blog.,https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+11,Use environmental variables for Django application,"<p>It is a good practice to keep your environmental variables in a separate file to be loaded that is not in version control, to avoid having to set them time and time again.</p>
+
+<p>To do so, create a .env file in your Django project directory (same level as manage.py) while in your virtual environment and add any variables you need to set there (I have a SendGrid API key as an example):</p>
+
+<p><code>SENDGRID_API_KEY=whateverapikey</code></p>
+
+<p>Add .env files to your .gitignore:</p>
+
+<p><code>.env</code></p>
+
+<p>Install django-environ using pip:</p>
+
+<p><code>pip install django-environ</code></p>
+
+<p>Import environ and load environmental variables from .env file in the settings.py file:</p>
+
+<p><code>#Take environment variables from .env file</code></p>
+
+<p><code>import environ</code></p>
+
+<p><code>env = environ.Env(</code></p>
+
+<p><code>&nbsp; &nbsp; # set casting, default value</code></p>
+
+<p><code>&nbsp; &nbsp; DEBUG=(bool, False)</code></p>
+
+<p><code>)</code></p>
+
+<p><code>#Take the environmental variables from .env file</code></p>
+
+<p><code>environ.Env.read_env(os.path.join(BASE_DIR, &#39;.env&#39;))</code></p>
+
+<p>Use the variables in your configuration:</p>
+
+<p><code>SENDGRID_API_KEY = env(&#39;SENDGRID_API_KEY&#39;)</code></p>
+
+<p>Update the environmental variables on Heroku (or whatever production environment):</p>
+
+<p><code>heroku config:set SENDGRID_API_KEY=whateverapikey</code></p>",2022-07-31 19:06:06,2022-08-09 16:49:09,1,"1,2,3",Keep your environmental variables managed.,https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+10,Features to be implemented:,"<p>Here are features to be implemented for this blog:</p>
+
+<p>-Password reset (done!)</p>
+
+<p>-Comments (preliminarily done)</p>
+
+<p>-Subscribe to mailing list (preliminarily done)</p>
+
+<p>-Export posts (just in case) or perhaps export pdf</p>
+
+<p>-Share button, maybe automatic sharing</p>
+
+<p>-Layout redesign</p>
+
+<p>-SEO, accessibility, yada yada</p>
+
+<p>-Testing</p>
+
+<p>-Advertisements, donation, monetization</p>
+
+<p>-Analytics</p>
+
+<p>-Table of contents for posts</p>",2022-07-30 02:57:09,2022-08-28 03:14:40,1,,,https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+9,Adding category to the base template in Django via context_processor,"<p>Create a file in the app directory:</p>
+
+<p><code>context_processors.py</code></p>
+
+<p>Define the context:</p>
+
+<pre>
+<code>def add_variable_to_context(request):
+    return {
+        &#39;categories&#39;: Category.objects.all()
+    }</code></pre>
+
+<p>Add the context_processor in settings.py to the templates OPTIONS list:</p>
+
+<pre>
+<code>&#39;blog.context_processors.add_variable_to_context&#39;,</code></pre>
+
+<p>&nbsp;</p>",2022-07-30 00:41:01,2022-08-09 16:48:57,1,"1,2,3",Add variables to be used in all templates via context_processor.,https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+8,A combination of two learning philosophies,"<p>So this is my new strategy for learning software engineering (not so much for learning computer science theory). Basically, there will be learning things multiple times. The first might be the &quot;hacking&quot; session, which involves just doing whatever it takes to acquire the results you desire. So there&#39;s not so much theoretical, background understanding of HOW things work, but just getting it to look and work as it should. That sounds great, but of course, it isn&#39;t flexible and is easily breakable. So the other side of it is to learn the principles underlying what I&#39;m doing. Then, I should use these principles to refactor and do things correctly. For example, to create this blog I can hack a few tutorials together and just get it working. But the blog lacks testing, and learning how to do new things with it takes a long time because I have to hack everything without solid fundamentals. I should then go through and do it more and more properly, iteratively, until it becomes refined and more professional. So the &quot;hacking&quot; part is fun and creates results, but learning the theory/fundamentals is where most of the learning takes place.</p>",2022-07-28 18:55:55,2022-08-09 16:48:53,1,3,,https://images.pexels.com/photos/826349/pexels-photo-826349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+7,Adding a Rich text editor to Django,"<p>In the virtual environment, install django-ckeditor:</p>
+
+<p><code>pip install django-ckeditor</code></p>
+
+<p>Add &#39;ckeditor&#39; to your INSTALLED_APPS:</p>
+
+<p><code>&#39;ckeditor&#39;,</code></p>
+
+<p>Add a RichTextField to your model:</p>
+
+<p><code>from ckeditor.fields import RichTextField</code></p>
+
+<p><code>body = RichTextField(blank=True, null=True)</code></p>
+
+<p>Add the safe filter to any template that needs to use the rich text:</p>
+
+<p><code>{{ post.body | safe }}</code></p>
+
+<p>You can truncate rich text and safe at the same time (say for example the posts on the home page of this site). This allows you to trunchate HTML tags and automatically close them after a certain number of characters or words.</p>
+
+<p><code>{{ post.body | truncatechars_html:500 | safe }}</code></p>
+
+<p>Add widget media to your form template:</p>
+
+<p><code>{{ form.media }}</code></p>
+
+<p>Makemigrations and migrate</p>
+
+<p><code>py manage.py makemigrations</code></p>
+
+<p><code>py manage.py migrate</code></p>
+
+<p>Freeze requirements, push to Github and Heroku.&nbsp;</p>",2022-07-27 06:12:46,2022-08-09 16:48:48,1,"1,2,3",Enable rich text for use in Django with ckeditor.,https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,0,0
+6,Creating a Django blog application,"<p>There are many ways to create a blog; most people are familiar with Wordpress and other content management systems that allow users to setup a blog quickly and efficiently. Unfortunately, here at the CompSci Blog, we do things the hard way. Thankfully, Django is anything <em>but </em>hard. <a href=""https://www.djangoproject.com/"" target=""_blank"">Django</a> is a popular server-side framework for developing full-feature web applications. It is free and open-source, and was designed to make making websites easy. In this post, I&#39;m going to go over a quick setup example of how to get a Django blog application setup quickly and painlessly. It is how I set up this blog!</p>
+
+<p>By the end of this tutorial, you (hopefully) will have a functioning application running on Heroku, a platform as a service (PaaS) which we will use to serve our application. The application will allow for users to create, read, update, and delete (CRUD) posts. The application can then be further developed as needed.</p>
+
+<p>Note: In this guide I will be describing all of the commands for Windows.</p>
+
+<h1>Setting up the virtual environment</h1>
+
+<p>A <a href=""https://docs.python.org/3/tutorial/venv.html"" target=""_blank"">virtual environment</a> is a self-contained directory tree that contains a specific Python installation and any additional packages necessary to run the application. It is recommended to use a virtual environment in order to prevent one application from interfering another, and to make it easy for Heroku to know what packages to install.</p>
+
+<p>First, let&#39;s designate a folder where we will store our virtual environment and then generate our Django application. In your console, navigate to where you want to create the folder and make a new directory, enter that directory, create a virtual environment, and activate the environment.</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""PS A:\projects&gt;"">
+<code class=""language-powershell"">
+mkdir blog_directory
+cd blog_directory
+</code></pre>
+
+<pre class=""command-line language-powershell"" data-prompt=""PS A:\projects\blog_directory&gt;"">
+<code class=""language-powershell"">
+py -m venv venv
+venv\Scripts\activate
+</code></pre>
+
+<h1>Starting a new project</h1>
+
+<p>Install django, start a new project (called blog in this example), and enter the project folder.</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""(venv) PS A:\projects\blog_directory&gt;"">
+<code class=""language-powershell"">
+pip install django
+django-admin startproject blog
+cd blog
+</code></pre>
+
+<p>The blog folder is the entrypoint for our application, but is not the application itself. Create the application (called blog_app in this example).</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""(venv) PS A:\projects\blog_directory&gt;"">
+<code class=""language-powershell"">
+py manage.py startapp blog_app
+</code></pre>
+
+<p>Finally, we have the basic structure of our application setup. It is probably quite confusing with one directory within another the first time you run through this, but this is the basic treeview of how your blog_directory should look now. Our blog_directory is just a container for our virtual environment, and we have a blog project within it. Within this project, there is the entrypoint for the application, called blog, and the application itself, called blog_app.</p>
+
+<pre>
+<code class=""language-treeview"">
+blog_directory/
+|-- blog/
+|   |-- blog/
+|   `-- blog_app/
+`-- venv/
+</code></pre>
+
+<p>Within the blog entrypoint, you will find a <code>settings.py</code> file which contains the settings for the project. Add our recently generated application to the list of INSTALLED_APPS:</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog\settings.py"" data-line=""8"">
+<code class=""language-python"">
+INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;blog_app.apps.BlogAppConfig&#39;,
+]
+</code></pre>
+
+<p>Next, route the URLs from the entrypoint to the URLs that we will later define in the blog_app, and enable the serving of static files during development:</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog\urls.py"" data-line=""2,4,8-9"">
+<code class=""language-python"">
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path(&#39;admin/&#39;, admin.site.urls),
+    path(&#39;&#39;, include(&#39;blog_app.urls&#39;)),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+</code></pre>
+
+<h1>Setting up the Post model</h1>
+
+<p>Django uses the Model-View-Template architecture. As such, in order to create posts, let&#39;s define a Post model with some simple fields: a title, a body, and a couple of timepoints at which the post is both created and updated. We will also define a __str__ method to define how a Post is displayed when called, and provide a method for getting the URL of a specific post in order to link to it later on. We&#39;ll also make it so that a Post can be created even without any specific field by adding null and blank to true. blank=True allows the field to be left blank, and null=True allows the field to be null; certain fields such as the CharField don&#39;t care about null=True but it&#39;s easier to remember this way. The auto_now and auto_now_add options add default values for the created and updated dates.</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog_app\models.py"" data-line=""2-14"">
+<code class=""language-python"">
+from django.db import models
+from django.urls import reverse
+
+class Post(models.Model):
+    title = models.CharField(max_length=255, null=True, blank=True)
+    body = RichTextField(blank=True, null=True)
+    date_created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    date_updated = models.DateTimeField(auto_now=True, null=True, blank=True)
+    
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse(&#39;post-view&#39;, args=[str(self.id)])
+</code></pre>
+
+<p>Whenever you adjust a model or its fields, you will need to create new migrations and apply them to your database.</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""(venv) PS A:\projects\blog_directory\blog"">
+<code class=""language-powershell"">
+py manage.py makemigrations
+py manage.py migrate
+</code></pre>
+
+<p>Django makes it easy to work with models by providing an admin site where you can create, edit, and delete objects directly. Let&#39;s register our newly created Post model with the admin site.</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog_app\admin.py"" data-line=""2-4"">
+<code class=""language-python"">
+from django.contrib import admin
+from .models import Post
+
+admin.site.register(Post)
+</code></pre>
+
+<p>Create a superuser to login to the admin site, and then run the server.</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""(venv) PS A:\projects\blog_directory\blog"">
+<code class=""language-powershell"">
+py manage.py createsuperuser
+py manage.py runserver
+</code></pre>
+
+<p>You should now be able to open the admin site with your browser at http://127.0.0.1:8000/admin, log in with your superuser credentials, and create a new Post. Do so now so we have a post to look at.</p>
+
+<h1>Creating templates and views</h1>
+
+<p>Next, let&#39;s add some templates that we want to render in the browser so we can see our post in action. Create a folder in our application directory called templates, and create a base.html file. This will serve as our base template, which all other templates will extend. For now, it will just include boilerplate HTML with a content block in the body. This content block is written in Django&#39;s template language (DTL) and allows us to render HTML content dynamically.</p>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\blog_app\templates\base.html"">
+<code><!--
+<!DOCTYPE html>
+<html lang=""en"">
+  <head>
+    <meta charset=""UTF-8"" />
+    <meta http-equiv=""X-UA-Compatible"" content=""IE=edge"" />
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"" />
+    <title>Blog</title>
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+</html>
+--></code></pre>
+
+<p>We&#39;ll also add a template for a list of all of our posts. We&#39;ll use Django&#39;s built-in generic list view, and this view automatically searches for a specifically named file in a specific location. Thus, create a new folder called blog_app in your templates folder and a file called post_list.html inside. The hierarchization of this looks a little funny but this is the default routing Django looks for. The template extends our base template and displays our posts as a list. It checks for a variable called post_list, and then loops through the post_list and gets the title and body of each post. The title is linked to the specific post.</p>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\blog_app\templates\blog_app\post_list.html"">
+<code><!--
+{% extends ""base.html"" %} 
+{% block content %}
+<h1>Posts</h1>
+  {% if post_list %}
+    {% for post in post_list %}
+    <div>
+      <div><a href=""{{ post.get_absolute_url }}"">{{ post.title }}</a></div>
+      <div>{{ post.body }}</div>
+    </div>
+    {% endfor %}
+  {% else %}
+  <div>There are no posts.</div>
+  {% endif %} 
+{% endblock %}
+--></code></pre>
+
+<p>Create a post_detail.html file which contains the template for a single post. This one should be self-explanatory.</p>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\blog_app\templates\blog_app\post_detail.html"">
+<code><!--
+{% extends ""base.html"" %} 
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p>{{ post.body }}</p>
+{% endblock %}
+--></code></pre>
+
+<p>Using Django&#39;s generic (built-in) views, add our new list and detail views for our post model by changing our views.py file.</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog_app\views.py"">
+<code class=""language-python"">
+from django.views import generic
+from .models import Post
+
+class PostListView(generic.ListView):
+    model = Post
+
+class PostDetailView(generic.DetailView):
+    model = Post
+</code></pre>
+
+<p>Link up our views to our urls so we know which view corresponds to which URL. To do this, you&#39;ll need to create a urls.py file in our blog application directory. We&#39;ll path the empty path to the list of posts. If the path has a number to it (e.g. &quot;domain.com/4&quot;), then the URL will parse out that number as our pk or primary key and display the proper specific post with that identifying key. Also note that since we created as views as classes, we convert them to views here with the as_view() function.</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog_app\urls.py"">
+<code class=""language-python"">
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path(&#39;&#39;, views.PostListView.as_view(), name=&#39;posts&#39;),
+    path(&#39;&lt;int:pk&gt;&#39;, views.PostDetailView.as_view(), name=&#39;post-view&#39;),
+]
+</code></pre>
+
+<p>At this point, you should be able to run the server and check to see if the post you created from the admin site shows up on our site and if the link to the specific post works.</p>
+
+<h1>Creating CRUD actions</h1>
+
+<p>Now, we&#39;ll add the create, update, and delete pages as part of the CRUD design. Again, Django has some generic versions already prebuilt for us, so we&#39;ll just add these class-based views. The fields variable defines which fields we will be able to edit in our views. The reverse_lazy function gives us the proper URL for our post list view as defined in urls.py. The lazy version is needed in class-based views based on how attributes are evaluated. We&#39;ve also added the LoginRequiredMixin to make sure only logged in users can access these views (our only user is still our superuser at this point, so you have to log in via the admin site to access the views).</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog_app\views.py"" data-line=""4-6,13-23"">
+<code class=""language-python"">
+from django.shortcuts import render
+from django.views import generic
+from .models import Post
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+class PostListView(generic.ListView):
+    model = Post
+
+class PostDetailView(generic.DetailView):
+    model = Post
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = [&#39;title&#39;,&#39;body&#39;]
+
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    model = Post
+    fields = [&#39;title&#39;,&#39;body&#39;]
+
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
+    success_url = reverse_lazy(&#39;posts&#39;)
+</code></pre>
+
+<p>Add the corresponding views to our urls.py. The views that are for a specific post (view, update, delete) are given the primary key through parsing the URL.</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog_app\urls.py"" data-line=""7-9"">
+<code class=""language-python"">
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path(&#39;&#39;, views.PostListView.as_view(), name=&#39;posts&#39;),
+    path(&#39;create&#39;, views.PostCreateView.as_view(), name=&#39;post-create&#39;),
+    path(&#39;&lt;int:pk&gt;&#39;, views.PostDetailView.as_view(), name=&#39;post-view&#39;),
+    path(&#39;&lt;int:pk&gt;/update&#39;, views.PostUpdateView.as_view(), name=&#39;post-update&#39;),
+    path(&#39;&lt;int:pk&gt;/delete&#39;, views.PostDeleteView.as_view(), name=&#39;post-delete&#39;),
+]
+</code></pre>
+
+<p>The templates for the create, update, and delete views should be found in the post_form.html file (for create and update) and the post_confirm_delete.html file (for delete).</p>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\blog_app\templates\blog_app\post_form.html"">
+<code><!--
+{% extends ""base.html"" %}
+
+{% block content %}
+  <form action="""" method=""post"">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type=""submit"" value=""Submit"">
+  </form>
+{% endblock %}
+--></code></pre>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\blog_app\templates\blog_app\post_confirm_delete.html"">
+<code><!--
+{% extends ""base.html"" %}
+
+{% block content %}
+<h1>Delete Post</h1>
+<p>Are you sure you want to delete the post: {{ post.title }}?</p>
+<form action="""" method=""POST"">
+  {% csrf_token %}
+  <input type=""submit"" value=""Yes, delete."">
+</form>
+{% endblock %}
+--></code></pre>
+
+<p>Add in a link to create posts in the post_list.html. Only the superuser can currently create, delete, and update posts, so these should only be displayed if the user is staff.</p>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\blog_app\templates\blog_app\post_list.html"" data-line=""4"">
+<code><!--
+{% extends ""base.html"" %} 
+{% block content %}
+<h1>Posts</h1>
+{% if user.is_staff %}<a href={% url 'post-create' %}>Create post</a>{% endif %}
+  {% if post_list %}
+    {% for post in post_list %}
+    <div>
+      <div><a href=""{{ post.get_absolute_url }}"">{{ post.title }}</a></div>
+      <div>{{ post.body }}</div>
+    </div>
+    {% endfor %}
+  {% else %}
+  <div>There are no posts.</div>
+  {% endif %} 
+{% endblock %}
+--></code></pre>
+
+<p>Add links to update and delete the post from within the post_detail page.</p>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\blog_app\templates\blog_app\post_detail.html"" data-line=""6-7"">
+<code><!--
+{% extends ""base.html"" %} 
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p>{{ post.body }}</p>
+{% if user.is_staff %}<div><a href=""{% url 'post-delete' post.id %}"">Delete</a></div>
+<div><a href=""{% url 'post-update' post.id %}"">Edit</a></div>{% endif %}
+{% endblock %}
+--></code></pre>
+
+<p>We should now be able to not only see a list of posts, but also create a post, go to a specific post, and edit and/or delete a post.</p>
+
+<h1>Deploying to Heroku</h1>
+
+<p>Finally, now that we have something functional (albeit extremely barebones), let&#39;s deploy our application to <a href=""https://dashboard.heroku.com/apps"" target=""_blank"">Heroku</a> so that we can take a look at how it works in production. You may want to test it in the development server to double check that it works in development first. We&#39;re going to use Heroku because it has a truly free option. This free option takes a few seconds to a few minutes to load up, so after the application hasn&#39;t been used for 30 minutes, it will take some time to load up again. However, it is completely free, and if you want to avoid the loadup time you can upgrade the dyno for a few bucks a month.</p>
+
+<p>The first thing we should do is add our project into version control via Git. We don&#39;t need our virtual environment in version control, so go to the project directory (same level as manage.py) and add a .gitignore file and add the following. This will tell version control to ignore any files. If you have an environmental variable file, you would add that to this as well.</p>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\.gitignore"">
+<code>
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
+</code>
+</pre>
+
+<p>For production on Heroku, we&#39;ll need gunicorn (an HTTP server), dj-database-url (to set the proper database connection), psycopg2 (to use Heroku&#39;s PostgresQL database), and whitenoise (for static file serving). Install these now.</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""(venv) PS A:\projects\blog_directory\blog"">
+<code class=""language-powershell"">
+pip install gunicorn
+pip install dj-database-url
+pip install psycopg2
+pip install whitenoise
+</code></pre>
+
+<p>Update the path for static files in our settings and whitenoise to our middleware. Make sure to place the middleware under the security middleware.</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog\settings.py"" data-line=""3,14-25"">
+<code class=""language-python"">
+MIDDLEWARE = [
+    &#39;django.middleware.security.SecurityMiddleware&#39;,
+    &#39;whitenoise.middleware.WhiteNoiseMiddleware&#39;,
+    &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+    &#39;django.middleware.common.CommonMiddleware&#39;,
+    &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+    &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+    &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+    &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;,
+]
+
+...
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+# The absolute path to the directory where collectstatic will collect static files for deployment.
+STATIC_ROOT = BASE_DIR / &#39;staticfiles&#39;
+
+# The URL to use when referring to static files (where they will be served from)
+STATIC_URL = &#39;/static/&#39;
+
+# Simplified static file serving.
+# https://pypi.org/project/whitenoise/
+STATICFILES_STORAGE = &#39;whitenoise.storage.CompressedManifestStaticFilesStorage&#39;
+</code></pre>
+
+<p>Heroku requires a Procfile which tells Heroku what processes to execute on application startup. Make sure you use the name of your project (in this example, I have blog.wsgi because my project is called blog).</p>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\Procfile"">
+<code>
+web: gunicorn blog.wsgi --log-file -
+</code>
+</pre>
+
+<p>Add a runtime.txt to the project directory, as it is needed by Heroku to know which Python runtime to use.</p>
+
+<pre class=""language-markup"" data-file=""A:projects\blog_directory\blog\runtime.txt"">
+<code>
+python-3.10.2
+</code>
+</pre>
+
+<p>Freeze our requirements, creating a requirements.txt file with all of the packages we have installed into our virtual environment.</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""(venv) PS A:\projects\blog_directory\blog"">
+<code class=""language-powershell"">
+pip freeze &gt; requirements.txt
+</code></pre>
+
+<p>Now that we have all the files we need, create a new <a href=""https://github.com/"" target=""_blank"">Github</a>&nbsp;repository online and push to it (initiate the git repository, add your files, commit your files, add a remote origin to your Github repository, and push. You can get your repository location on Github. Note that your branch might be called main instead of master, since they have updated the name.</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""(venv) PS A:\projects\blog_directory\blog"">
+<code class=""language-powershell"">
+git init .
+git add .
+git commit -m &quot;commit message&quot;
+git remote add origin YOUR_REPOSITORY_NAME
+git push origin master
+</code></pre>
+
+<p>Download and install the Heroku client and make an account on Heroku until you can run commands in your console. Via the console, create an app with whatever name you want that&#39;s available, and push to Heroku. Then, apply your migrations and create a superuser. Finally, set the production configuration variables with your own generated secret key and set Debug to false.</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""(venv) PS A:\projects\blog_directory\blog"">
+<code class=""language-powershell"">
+heroku create yourblogname
+git push heroku master
+heroku run python manage.py migrate
+heroku run python manage.py createsuperuser
+heroku config:set DJANGO_SECRET_KEY=yoursecretkey
+heroku config:set DJANGO_DEBUG=False
+</code></pre>
+
+<p>Add your Heroku application&#39;s URL to your ALLOWED_HOSTS.</p>
+
+<pre data-file=""A:projects\blog_directory\blog\blog\settings.py"">
+<code class=""language-python"">
+ALLOWED_HOSTS = [&#39;yourblogname.herokuapp.com&#39;,&#39;127.0.0.1&#39;]
+</code>
+</pre>
+
+<h1>Finished!</h1>
+
+<p>Recommit and push to Github and Heroku. Then open the page on the browser and see if it works! Most likely, the first run through won&#39;t work. A small detail might have been missed or something might have become outdated. If it does work, congratulations! If not, check out the heroku logs to see if you can track down what went wrong. Remember that in order to update posts you need to login via the admin site first with your superuser credentials.</p>
+
+<pre class=""command-line language-powershell"" data-prompt=""(venv) PS A:\projects\blog_directory\blog"">
+<code class=""language-powershell"">
+heroku open
+heroku logs --tail
+</code></pre>
+<script src=""/static/prism/prism.js"" defer></script>",2022-07-27 06:11:58,2022-08-28 03:13:04,1,"1,2,3",Quickly set up and deploy a blog application built with Django.,https://images.pexels.com/photos/159533/kid-notebook-computer-learns-159533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,0,1,0
