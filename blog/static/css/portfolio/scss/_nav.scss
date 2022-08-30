@@ -157,6 +157,14 @@
   }
 }
 
+.hero_resume {
+  display: none;
+
+  @include breakpoints.sm {
+    display: block;
+  }
+}
+
 .alert {
   position: fixed;
   top: 140px;

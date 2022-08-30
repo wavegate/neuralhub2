@@ -147,6 +147,15 @@
   color: #3b4754;
 }
 
+.hero_resume {
+  display: none;
+}
+@media (max-width: 480px) {
+  .hero_resume {
+    display: block;
+  }
+}
+
 .alert {
   position: fixed;
   top: 140px;
