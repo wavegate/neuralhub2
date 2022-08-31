@@ -17,7 +17,7 @@ let avgRT;
 
 const submitData = async () => {
   let data = { name: "subitizing", trials: trials, results: results };
-  fetch("/add_experiment", {
+  fetch("/add_experiment/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

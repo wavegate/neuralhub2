@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cover letter generator</title>
+    {% load static %}
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      var csrftoken = '{{ csrf_token }}';
+    </script>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18.2.0/umd/react-dom-server-legacy.browser.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/babel-standalone@6/babel.min.js"
+      crossorigin
+    ></script>
+    <script src="{% static 'js/cover_letter_generator/script.js' %}" type="text/babel"></script>
+  </body>
+</html>

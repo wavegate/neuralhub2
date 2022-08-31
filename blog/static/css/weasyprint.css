@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald&display=swap");
+
+.cover-letter .formBlock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.cover-letter h1 {
+  font-size: 36px;
+  margin-bottom: 18px;
+  margin-top: 44px;
+}
+
+.cover-letter h2 {
+  font-size: 24px;
+  margin-bottom: 18px;
+  margin-top: 24px;
+}
+
+.cover-letter h3 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  margin-top: 18px;
+}
+
+.cover-letter p {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  line-height: 1.7em;
+}
+
+.cover-letter a {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.cover-letter img {
+  margin-top: 24px;
+}
+
+.cover-letter ul,
+ol {
+  margin-left: 96px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.cover-letter ul > li,
+ol > li {
+  line-height: 1.7em;
+}
+
+.cover-letter li {
+}
+
+.cover-letter img {
+  max-width: 100%;
+  height: auto;
+  align-self: center;
+}
+
+.cover-letter .image {
+  text-align: center;
+}
+
+.cover-letter {
+  border-radius: 8px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 24px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Open Sans", sans-serif;
+}

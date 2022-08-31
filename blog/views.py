@@ -6,7 +6,7 @@ from django.urls import reverse, reverse_lazy
 from django.contrib import messages
 import random
 from django.core.mail import send_mail
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 import json
 
@@ -14,6 +14,12 @@ import json
 import io
 from django.http import FileResponse
 from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Image
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.units import inch, cm
+import re
+from weasyprint import HTML, CSS
 
 def index(request):
     featuredPost = Post.objects.filter(featured=True,draft=False)[0]
@@ -249,22 +255,14 @@ class CategoryDetailView(generic.DetailView):
         context['posts'] = Post.objects.filter(categories=self.kwargs['pk'],draft=False)
         return context
 
+def cover_letter_generator(request):
+    return render(request, 'cover_letter_generator.html')
+
 def generate_pdf(request):
-    # Create a file-like buffer to receive PDF data.
-    buffer = io.BytesIO()
-
-    # Create the PDF object, using the buffer as its "file."
-    p = canvas.Canvas(buffer)
-
-    # Draw things on the PDF. Here's where the PDF generation happens.
-    # See the ReportLab documentation for the full list of functionality.
-    p.drawString(100, 100, "Hello world.")
-
-    # Close the PDF object cleanly, and we're done.
-    p.showPage()
-    p.save()
-
-    # FileResponse sets the Content-Disposition header so that browsers
-    # present the option to save the file.
-    buffer.seek(0)
-    return FileResponse(buffer, as_attachment=True, filename='hello.pdf')
+    if request.method == 'POST':
+        data = json.loads(request.body.decode("utf-8"))
+        pdf_file = HTML(string=data['content'], base_url=request.build_absolute_uri()).write_pdf()
+        response = HttpResponse(pdf_file, content_type='application/pdf')
+        response['Content-Disposition'] = 'filename="home_page.pdf"'
+        return response
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

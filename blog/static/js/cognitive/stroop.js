@@ -84,7 +84,7 @@ let incongruentRT;
 
 const submitData = async () => {
   let data = { name: "stroop", trials: trials, results: results };
-  fetch("/add_experiment", {
+  fetch("/add_experiment/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

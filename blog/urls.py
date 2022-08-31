@@ -31,4 +31,5 @@ urlpatterns = [
    path('portfolio/', views.portfolio, name='portfolio'),
    path('portfolio_contact/', views.portfolio_contact, name='portfolio_contact'),
    path('generate_pdf/', views.generate_pdf, name='generate_pdf'),
+   path('cover_letter_generator/', views.cover_letter_generator, name='cover_letter_generator'),
 ]

@@ -665,6 +665,11 @@
   display: flex;
   flex-direction: column;
 }
+.postBody .formBlock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
 .postBody h1 {
   font-size: 36px;
   margin-bottom: 18px;
@@ -756,6 +761,8 @@
   width: 300px;
   height: 36px;
   padding: 0px 12px;
+  display: flex;
+  align-items: center;
   font-size: 18px;
   outline: 2px solid #c9d3dd;
   border-radius: 6px;
@@ -838,7 +845,7 @@
   justify-content: center;
   align-items: center;
   border: 2px solid black;
-  padding: 12px 36px;
+  padding: 4px 12px;
   font-size: 26px;
   border-radius: 0.4rem;
   border: 0.3rem solid black;
@@ -852,7 +859,7 @@
   cursor: pointer;
 }
 .postBody .button:active {
-  margin-top: 5px;
+  transform: translateY(5px);
   box-shadow: none;
   transition: all 0.1s;
 }
@@ -878,6 +885,16 @@
 .postBody #scene-container canvas {
   height: 400px;
   outline: 2px solid black;
+}
+.postBody .cover-letter {
+  border-radius: 8px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 24px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+.postBody .loading {
+  visibility: hidden;
 }
 
 .morePostsContainer {
