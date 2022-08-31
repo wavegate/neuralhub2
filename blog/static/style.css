@@ -780,6 +780,8 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  width: 12px;
+  display: inline;
   border-radius: 50%;
   transition: 0.2s all linear;
   margin-right: 15px;

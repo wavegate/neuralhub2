@@ -51,7 +51,7 @@ if (votebox1) {
         const re = /voteoption#(\d+)/;
         let optionID = selected.match(re)[1];
         let data = await addVote(
-          `${event.target.getAttribute("data-url")}/${optionID}`
+          `${event.target.getAttribute("data-url")}${optionID}/`
         );
         let width = votebox.offsetWidth;
         displayChart(data, width);
