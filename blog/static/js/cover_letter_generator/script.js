@@ -24,14 +24,12 @@ const Output = (props) => {
       <div className="cover-letter">
         <link href="/static/css/weasyprint.css" rel="stylesheet" />
         <p className="date">{date}</p>
-        <div className="intro">{props.to_name}</div>
+        <div className="intro">{props.company_name}</div>
         <div className="intro">{props.to_address_1}</div>
         <div className="intro">{props.to_address_2}</div>
         <div className="intro">{props.to_phone}</div>
         <div className="intro">{props.to_email}</div>
-        <p>
-          Dear {props.prefix} {lastName},
-        </p>
+        <p>Dear {props.to_name},</p>
         <p>
           I am a web developer applying for your web developer position.
           Although my background is in medicine, web development is my passion.
@@ -104,14 +102,14 @@ const Output = (props) => {
 
 function Form() {
   const [content, setContent] = React.useState({
-    company_name: "Bazinga",
+    company_name: "",
     date: new Date().toISOString().split("T")[0],
-    to_sub: "Mr.",
+    to_sub: "",
     to_name: "Hiring Manager",
-    to_address_1: "123 Company Address",
-    to_address_2: "Company's City, State, Zip Code",
-    to_phone: "(xxx) xxx-xxxx",
-    to_email: "hiring.manager@gmail.com",
+    to_address_1: "",
+    to_address_2: "",
+    to_phone: "",
+    to_email: "",
     from_phone: "",
     from_email: "",
   });
